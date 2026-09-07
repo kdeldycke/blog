@@ -112,7 +112,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
-          version: "0.12.2"
+          version: "0.12.7"
       # Plumage's webassets pipeline shells out to npm to install its PostCSS
       # toolchain, so the theme cannot build without it. Same step as tests.yaml,
       # including the pin: the apt package this replaced was npm 9.2.0, four major
@@ -160,7 +160,7 @@ jobs:
         run: >
           npx --yes @divriots/jampack@0.34.1 ./output
       # The SHA pins the action, not the CLI it installs. Left to itself the
-      # action falls back to its own default of `4` and runs `npm i wrangler@4.119.0`,
+      # action falls back to its own default of `4` and runs `npm i wrangler@4.127.1`,
       # so the tool that uploads the site would be whatever 4.x happens to be
       # current that morning. The install does inherit the cooldown, npm having
       # been upgraded above and NPM_CONFIG_MIN_RELEASE_AGE being set at workflow

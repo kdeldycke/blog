@@ -97,7 +97,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
-          version: "0.12.2"
+          version: "0.12.7"
       # Plumage's webassets pipeline shells out to npm to install its PostCSS
       # toolchain, so the theme cannot build without it. The runner already ships
       # Node and npm, so this upgrades in place rather than installing from apt,
@@ -144,7 +144,7 @@ jobs:
       - name: Validate generated HTML
         continue-on-error: true
         run: >
-          npx --yes html-validate@11.6.2 './output/**/*.html'
+          npx --yes html-validate@11.11.0 './output/**/*.html'
 
   unittests:
     name: Unittests
@@ -158,7 +158,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
-          version: "0.12.2"
+          version: "0.12.7"
       # No path argument: pytest discovers everything under tests/, so a new test file is
       # picked up without editing this workflow. Naming one file here is how the local
       # Pelican patches went untested in CI for as long as they did.

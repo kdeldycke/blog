@@ -133,11 +133,6 @@ override-dependencies = [ "pygments>=2.20" ]
 # ~/.config/uv/uv.toml alone, which is one machine's config and does not travel: a fresh
 # clone resolved with no window at all.
 exclude-newer = "1 week"
-# The theme is my own, published by me: the cooldown above guards against a compromised
-# upstream, which does not apply here, and it otherwise holds each release back for a
-# week. A zero duration rather than a fixed date, so the next release is picked up without
-# editing this file. Not a repomatic-owned key: the sync leaves it untouched.
-exclude-newer-package = { plumage = "2026-08-11T00:00:00Z" }
 package = false
 
 [tool.typos]

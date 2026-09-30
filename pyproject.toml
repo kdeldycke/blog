@@ -404,6 +404,10 @@ minimum-release-age = "1 week"
 site.cloudflare-compatibility-date = "2026-06-16"
 site.cloudflare-placement = "smart"
 site.cloudflare-project = "kevin-deldycke-blog"
+# The bucket takes every file over the 25 MiB Pages limit, moved there by the offload
+# step of deploy.yaml. See docs/infrastructure.md.
+site.cloudflare-r2-bucket = "blog-files"
+site.cloudflare-r2-domain = "files.deldycke.com"
 site.deploy = "cloudflare-pages"
 # The default filter is written for a repo whose prose lives in docs/ and readme.md. Here
 # the prose is the product: every post is under content/, so without it below a new article

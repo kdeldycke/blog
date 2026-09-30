@@ -95,9 +95,6 @@
 /static/repository          https://github.com/kdeldycke/mandriva-specs
 /video                      https://www.youtube.com/@kdeldycke/videos
 /video/                     https://www.youtube.com/@kdeldycke/videos
-# Big files over the 25 MiB cap that Pages Direct Upload enforces, so it is served from
-# external storage. See: https://github.com/kdeldycke/blog/blob/main/docs/infrastructure.md
-/2020/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu     https://files.deldycke.com/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu   301
 # Site-wide comments feeds moved to Disqus.
 /comments/feed      https://kevin-deldycke-blog.disqus.com/latest.rss
 # Simplification of feeds URL: use .atom and .rss suffixes.

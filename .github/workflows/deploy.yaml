@@ -148,6 +148,26 @@ jobs:
         run: >
           uv --no-progress run --frozen --all-extras --
           pelican --extra-settings SITEURL='"https://kevin.deldycke.com"'
+      # Direct Upload rejects any file over 25 MiB, and wrangler fails the whole deploy on
+      # the first one it meets. The offload moves each such file to the R2 bucket that
+      # `[tool.repomatic] site.cloudflare-r2-bucket` declares, and puts a 302 from its
+      # path at the top of output/_redirects. A file it cannot move is dropped with an
+      # error annotation and the step fails: `continue-on-error` lets the publish below go
+      # ahead, and the last step then fails the job, since that file's links are dead.
+      # Ahead of jampack, so the optimizer never reads a file that leaves the tree anyway.
+      # The pin must equal the `uses:` refs of the thin callers, which lint-repo enforces,
+      # and repomatic skips the cooldown the same way those reusable workflows do.
+      # See https://repomatic.net/cloudflare#files-over-25-mib.
+      - name: Offload files over the Pages upload limit
+        id: offload
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_R2_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
+          CLOUDFLARE_R2_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
+        run: >
+          uvx --no-progress --exclude-newer-package repomatic=P0D 'repomatic==7.17.0'
+          cloudflare-r2 --offload ./output
       # Version-pinned like the html-validate call in tests.yaml. An unpinned `npx`
       # resolves whatever is newest at deploy time, which is the one moment a
       # surprise is least welcome.
@@ -170,3 +190,8 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy ./output --project-name=kevin-deldycke-blog --commit-dirty=true
           wranglerVersion: "4.118.0"
+      # The site went live without the files the offload dropped, so every link to them is
+      # dead. The offload step's annotations name each file and how to fix it.
+      - name: Fail on files the deploy dropped
+        if: steps.offload.outcome == 'failure'
+        run: exit 1

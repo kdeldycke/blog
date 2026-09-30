@@ -36,7 +36,7 @@ from collections.abc import Iterator
 from pathlib import Path
 from string import ascii_letters, digits
 from typing import TYPE_CHECKING
-from urllib.parse import urljoin
+from urllib.parse import quote, urljoin, urlsplit
 
 if TYPE_CHECKING:
     # What `pytest.param()` returns. pytest exposes the factory but not the type it
@@ -447,10 +447,6 @@ CORPUS: tuple[tuple[str, str], ...] = (
     ("/static/repository", "https://github.com/kdeldycke/mandriva-specs"),
     ("/video", "https://www.youtube.com/@kdeldycke/videos"),
     ("/video/", "https://www.youtube.com/@kdeldycke/videos"),
-    (
-        "/2020/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu",
-        "https://files.deldycke.com/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu",
-    ),
     ("/comments/feed", "https://kevin-deldycke-blog.disqus.com/latest.rss"),
     ("/feed/atom", "/feed.atom"),
     ("/feed", "/feed.rss"),
@@ -506,6 +502,43 @@ def test_corpus(old_url, landing):
         for hop in response.history:
             # 301/302 come from the rules, 308 from Pages' own URL normalization.
             assert hop.status_code in (301, 302, 308)
+
+
+# ----- Files over the Pages size limit, which the deploy serves from R2
+
+PAGES_MAX_FILE_SIZE = 25 * 1024 * 1024
+"""Largest file Cloudflare Pages Direct Upload accepts, in bytes."""
+
+R2_HOST = f"files.{DOMAIN}"
+"""Custom domain of the R2 bucket, per `[tool.repomatic] site.cloudflare-r2-domain`."""
+
+CONTENT_DIR = Path(__file__).parent.parent / "content"
+
+OVERSIZED = sorted(
+    path
+    for path in CONTENT_DIR.rglob("*")
+    if path.is_file() and path.stat().st_size > PAGES_MAX_FILE_SIZE
+)
+"""Content files the deploy's offload moves to R2 instead of uploading to Pages."""
+
+
+@pytest.mark.parametrize("path", OVERSIZED, ids=lambda path: path.name)
+def test_oversized_file_redirects_to_r2(path):
+    """The file's own URL must hand over to the copy the deploy put in R2.
+
+    The rule doing it exists only in the built `_redirects`, never in
+    `content/extra/_redirects`, so no test above ever sees it. Only the first hop
+    is asserted, like the corpus's external landings: its target is a key named by
+    the file's hash, which changes with the file.
+    """
+    url = f"{ROOT_URL}/{quote(path.relative_to(CONTENT_DIR).as_posix())}"
+    with requests.get(url, allow_redirects=False) as response:
+        assert response.status_code == 302, (
+            f"{url} answered {response.status_code}: the offload rule is not live."
+        )
+        location = urlsplit(response.headers["location"])
+        assert location.netloc == R2_HOST
+        assert location.path.endswith(f"/{quote(path.name)}")
 
 
 # ----- The entry points DNS and the edge own, which no file here can express

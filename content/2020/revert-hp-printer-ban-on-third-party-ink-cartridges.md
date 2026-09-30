@@ -54,7 +54,7 @@ I got lucky and found the previous `20200612` firmware referenced in [`https://f
 
 There you'll get a direct link to the `.rfu` file (Remote Firmware Update):[`http://ftp.hp.com/pub/networking/software/pfirmware/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu`](http://ftp.hp.com/pub/networking/software/pfirmware/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu).
 
-And just in case it disappear from its original location, here is [a copy](https://files.deldycke.com/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu).
+And just in case it disappear from its original location, here is [a copy]({attach}HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu).
 
 The checksum of that file is:
 

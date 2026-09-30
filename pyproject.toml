@@ -333,20 +333,6 @@ exclude = [
 ]
 
 [tool.repomatic]
-# `bumpversion.sync = false` used to sit here, because `sync-bumpversion` gated on
-# `is_python_project`, true for any repo carrying a [project] table, and so fired against
-# this `[tool.uv] package = false` project with nothing to version. v7.10.0 moved the job
-# onto the narrower `is_python_package`, which is false here, so the opt-out no longer
-# describes anything.
-# The release lane used to be listed here too: changelog, changelog.yaml, release.yaml
-# and publish-pypi-action. RepoScope.PACKAGE_ONLY now keeps all four away from a
-# `[tool.uv] package = false` project on its own, so naming them only restated what
-# repomatic already works out, exactly as the codecov entry did before it went.
-# debug.yaml is the one that stays: it is PYTHON_ONLY, and this repo really is a Python
-# project. It just has nothing to debug, being a Pelican toolchain rather than a package.
-exclude = [
-  "workflows/debug.yaml",
-]
 # `sync-gitignore` rebuilds .gitignore from gitignore.io and appends this key, in that
 # order and nothing else: the file on disk is never read. So the Pelican rules below only
 # survive by being declared here, and until they were, they sat in the generated file

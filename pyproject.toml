@@ -66,6 +66,7 @@ classifiers = [
   # humans read these, so a list reaching down to 3.10 advertised support for four
   # versions the project refuses to install on. `lint-repo` flags the disagreement.
   "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
   "Programming Language :: Python :: Implementation :: CPython",
   "Topic :: Internet :: WWW/HTTP :: Dynamic Content :: News/Diary",
   "Topic :: Text Processing :: Markup :: HTML",

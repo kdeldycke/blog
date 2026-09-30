@@ -80,12 +80,9 @@ jobs:
     # 6.0.3, 1.2.0), so none of them falls back to compiling from source. The move is
     # x64 to x64, which leaves the arm64 measurement above untouched.
     #
-    # Note that no updater walks a `runs-on:` value forward the way
-    # sync-workflow-pins walks the version pins in the steps below, so this is still a
-    # hand-held choice. What 26.04 buys is the warning: it is one of the images
-    # repomatic draws its test axes from, and the runner-images job files an issue
-    # when GitHub's announcement feed puts one of those into deprecation. 24.04 sat
-    # outside that list, so this image retiring would have arrived unannounced.
+    # The image version is not hand-held: `sync-runner-images` opens a pull request
+    # moving this literal onto a newer image as soon as GitHub's image table lists
+    # one. The architecture is, since that job never changes it.
     runs-on: ubuntu-26.04
     # The site build is the long pole here at roughly 6 minutes, and html-validate
     # walks 262 articles after it. 30 leaves room for a slow runner without letting a

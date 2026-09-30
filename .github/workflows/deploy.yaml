@@ -88,17 +88,16 @@ jobs:
     # Python is the one thing these arm64 runners do worse, and it is the one thing
     # this job mostly does.
     #
-    # Worth revisiting only if the build stops dominating. Note that no updater walks
-    # a `runs-on:` value forward the way sync-workflow-pins walks the version pins
-    # below, so the architecture stays a hand-held choice.
+    # Worth revisiting only if the build stops dominating. `sync-runner-images` walks
+    # the image version forward but never the architecture, so the architecture stays
+    # a hand-held choice.
     #
     # 26.04 rather than 24.04 since 2026-08-14, x64 to x64, so the table above still
     # describes this job. The image ships Python 3.14.4, Rust 1.97.1 and npm 11.17.0,
     # which covers everything the steps below reach for before they pin their own.
-    # The version, unlike the architecture, is now watched: 26.04 is one of the images
-    # repomatic draws its test axes from, and the runner-images job files an issue when
-    # GitHub's announcement feed puts one of those into deprecation. 24.04 sat outside
-    # that list, so its retirement would have surfaced as a broken deploy instead.
+    # The version, unlike the architecture, is watched: `sync-runner-images` opens a
+    # pull request moving this literal onto a newer image as soon as GitHub's image
+    # table lists one.
     runs-on: ubuntu-26.04
     # Measured at roughly 10 minutes end to end from the table above, and it is the
     # workflow whose output reaches readers, so the cap is set to absorb a bad day

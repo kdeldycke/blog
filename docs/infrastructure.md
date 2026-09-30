@@ -86,6 +86,8 @@ python scripts/cloudflare_config.py --apply   # write the declared values back
 python scripts/cloudflare_config.py --dump    # full live state, secrets redacted
 ```
 
+The Docs workflow runs the same comparison with `repomatic cloudflare-pages --check`, in its `cloudflare-config-drift` job. The `site.*` keys in `pyproject.toml` declare the values it checks. That job reads `CLOUDFLARE_API_TOKEN` alone and derives the account from it. repomatic measured on 2026-08-16 that an account-owned token scoped to Pages Edit lists its own account through `GET /accounts`. The 403 hint in `scripts/cloudflare_config.py` says the opposite, and this repository's token has not been tried against that call yet: the job's first run settles it.
+
 | Setting | Stock default | Here | Why |
 | --- | --- | --- | --- |
 | `deployment_configs.*.compatibility_date` | project creation date | `2026-06-16` | Pins the Workers runtime for Pages Functions. Inert while there are no Functions, which is exactly why it drifts unnoticed. |
@@ -282,6 +284,7 @@ Things known to be wrong or unfinished, as opposed to the gaps below which are l
 - **`www.deldycke.com` returns 403**, along with every other subdomain the wildcard covers. Needs either a second Pages custom domain or an edge redirect.
 - **The firmware mirror's R2 migration awaits deployment.** The `blog-files` bucket, its one object and the `files.deldycke.com` custom domain exist since 2026-09-30, per [oversized files](#oversized-files-live-in-r2). Until a deploy ships the article's new link and the `_redirects` rule, the old download link 404s as before, and `tests/test_redirects.py` fails on the two cases covering the rule. [`dns.md`](dns.md) also lacks the record the attachment wrote. Delete this bullet once the deploy is live and the snapshot is regenerated.
 - **The reordered `content/extra/_redirects` and the `.patch`/`.xcf` header rules await deployment.** Until the next deploy ships them, `tests/test_redirects.py` fails on the 35 cases covering the previously-dead rules and `tests/test_headers.py` on the two new content types; all flip green once live. A push touching `content/**` triggers `tests.yaml` and `deploy.yaml` in parallel, so a test run racing the deploy may fail once and pass on rerun; this is inherent to testing edge files against production.
+- **Two drift checks run side by side.** Once the Docs workflow's `cloudflare-config-drift` job has run green, delete `scripts/cloudflare_config.py`, the `config-drift` job in `deploy.yaml`, and the `CLOUDFLARE_ACCOUNT_ID` secret if the deploy step no longer needs it. Then point this page's commands at `repomatic cloudflare-pages`.
 
 ## Known gaps
 

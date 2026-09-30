@@ -397,6 +397,14 @@ lint-deps.allow = { pygments = "no published artifact: the overridden tree is th
 # upstream moves it, and nothing here would say what they were meant to equal. Writing it
 # down is what makes the other three checkable.
 minimum-release-age = "1 week"
+# deploy.yaml builds and publishes the site, since the Docs workflow's own deploy jobs only
+# run for Sphinx. Declaring the target anyway turns on the Docs workflow's
+# `cloudflare-config-drift` job and the Cloudflare checks of `lint-repo`. The date and
+# the placement are the live project's values, and match `wrangler.toml`.
+site.cloudflare-compatibility-date = "2026-06-16"
+site.cloudflare-placement = "smart"
+site.cloudflare-project = "kevin-deldycke-blog"
+site.deploy = "cloudflare-pages"
 # The default filter is written for a repo whose prose lives in docs/ and readme.md. Here
 # the prose is the product: every post is under content/, so without it below a new article
 # ships without ever having its links checked. An override rather than extra_paths because

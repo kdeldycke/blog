@@ -360,24 +360,22 @@ exclude = [
 # waiting to be overwritten. Losing `output` would have dropped 194 MB of rendered site
 # into `git status`, and into the next `git add -A`.
 # Setting the key replaces the default wholesale rather than extending it, so repomatic's
-# own entries are restated. `docs/_linkcheck/` is the one left out: it belongs to a Sphinx
-# tree this repo does not have. `.cc-writes/` is repomatic's own addition rather than a
-# bundled default, and is worth carrying: Claude Code drops that staging directory into
-# whichever tree it is launched from.
+# own entries are restated first, verbatim. `docs/_linkcheck/` is the one left out: it
+# belongs to a Sphinx tree this repo does not have.
 gitignore.extra-content = """
 # Claude Code local files.
 .claude/scheduled_tasks.lock
 .claude/settings.local.json
 **/.claude/.cc-writes/
 
+# Cloudflare wrangler local state.
+.wrangler/
+
 # Pelican.
 *.pid
 output
 seo_report.html
 
-# Cloudflare.
-# `wrangler` writes a local state directory into whichever tree it is run from.
-.wrangler/
 # The virtualenv template gitignore.io emits above ignores `[Ss]cripts`, aimed at a
 # venv's Windows `Scripts/` folder. It also swallows this repo's own `scripts/`, so
 # `scripts/cloudflare_config.py` silently refuses to be added. Re-included here, which

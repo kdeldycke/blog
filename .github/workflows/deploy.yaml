@@ -149,10 +149,6 @@ jobs:
         run: >
           uv --no-progress run --frozen --all-extras --
           pelican --extra-settings SITEURL='"https://kevin.deldycke.com"'
-      - name: "XXX Temporarily remove files >25 MiB"
-        # See: https://developers.cloudflare.com/pages/get-started/direct-upload/#limits
-        run: |
-          rm -f ./output/2020/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu
       # Version-pinned like the html-validate call in tests.yaml. An unpinned `npx`
       # resolves whatever is newest at deploy time, which is the one moment a
       # surprise is least welcome.

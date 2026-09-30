@@ -15,8 +15,9 @@ No account, zone or project identifier is recorded here. This repository is publ
 | Analytics | Cloudflare Web Analytics | Token lives in the project's `build_config`, injected by Cloudflare |
 | Redirects | `content/extra/_redirects` | Copied verbatim into `output/`, read by Pages at the edge |
 | Headers | `content/extra/_headers` | Sets feed and search-index content types |
+| Oversized files | R2 bucket `blog-files`, served at `files.deldycke.com` | Pages rejects files over 25 MiB; see [oversized files](#oversized-files-live-in-r2) |
 
-There are no Workers scripts, no KV namespaces, no D1 databases, and R2 has never been enabled. The blog is the only thing on this account that this repository is responsible for. Losing the repository would therefore cost the blog and nothing else.
+There are no Workers scripts, no KV namespaces and no D1 databases. R2 carries a single bucket, `blog-files`, holding the files too large for Pages. The blog is the only thing on this account that this repository is responsible for. Losing the repository would therefore cost the blog and nothing else: even the bucket's objects are recoverable from git history, as described [below](#oversized-files-live-in-r2).
 
 The same Cloudflare account carries other domains, and `deldycke.com` itself carries mail records. Neither is needed to rebuild the blog and neither is documented here: that is deliberate, since this repository is public and those describe a personal network rather than a website. They live in a private infrastructure knowledge base instead, and `scripts/cloudflare_dns.py` enforces the split in code rather than by memory.
 
@@ -26,12 +27,38 @@ The site is **never built by Cloudflare**. GitHub Actions renders it and uploads
 
 1. A push to `main` touching `content/**`, `*.py`, `pyproject.toml`, `uv.lock`, `wrangler.toml` or the workflow itself starts `deploy.yaml`. A monthly cron starts it too, for reasons under [token expiry](#the-deploy-token).
 2. `uv run pelican` renders `output/`, Stork indexes it, jampack optimises it.
-3. Files over 25 MiB are deleted, because Pages Direct Upload rejects them.
-4. `wrangler pages deploy ./output` uploads the tree. Cloudflare promotes it once the upload completes, so an interrupted run leaves the previous deployment serving.
+3. `wrangler pages deploy ./output` uploads the tree. Cloudflare promotes it once the upload completes, so an interrupted run leaves the previous deployment serving.
 
 This is a Direct Upload flow. In the API, those deployments carry `deployment_trigger.type = "ad_hoc"`, and the live one is the project's `canonical_deployment`.
 
 Two version pins in that job are hand-held, and both were floating until 2026-08-11. `cargo install stork-search --version 1.6.0` has to keep matching the runtime Plumage loads from `files.stork-search.net/releases/v1.6.0/stork.js`: the index format is versioned, so an indexer running ahead of that runtime breaks site search without failing the build. `wranglerVersion: "4.118.0"` pins the CLI that `cloudflare/wrangler-action` otherwise resolves on every deploy, its own default being the floating major `4`. repomatic's `sync-workflow-pins` walks npm literals, PyPI literals and the `setup-uv` version input only, so neither of these gets bumped for me: check them when Stork or wrangler moves.
+
+### Oversized files live in R2
+
+Pages Direct Upload rejects any file over 25 MiB, and `wrangler` fails the whole deploy on the first one it meets. A file over that cap lives in the `blog-files` R2 bucket instead, served at `files.deldycke.com`. The hostname sits directly under the apex on purpose: Universal SSL covers `*.deldycke.com` and nothing deeper, so a name under `kevin.deldycke.com` would need a paid certificate. Egress from R2 is free, and storage is free up to 10 GB-month.
+
+To move a file there:
+
+1. Upload it with the `r2 object put` command below.
+2. Link it from its article with its absolute `https://files.deldycke.com/{file}` URL, not with `{attach}`.
+3. `git rm` it from `content/`. `STATIC_PATHS` copies every file under `content/` into `output/`, so a file left there still reaches the deploy and fails it.
+4. Add a 301 from its old `/{year}/{file}` path in `content/extra/_redirects`, with its corpus entry in `tests/test_redirects.py`, so inbound links keep working.
+
+The upload is a one-time local act, never a deploy step, which is what keeps `CLOUDFLARE_API_TOKEN` on its single Pages permission. The OAuth token `wrangler login` stores drives it, and its consent page lets you narrow the grant. Five scopes did the whole job on 2026-09-30, with wrangler `4.128.0`: `user:read` and `offline_access` (both required), `account:read`, `workers:write` and `zone:read`. No OAuth scope names R2 storage: `workers:write` carries it. `zone:read` was granted for the domain attach, and whether the attach needs it is untested. `wrangler whoami` then warns about every default scope left out, which is expected. The wrangler version mirrors the deploy job's pin:
+
+```bash
+npx wrangler@4.118.0 r2 bucket create blog-files
+npx wrangler@4.118.0 r2 object put blog-files/{file} --file {path} --content-type {media-type} --remote
+npx wrangler@4.118.0 r2 bucket domain add blog-files --domain files.deldycke.com --zone-id {zone-id} --min-tls 1.2
+```
+
+Only the `object put` line repeats per file: the other two ran once, on 2026-09-30.
+
+`--remote` is not optional. Without it, wrangler 4 writes the object to local Miniflare storage under `.wrangler/state/`, reports success, and leaves the real bucket empty. `--content-type` sets the type R2 serves: a format with no registered media type gets `application/octet-stream`, for the reason the `.img` rule under [content types at the edge](#content-types-at-the-edge) gives.
+
+The `domain add` command makes the bucket public. It asks for confirmation, and a non-interactive shell answers yes on its own. `{zone-id}` comes from the `deldycke.com` zone's Overview page, because wrangler has no command that lists zones. `--min-tls 1.2` is there because an R2 custom domain accepts TLS 1.0 by default. The certificate is issued after the attach: `wrangler r2 bucket domain list blog-files` shows `ssl_status` go from `pending` to `active`. Then regenerate [`dns.md`](dns.md), since the attachment writes a proxied record into the zone.
+
+A file removed from `content/` stays in git history. To re-upload one, `git log --diff-filter=D -- {path}` names the deleting commit, and its parent holds the blob. When the article publishes a checksum, verify the recovered file against it before the upload.
 
 ### Content types at the edge
 
@@ -155,6 +182,7 @@ If the Cloudflare project is deleted or the account is lost:
 4. Push to `main`, or run the workflow manually, to produce the first deployment.
 5. Attach `kevin.deldycke.com` as a custom domain, then recreate its DNS record from [`dns.md`](dns.md), in the `deldycke.com` zone.
 6. Re-enable Cloudflare Web Analytics. The token is regenerated per project and is not recoverable from this repository.
+7. Recreate the `blog-files` R2 bucket, re-upload its objects from git history, and attach the `files.deldycke.com` custom domain: see [oversized files](#oversized-files-live-in-r2).
 
 ## DNS
 
@@ -252,6 +280,7 @@ Things known to be wrong or unfinished, as opposed to the gaps below which are l
 
 - **The apex still carries eight dead CloudFront records.** Replacing them is described under [what the snapshot turned up](#what-the-snapshot-turned-up). Add the discard record before deleting the rest, or the apex goes dark in between.
 - **`www.deldycke.com` returns 403**, along with every other subdomain the wildcard covers. Needs either a second Pages custom domain or an edge redirect.
+- **The firmware mirror's R2 migration awaits deployment.** The `blog-files` bucket, its one object and the `files.deldycke.com` custom domain exist since 2026-09-30, per [oversized files](#oversized-files-live-in-r2). Until a deploy ships the article's new link and the `_redirects` rule, the old download link 404s as before, and `tests/test_redirects.py` fails on the two cases covering the rule. [`dns.md`](dns.md) also lacks the record the attachment wrote. Delete this bullet once the deploy is live and the snapshot is regenerated.
 - **The reordered `content/extra/_redirects` and the `.patch`/`.xcf` header rules await deployment.** Until the next deploy ships them, `tests/test_redirects.py` fails on the 35 cases covering the previously-dead rules and `tests/test_headers.py` on the two new content types; all flip green once live. A push touching `content/**` triggers `tests.yaml` and `deploy.yaml` in parallel, so a test run racing the deploy may fail once and pass on rerun; this is inherent to testing edge files against production.
 
 ## Known gaps

@@ -447,6 +447,10 @@ CORPUS: tuple[tuple[str, str], ...] = (
     ("/static/repository", "https://github.com/kdeldycke/mandriva-specs"),
     ("/video", "https://www.youtube.com/@kdeldycke/videos"),
     ("/video/", "https://www.youtube.com/@kdeldycke/videos"),
+    (
+        "/2020/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu",
+        "https://files.deldycke.com/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu",
+    ),
     ("/comments/feed", "https://kevin-deldycke-blog.disqus.com/latest.rss"),
     ("/feed/atom", "/feed.atom"),
     ("/feed", "/feed.rss"),

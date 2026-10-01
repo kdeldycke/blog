@@ -111,7 +111,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
         with:
-          version: "0.12.2"
+          version: "0.12.17"
       # Plumage's webassets pipeline shells out to npm to install its PostCSS
       # toolchain, so the theme cannot build without it. Same step as tests.yaml,
       # including the pin: the apt package this replaced was npm 9.2.0, four major
@@ -121,7 +121,7 @@ jobs:
       # that mattered most.
       - name: Install npm
         run: >
-          npm install npm@12.0.2 --global --ignore-scripts --no-progress
+          npm install npm@12.1.0 --global --ignore-scripts --no-progress
           --no-update-notifier --no-fund --no-audit
       # Version-pinned because `--locked` does not do it: that flag freezes the
       # crate's own dependency tree and leaves the crate itself resolved fresh on
@@ -175,7 +175,7 @@ jobs:
         run: >
           npx --yes @divriots/jampack@0.34.1 ./output
       # The SHA pins the action, not the CLI it installs. Left to itself the
-      # action falls back to its own default of `4` and runs `npm i wrangler@4.119.0`,
+      # action falls back to its own default of `4` and runs `npm i wrangler@4.137.0`,
       # so the tool that uploads the site would be whatever 4.x happens to be
       # current that morning. The install does inherit the cooldown, npm having
       # been upgraded above and NPM_CONFIG_MIN_RELEASE_AGE being set at workflow

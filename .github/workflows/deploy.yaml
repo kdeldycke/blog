@@ -174,22 +174,17 @@ jobs:
       - name: Optimize
         run: >
           npx --yes @divriots/jampack@0.34.1 ./output
-      # The SHA pins the action, not the CLI it installs. Left to itself the
-      # action falls back to its own default of `4` and runs `npm i wrangler@4.137.0`,
-      # so the tool that uploads the site would be whatever 4.x happens to be
-      # current that morning. The install does inherit the cooldown, npm having
-      # been upgraded above and NPM_CONFIG_MIN_RELEASE_AGE being set at workflow
-      # level, but a week-old release nobody picked is still nobody's choice.
-      # 4.118.0 is what that floating range resolves to today, so the pin starts
-      # as a no-op. Hand-held like the Stork pin: sync-workflow-pins reads npm and
-      # PyPI literals and setup-uv's version input, not a `with:` input here.
+      # wrangler runs straight from npm, version-pinned like jampack above, so
+      # sync-workflow-pins moves it past the cooldown. cloudflare/wrangler-action would
+      # only install this same CLI and run this command, with one more third-party
+      # dependency to trust.
       - name: Publish
-        uses: cloudflare/wrangler-action@25853364521e0d392ece9b0c1e97a4b37b638087 # v4.1.2
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./output --project-name=kevin-deldycke-blog --commit-dirty=true
-          wranglerVersion: "4.118.0"
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: >
+          npx --yes wrangler@4.118.0 pages deploy ./output
+          --project-name=kevin-deldycke-blog --commit-dirty=true
       # The site went live without the files the offload dropped, so every link to them is
       # dead. The offload step's annotations name each file and how to fix it.
       - name: Fail on files the deploy dropped

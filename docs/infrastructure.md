@@ -33,7 +33,7 @@ The site is **never built by Cloudflare**. GitHub Actions renders it and uploads
 
 This is a Direct Upload flow. In the API, those deployments carry `deployment_trigger.type = "ad_hoc"`, and the live one is the project's `canonical_deployment`.
 
-Two version pins in that job are hand-held, and both were floating until 2026-08-11. `cargo install stork-search --version 1.6.0` has to keep matching the runtime Plumage loads from `files.stork-search.net/releases/v1.6.0/stork.js`: the index format is versioned, so an indexer running ahead of that runtime breaks site search without failing the build. `wranglerVersion: "4.118.0"` pins the CLI that `cloudflare/wrangler-action` otherwise resolves on every deploy, its own default being the floating major `4`. repomatic's `sync-workflow-pins` walks npm literals, PyPI literals and the `setup-uv` version input only, so neither of these gets bumped for me: check them when Stork or wrangler moves.
+One version pin in that job is hand-held, and it was floating until 2026-08-11. `cargo install stork-search --version 1.6.0` has to keep matching the runtime Plumage loads from `files.stork-search.net/releases/v1.6.0/stork.js`: the index format is versioned, so an indexer running ahead of that runtime breaks site search without failing the build. repomatic's `sync-workflow-pins` walks npm literals, PyPI literals and the `setup-uv` version input only, so it never bumps this one: check it when Stork moves. wrangler runs from a pinned `npx --yes wrangler@X.Y.Z` literal, so `sync-workflow-pins` moves it past the cooldown like jampack.
 
 ### Oversized files live in R2
 

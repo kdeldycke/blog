@@ -249,17 +249,17 @@ files.ignore-hidden = false
 # carries globs like `[Ii]nclude` that typos reads as a typo it cannot fix.
 # `.mailmap` lists contributor names, where a fix renames a person.
 files.extend-exclude = [
-    ".git",
-    ".gitignore",
-    ".mailmap",
-    # Exclude French articles.
-    "content/2004/mise-en-place-paserelle-adsl-mandrake-10.md",
-    "content/2005/creer-un-espace-de-stockage-fiable-avec-raid-5-et-lvm-sous-linux.md",
-    "content/2005/script-de-reconnection-automatique-ppp.md",
-    "content/2006/ajouter-une-entree-jack-universelle-sur-un-telephone-sagem-my700xi.md",
-    "content/2009/cool-cavemen-creative-commons-moi.md",
-    "content/2010/comment-supprimer-des-comptes-mails-secondaires-free-fr.md",
-    "content/2012/ovh-configuration-modem-thomson-tg585-ipoe.md",
+  ".git",
+  ".gitignore",
+  ".mailmap",
+  # Exclude French articles.
+  "content/2004/mise-en-place-paserelle-adsl-mandrake-10.md",
+  "content/2005/creer-un-espace-de-stockage-fiable-avec-raid-5-et-lvm-sous-linux.md",
+  "content/2005/script-de-reconnection-automatique-ppp.md",
+  "content/2006/ajouter-une-entree-jack-universelle-sur-un-telephone-sagem-my700xi.md",
+  "content/2009/cool-cavemen-creative-commons-moi.md",
+  "content/2010/comment-supprimer-des-comptes-mails-secondaires-free-fr.md",
+  "content/2012/ovh-configuration-modem-thomson-tg585-ipoe.md",
 ]
 # Skip the content of SVG files. A terminal capture renders each run of
 # same-styled characters as one <text> element, so a word cut at a run boundary

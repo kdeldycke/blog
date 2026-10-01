@@ -166,7 +166,7 @@ jobs:
           CLOUDFLARE_R2_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
           CLOUDFLARE_R2_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
         run: >
-          uvx --no-progress --exclude-newer-package repomatic=P0D 'repomatic==7.17.0'
+          uvx --no-progress --exclude-newer-package repomatic=P0D 'repomatic==7.17.1'
           cloudflare-r2 --offload ./output
       # Version-pinned like the html-validate call in tests.yaml. An unpinned `npx`
       # resolves whatever is newest at deploy time, which is the one moment a

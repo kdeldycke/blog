@@ -241,6 +241,26 @@ default.extend-ignore-re = [
   #     |
   ":abitrate=",
 ]
+# Check hidden files and directories too, which typos skips by default: the
+# `.github/` workflows and the `.claude/` agents and skills live there.
+files.ignore-hidden = false
+# Hidden files bring in paths typos must never rewrite. `.git` holds the
+# repository internals. `sync-gitignore` regenerates `.gitignore`, which also
+# carries globs like `[Ii]nclude` that typos reads as a typo it cannot fix.
+# `.mailmap` lists contributor names, where a fix renames a person.
+files.extend-exclude = [
+    ".git",
+    ".gitignore",
+    ".mailmap",
+    # Exclude French articles.
+    "content/2004/mise-en-place-paserelle-adsl-mandrake-10.md",
+    "content/2005/creer-un-espace-de-stockage-fiable-avec-raid-5-et-lvm-sous-linux.md",
+    "content/2005/script-de-reconnection-automatique-ppp.md",
+    "content/2006/ajouter-une-entree-jack-universelle-sur-un-telephone-sagem-my700xi.md",
+    "content/2009/cool-cavemen-creative-commons-moi.md",
+    "content/2010/comment-supprimer-des-comptes-mails-secondaires-free-fr.md",
+    "content/2012/ovh-configuration-modem-thomson-tg585-ipoe.md",
+]
 # Skip the content of SVG files. A terminal capture renders each run of
 # same-styled characters as one <text> element, so a word cut at a run boundary
 # leaves a fragment the checker reads as a misspelling. Correcting it in place
@@ -248,16 +268,6 @@ default.extend-ignore-re = [
 # rest of the word, so the picture gains a doubled letter. typos ships an "svg"
 # file type, so no glob is needed here. Filenames stay checked.
 type.svg.check-file = false
-files.extend-exclude = [
-  # Exclude French articles.
-  "content/2004/mise-en-place-paserelle-adsl-mandrake-10.md",
-  "content/2005/creer-un-espace-de-stockage-fiable-avec-raid-5-et-lvm-sous-linux.md",
-  "content/2005/script-de-reconnection-automatique-ppp.md",
-  "content/2006/ajouter-une-entree-jack-universelle-sur-un-telephone-sagem-my700xi.md",
-  "content/2009/cool-cavemen-creative-commons-moi.md",
-  "content/2010/comment-supprimer-des-comptes-mails-secondaires-free-fr.md",
-  "content/2012/ovh-configuration-modem-thomson-tg585-ipoe.md",
-]
 
 [tool.mypy]
 warn_redundant_casts = true

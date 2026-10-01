@@ -271,7 +271,6 @@ Things known to be wrong or unfinished, as opposed to the gaps below which are l
 
 - **The apex still carries eight dead CloudFront records.** Replacing them is described under [what the snapshot turned up](#what-the-snapshot-turned-up). Add the discard record before deleting the rest, or the apex goes dark in between.
 - **`www.deldycke.com` returns 403**, along with every other subdomain the wildcard covers. Needs either a second Pages custom domain or an edge redirect.
-- **[`dns.md`](dns.md) lacks the record the R2 custom domain wrote.** Regenerate the snapshot, then delete this bullet.
 - **The reordered `content/extra/_redirects` and the `.patch`/`.xcf` header rules await deployment.** Until the next deploy ships them, `tests/test_redirects.py` fails on the 35 cases covering the previously-dead rules and `tests/test_headers.py` on the two new content types; all flip green once live. A push touching `content/**` triggers `tests.yaml` and `deploy.yaml` in parallel, so a test run racing the deploy may fail once and pass on rerun; this is inherent to testing edge files against production.
 - **Two drift checks run side by side.** Once the Docs workflow's `cloudflare-config-drift` job has run green, delete `scripts/cloudflare_config.py`, the `config-drift` job in `deploy.yaml`, and the `CLOUDFLARE_ACCOUNT_ID` secret if the deploy step no longer needs it. Then point this page's commands at `repomatic cloudflare-pages`.
 

@@ -8,7 +8,7 @@ TXT values are fingerprinted, not published. A changed fingerprint means the rec
 
 ## deldycke.com
 
-15 records, zone status `active`.
+16 records, zone status `active`.
 
 | Type | Name | Content | Proxied | TTL |
 | --- | --- | --- | --- | --- |
@@ -25,5 +25,6 @@ TXT values are fingerprinted, not published. A changed fingerprint means the rec
 | AAAA | `deldycke.com` | 2600:9000:20d3:8800:19:ee4a:8b80:93a1 | yes | auto |
 | AAAA | `deldycke.com` | 2600:9000:20d3:ce00:19:ee4a:8b80:93a1 | yes | auto |
 | CNAME | `*.deldycke.com` | kevin.deldycke.com | yes | auto |
+| CNAME | `files.deldycke.com` | public.r2.dev | yes | auto |
 | CNAME | `kevin.deldycke.com` | kevin-deldycke-blog.pages.dev | yes | auto |
 | CNAME | `www.deldycke.com` | kevin.deldycke.com | yes | auto |

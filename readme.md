@@ -137,7 +137,6 @@ Now if you need to work both on the content and the theme you need to:
 ### Content
 
 - Use ML to produce article's summaries.
-- Renders disqus comments as static content for SEO? => https://github.com/getpelican/pelican-plugins/tree/maste-disqus_static
 - https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags
 - https://github.com/getpelican/pelican-plugins/tree/master/post_stats
 - https://github.com/getpelican/pelican-plugins/tree/master/filetime_from_git

@@ -1,4 +1,4 @@
-"""Local workarounds for Pelican behaviours this blog needs changed.
+"""Local workarounds and additions for the Pelican behaviours this blog needs.
 
 Fixes are collected here rather than pushed straight to Plumage or Pelican, so each one
 gets exercised against the whole corpus before being proposed to whichever project it
@@ -16,10 +16,30 @@ from __future__ import annotations
 import os
 import posixpath
 import re
+from dataclasses import dataclass, field
+from datetime import datetime
 from html import escape
+from itertools import chain
+from operator import attrgetter
+from pathlib import Path
 
+import tomllib
+from markdown_it import MarkdownIt
 from pelican import signals
 from pelican.contents import Article, Content
+from pygments import highlight
+from pygments.formatters import HtmlFormatter
+from pygments.lexers import TextLexer, get_lexer_by_name
+from pygments.util import ClassNotFound
+
+TYPE_CHECKING = False
+if TYPE_CHECKING:
+    from collections.abc import Sequence
+
+    from markdown_it.renderer import RendererHTML
+    from markdown_it.token import Token
+    from markdown_it.utils import EnvType, OptionsDict
+    from pelican.generators import ArticlesGenerator
 
 # The src of an <img>, captured in three pieces so the value can be swapped without
 # disturbing the other attributes. Deliberately narrow: <img> is the only tag whose
@@ -152,6 +172,207 @@ def canonicalize_listings(path: str, context: dict) -> None:
         document.write(markup.replace("</head>", f"{tag}</head>", 1))
 
 
+# Where the comments archived from Disqus live, relative to the content root.
+COMMENTS_FILE = "comments.toml"
+
+# Every key a comment record may carry, with the type TOML must hand back for it.
+COMMENT_FIELDS: dict[str, type] = {
+    "article": str,
+    "author": str,
+    "body": str,
+    "date": datetime,
+    "id": int,
+    "parent": int,
+    "username": str,
+    "wp_id": int,
+}
+REQUIRED_COMMENT_FIELDS = frozenset({"article", "author", "body", "date", "id"})
+
+# Pygments' default HTML output: a <div class="highlight"> around a <pre>.
+CODE_FORMATTER = HtmlFormatter()
+
+
+def _render_code(
+    self: RendererHTML,
+    tokens: Sequence[Token],
+    idx: int,
+    options: OptionsDict,
+    env: EnvType,
+) -> str:
+    """Highlight a code block with Pygments, the way the articles' code is highlighted.
+
+    The fence names the lexer, and a missing or unknown name falls back to plain text.
+    The output is Pygments' own ``.highlight`` container, which Plumage scopes its code
+    styling and palette to. PHP snippets in comments rarely open with ``<?php``, so the
+    lexer starts inline: other lexers ignore that option.
+    """
+    token = tokens[idx]
+    name = token.info.split()[0] if token.info.strip() else ""
+    try:
+        lexer = get_lexer_by_name(name, startinline=True) if name else TextLexer()
+    except ClassNotFound:
+        lexer = TextLexer()
+    html: str = highlight(token.content, lexer, CODE_FORMATTER)
+    return html
+
+
+def _render_link_open(
+    self: RendererHTML,
+    tokens: Sequence[Token],
+    idx: int,
+    options: OptionsDict,
+    env: EnvType,
+) -> str:
+    """Mark every link in a comment as one the site does not vouch for.
+
+    Readers wrote these links, so they carry ``ugc``, the value search engines document
+    for user-generated content, next to the older ``nofollow``. A link to another
+    comment on the same page, like a mention, stays plain.
+    """
+    if not str(tokens[idx].attrGet("href") or "").startswith("#"):
+        tokens[idx].attrSet("rel", "nofollow ugc")
+    return self.renderToken(tokens, idx, options, env)
+
+
+# Renders the body of archived comments: plain CommonMark, without the MyST extensions
+# or the typographer articles go through. Raw HTML stays text, and a single newline is
+# a line break, which is how Disqus displayed comments.
+COMMENT_MARKDOWN = MarkdownIt("commonmark", {"breaks": True, "html": False})
+COMMENT_MARKDOWN.add_render_rule("code_block", _render_code)
+COMMENT_MARKDOWN.add_render_rule("fence", _render_code)
+COMMENT_MARKDOWN.add_render_rule("link_open", _render_link_open)
+
+
+def render_comment(body: str) -> str:
+    """Render the Markdown body of an archived comment to HTML."""
+    html: str = COMMENT_MARKDOWN.render(body)
+    return html
+
+
+@dataclass
+class Comment:
+    """A comment archived from Disqus, as curated in ``content/comments.toml``."""
+
+    id: int
+    """Disqus post ID. Also anchors the comment on its page."""
+    article: str
+    """Source path of the article under the content root, without its extension."""
+    author: str
+    date: datetime
+    body: str
+    """Markdown source of the comment."""
+    parent: int | None = None
+    """ID of the comment this one replies to."""
+    username: str | None = None
+    """Disqus account of a registered commenter."""
+    wp_id: int | None = None
+    """WordPress comment ID, for comments from before the move to Disqus."""
+    html: str = ""
+    """The rendered body."""
+    replies: list[Comment] = field(default_factory=list)
+    """Direct replies, oldest first."""
+
+    @property
+    def thread_size(self) -> int:
+        """Number of comments in this thread, this one included."""
+        return 1 + sum(reply.thread_size for reply in self.replies)
+
+
+def load_comments(path: Path) -> dict[str, list[Comment]]:
+    """Read the curated comments, render them, and thread each reply under its parent.
+
+    Returns the top-level comments of every article, oldest first, keyed by the source
+    path of the article. The file is edited by hand, so every record is checked. The
+    first one a hand edit broke raises ``ValueError`` naming its ID: an unknown or
+    missing field, a value of the wrong type, a repeated ID, or a reply whose parent is
+    gone or sits under another article.
+    """
+    with path.open("rb") as data:
+        records = tomllib.load(data).get("comment", [])
+
+    comments: dict[int, Comment] = {}
+    for record in records:
+        label = f"Comment {record.get('id', '?')} in {path}"
+        unknown = record.keys() - COMMENT_FIELDS.keys()
+        if unknown:
+            raise ValueError(
+                f"{label} has unknown fields: {', '.join(sorted(unknown))}."
+            )
+        missing = REQUIRED_COMMENT_FIELDS - record.keys()
+        if missing:
+            raise ValueError(f"{label} lacks fields: {', '.join(sorted(missing))}.")
+        mistyped = [
+            f"{key} is {type(value).__name__}, not {COMMENT_FIELDS[key].__name__}"
+            for key, value in record.items()
+            if not isinstance(value, COMMENT_FIELDS[key])
+        ]
+        if mistyped:
+            raise ValueError(f"{label}: {', '.join(mistyped)}.")
+        if record["date"].tzinfo is None:
+            raise ValueError(
+                f"{label}: date needs a UTC offset, like 2011-03-14T09:26:53Z."
+            )
+        if record["id"] in comments:
+            raise ValueError(f"{label} repeats the ID of another comment.")
+        comment = Comment(**record)
+        comment.html = render_comment(comment.body.strip())
+        comments[comment.id] = comment
+
+    threads: dict[str, list[Comment]] = {}
+    for comment in sorted(comments.values(), key=attrgetter("date")):
+        if comment.parent is None:
+            threads.setdefault(comment.article, []).append(comment)
+            continue
+        parent = comments.get(comment.parent)
+        if parent is None:
+            raise ValueError(
+                f"Comment {comment.id} in {path} replies to {comment.parent}, which is "
+                "not in the file: delete the reply as well, or remove its parent key."
+            )
+        if parent.article != comment.article:
+            raise ValueError(
+                f"Comment {comment.id} in {path} replies to {comment.parent}, which is "
+                "filed under another article."
+            )
+        parent.replies.append(comment)
+    return threads
+
+
+def attach_comments(generator: ArticlesGenerator) -> None:
+    """Hang the comments archived from Disqus off the articles they were posted on.
+
+    The theme override in ``content/templates/article.html`` renders ``comments`` below
+    the article. Going through the template rather than the article's content keeps
+    comments out of the feeds and the summaries, which reuse that content. The search
+    index reads the rendered page instead, so ``STORK_INPUT_OPTIONS`` excludes them.
+
+    Comments are matched to articles on the source path, never on the URL. The Disqus
+    embed keyed its threads on the URL, so a change of URL scheme split threads in two.
+    """
+    path = Path(generator.settings["PATH"]) / COMMENTS_FILE
+    if not path.is_file():
+        return
+    articles = {
+        Path(article.relative_source_path).with_suffix("").as_posix(): article
+        for article in chain(
+            generator.articles,
+            generator.translations,
+            generator.hidden_articles,
+            generator.hidden_translations,
+            generator.drafts,
+            generator.drafts_translations,
+        )
+    }
+    for key, comments in load_comments(path).items():
+        article = articles.get(key)
+        if article is None:
+            raise ValueError(
+                f"Comment {comments[0].id} in {path} is filed under {key}, which "
+                "matches no article."
+            )
+        article.comments = comments
+
+
 def register() -> None:
     """Connect every patch above to the signal it hooks into.
 
@@ -160,6 +381,7 @@ def register() -> None:
     """
     signals.content_object_init.connect(absolutize_relative_images)
     signals.content_written.connect(canonicalize_listings)
+    signals.article_generator_finalized.connect(attach_comments)
 
 
 register()

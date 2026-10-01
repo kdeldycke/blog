@@ -1,0 +1,40 @@
+{% extends "!theme/article.html" %}
+{# Adds the comments archived from Disqus below the article. pelican_patches.py reads
+them from content/comments.toml and attaches them as `article.comments`. Pelican's
+templates do not autoescape, so the author name, which commenters typed, is escaped by
+hand. The body arrives as HTML that markdown-it rendered with raw HTML turned off. #}
+{% block content %}
+    {{ super() }}
+    {% if article.comments %}
+        {% set total = article.comments|sum(attribute='thread_size') %}
+        <section id="comments" class="mt-5">
+            <h3>{{ total }} archived comment{{ 's' if total > 1 else '' }}</h3>
+            <p class="text-body-secondary">Comments are closed. These were posted on Disqus, and are archived here.</p>
+            <ol class="list-unstyled">
+                {% for comment in article.comments recursive %}
+                    <li id="comment-{{ comment.id }}" class="mt-4">
+                        {# The anchor WordPress gave the comment before 2013, so old deep
+                        links still land on it. WordPress IDs never reach Disqus ones. #}
+                        {% if comment.wp_id %}<span id="comment-{{ comment.wp_id }}"></span>{% endif %}
+                        <div class="small mb-1">
+                            <strong>{{ comment.author|e }}</strong>
+                            {% if comment.author == AUTHOR %}<span class="badge text-bg-primary ms-1">Author</span>{% endif %}
+                            <a class="text-body-secondary ms-1" href="#comment-{{ comment.id }}">
+                                <time datetime="{{ comment.date.isoformat() }}"
+                                      title="{{ comment.date.isoformat() }}">{{ comment.date.strftime(DEFAULT_DATE_FORMAT) }}</time>
+                            </a>
+                        </div>
+                        <div class="text-break">{{ comment.html }}</div>
+                        {# Indentation stops after three levels, so deep threads still
+                        fit a phone screen. #}
+                        {% if comment.replies %}
+                            <ol class="list-unstyled{% if loop.depth < 4 %} border-start ps-3{% endif %}">
+                                {{ loop(comment.replies) }}
+                            </ol>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ol>
+        </section>
+    {% endif %}
+{% endblock content %}

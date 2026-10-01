@@ -17,7 +17,7 @@ The URL schemes the file keeps alive, oldest first:
 
 - **WordPress permalinks**: `/YYYY/MM/slug/`, always with a trailing slash. Today's canonical form is `/YYYY/slug`, so the month must be stripped: `/:year/:month/*` shapes.
 - **WordPress plumbing**: `/wp-content/uploads/*`, `/author/*`, comment pagination (`…/comment-page-N/`), monthly and yearly archive pages with their own pagination (`/YYYY/MM/page/N`).
-- **WordPress feeds**: `/feed/`, `/feed/atom/`, per-post and per-category `…/feed/rss`, `rss2`, `rdf` variants — WordPress distinguished three RSS dialects, Pelican serves one.
+- **WordPress feeds**: `/feed/`, `/feed/atom/`, per-post and per-category `…/feed/rss`, `rss2`, `rdf` variants — WordPress distinguished three RSS dialects, Pelican serves one. The site-wide comments feed, `/comments/feed/`, lands on the articles feed since comments left Disqus.
 - **Early Pelican reorganizations**: `/uploads/:year/:month/:slug` flattened (filenames are globally unique), `/static/*` and `/documents/*` moves, `/pages/*` flattening, hierarchical categories (`/category/lang/en`) flattened.
 - **Attachments that moved between articles** and articles that were absorbed into others: the long static tail.
 
@@ -41,7 +41,7 @@ The file carried 125 rules with statics and dynamics interleaved by theme. Only 
 
 The replica predicted the dead set from the file alone; probing production confirmed it case for case (35 failing test cases, all of them and only them). The fix is the file's current shape:
 
-1. **All exact rules first, all pattern rules second.** 64 statics ride free, 65 dynamics fit the budget with 35 slots of headroom.
+1. **All exact rules first, all pattern rules second.** 64 statics ride free, 66 dynamics fit the budget with 34 slots of headroom.
 2. The thematic sections survive in both halves; order within each half is preserved, which keeps first-match precedence for the overlapping feed rules.
 3. The contract is enforced by `test_statics_first_contract`, and `test_file_survives_the_engine` fails the suite if the engine would drop or stop at anything.
 

@@ -350,7 +350,9 @@ CORPUS: tuple[tuple[str, str], ...] = (
     ("/tag/python/feed/rss2/", "/tag/python/feed.rss"),
     ("/tag/python/feed/rdf", "/tag/python/feed.rss"),
     ("/tag/python/feed/rdf/", "/tag/python/feed.rss"),
-    ("/comments/feed/atom/", "https://kevin-deldycke-blog.disqus.com/latest.rss"),
+    # The site-wide comments feeds left with Disqus and fold into the articles feeds.
+    ("/comments/feed/", "/feed.rss"),
+    ("/comments/feed/atom/", "/feed.atom"),
     # -- Pre-WordPress corners of the site and old top-level pages.
     ("/pages/about", "/about"),
     ("/about-me/", "/about"),
@@ -447,7 +449,7 @@ CORPUS: tuple[tuple[str, str], ...] = (
     ("/static/repository", "https://github.com/kdeldycke/mandriva-specs"),
     ("/video", "https://www.youtube.com/@kdeldycke/videos"),
     ("/video/", "https://www.youtube.com/@kdeldycke/videos"),
-    ("/comments/feed", "https://kevin-deldycke-blog.disqus.com/latest.rss"),
+    ("/comments/feed", "/feed.rss"),
     ("/feed/atom", "/feed.atom"),
     ("/feed", "/feed.rss"),
     ("/wp-content/uploads", "/"),

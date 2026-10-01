@@ -95,8 +95,9 @@
 /static/repository          https://github.com/kdeldycke/mandriva-specs
 /video                      https://www.youtube.com/@kdeldycke/videos
 /video/                     https://www.youtube.com/@kdeldycke/videos
-# Site-wide comments feeds moved to Disqus.
-/comments/feed      https://kevin-deldycke-blog.disqus.com/latest.rss
+# The site-wide comments feeds went away with Disqus. Their readers get the articles
+# feed instead.
+/comments/feed              /feed.rss              301
 # Simplification of feeds URL: use .atom and .rss suffixes.
 /feed/atom                  /feed.atom             301
 /feed                       /feed.rss              301
@@ -129,7 +130,8 @@
 /uploads/*                  /:splat                 301
 /mandriva-rpm-repository/*  https://github.com/kdeldycke/mandriva-specs
 /static/repository/*        https://github.com/kdeldycke/mandriva-specs
-/comments/feed/*    https://kevin-deldycke-blog.disqus.com/latest.rss
+/comments/feed/atom/*       /feed.atom             301
+/comments/feed/*            /feed.rss              301
 /feed/atom/*                /feed.atom             301
 /feed/*                     /feed.rss              301
 /*/feed/atom                /:splat/feed.atom      301

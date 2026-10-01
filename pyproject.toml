@@ -74,6 +74,9 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = [
+  # Renders the archived comments in pelican_patches.py, whose render rules are typed
+  # with `EnvType`: 3.0 introduced it, and mypy rejects the module below that.
+  "markdown-it-py>=3",
   "pelican[Markdown]>=4.10",
   "pelican-neighbors>=1.2",
   "pelican-search>=1.1",
@@ -81,6 +84,9 @@ dependencies = [
   # "pelican-similar-posts ~= 1.0.0",  # XXX Broken!
   "pelican-sitemap>=1.1",
   "plumage>=5",
+  # Highlights the code blocks of archived comments in pelican_patches.py. 2.20 is the
+  # release fixing CVE-2026-4539, as the override in [tool.uv] explains.
+  "pygments>=2.20",
   "typogrify>=2.0.7",
   # "gensim ~= 4.3.0",  # XXX Broken!
 ]
@@ -277,6 +283,8 @@ overrides = [
   # workaround in pelican_patches.py has to reach into the engine to hook onto it. Drop
   # this once Pelican starts advertising its own types.
   { module = [ "pelican.*" ], ignore_missing_imports = true },
+  # Pygments neither, and pelican_patches.py calls it to highlight comment code.
+  { module = [ "pygments.*" ], ignore_missing_imports = true },
 ]
 
 [tool.pytest]

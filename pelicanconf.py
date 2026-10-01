@@ -179,6 +179,11 @@ PAGINATION_PATTERNS = (
 
 THEME = plumage.get_path()
 
+# Searched before the theme, so a template here can extend Plumage's own through the
+# "!theme/" prefix instead of replacing it whole. article.html adds the comments
+# archived from Disqus.
+THEME_TEMPLATES_OVERRIDES = [str(Path(__file__).parent / PATH / "templates")]
+
 # The yearly folders are listed here as well as in ARTICLE_PATHS, so that an image
 # referenced by a plain relative path gets copied to the output. Pelican otherwise only
 # copies what an {attach} marker points at, and that marker renders as a broken image
@@ -229,6 +234,13 @@ _WEBASSETS_CACHE = Path(__file__).parent / ".webassets-cache"
 _WEBASSETS_CACHE.mkdir(exist_ok=True)
 WEBASSETS_CONFIG = {"cache": str(_WEBASSETS_CACHE)}
 
+# pelican.plugins.search
+#
+# Stork indexes the <main> element of every page, and that is where the comments
+# archived from Disqus render. Excluding them keeps search results on what the
+# articles themselves say.
+STORK_INPUT_OPTIONS = {"exclude_html_selector": "#comments"}
+
 # pelican.plugins.seo
 SEO_REPORT = False
 SEO_ENHANCER = True
@@ -270,5 +282,3 @@ COPYRIGHT = """Unless contrary mentioned, the content of this site is published
 under a <a class="text-body-secondary" rel="license"
 href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons
 Attribution-NonCommercial-ShareAlike 4.0 International license</a>."""
-
-DISQUS_SITENAME = "kevin-deldycke-blog"

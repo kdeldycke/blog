@@ -267,6 +267,9 @@ files.extend-exclude = [
   "content/2009/cool-cavemen-creative-commons-moi.md",
   "content/2010/comment-supprimer-des-comptes-mails-secondaires-free-fr.md",
   "content/2012/ovh-configuration-modem-thomson-tg585-ipoe.md",
+  # Reader comments archived from Disqus. A fix would change what a reader wrote, and
+  # some comments are in French.
+  "content/comments.toml",
 ]
 # Skip the content of SVG files. A terminal capture renders each run of
 # same-styled characters as one <text> element, so a word cut at a run boundary

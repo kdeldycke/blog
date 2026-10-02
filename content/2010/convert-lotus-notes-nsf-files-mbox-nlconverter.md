@@ -17,7 +17,7 @@ Here is how I installed `nlconverter` on a Windows 2000 (SP4) machine:
 
    ![Python 2.6.6 Windows installer asking whether to install for all users or just the current one, with all users selected](001-python-266-install-on-windows-2000.png)
 
-   ![Installer destination step keeping the default C:\Python26 directory](002-python-266-install-on-windows-2000.png)
+   ![Installer destination step keeping the default Python26 directory at the root of the C: drive](002-python-266-install-on-windows-2000.png)
 
    ![Feature tree of the Python installer with all five subfeatures selected, including Tcl/Tk, documentation and the test suite](003-python-266-install-on-windows-2000.png)
 
@@ -29,7 +29,7 @@ Here is how I installed `nlconverter` on a Windows 2000 (SP4) machine:
 
    ![pywin32 setup wizard opening on the package description for build 214 by Mark Hammond, its buttons in French](001-pywin32-214-install-on-windows-2000.png)
 
-   ![pywin32 setup having found Python 2.6 in the registry, targeting C:\Python26 and its site-packages directory](002-pywin32-214-install-on-windows-2000.png)
+   ![pywin32 setup having found Python 2.6 in the registry, targeting the Python26 directory on the C: drive and its site-packages directory](002-pywin32-214-install-on-windows-2000.png)
 
    ![pywin32 setup copying files, currently on a win32com test script](003-pywin32-214-install-on-windows-2000.png)
 

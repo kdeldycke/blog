@@ -6,7 +6,7 @@ tags: Plumage, Pelican, Python, Jinja, theme, HTML, CSS, JavaScript
 ---
 
 After more than a year in stasis, I just released both version 0.5 and version
-0.6  of my [Plumage theme](https://github.com/kdeldycke/plumage) for Pelican.
+0.6 of my [Plumage theme](https://github.com/kdeldycke/plumage) for Pelican.
 
 Why the sudden burst of activity you might ask? Well, I noticed during last
 months that some fellow *Pelican-ista* were still using my theme. And I

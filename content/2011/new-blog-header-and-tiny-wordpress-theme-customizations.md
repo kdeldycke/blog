@@ -34,7 +34,6 @@ As widgets are site-wide, all these CSS customizations will be applied everywher
 }
 -->
 </style>
-
 ```
 
 This quick and dirty hack is perfect for tiny customizations. It will make your CSS easier to maintain as you don't have to modify the core style files or create a child theme.

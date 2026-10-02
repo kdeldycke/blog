@@ -6,12 +6,12 @@
 
 The URLs predate every piece of the current stack. The redirect rules have been translated intact across each hosting move, and the git history records every hop:
 
-| Era | Backend | Redirects carried by | Evidence |
-| --- | --- | --- | --- |
-| 2004–2012 | WordPress | WordPress itself | The URL schemes below |
-| 2012–2020 | Pelican on Apache | `.htaccess` directives | [`2013-01-24` "Add redirects…"](https://github.com/kdeldycke/blog/commits/main), "Massive rework of feed redirects" `2013-01-25` |
-| 2020–2023 | Pelican on S3 | S3 routing rules | "Replace old Apache directives to S3 redirection rules" `2020-10-30` |
-| 2023– | Pelican on Cloudflare Pages | `_redirects` | "Translate S3 redirects to Cloudflare's" `2023-03-02` |
+| Era       | Backend                     | Redirects carried by   | Evidence                                                                                                                         |
+| --------- | --------------------------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 2004–2012 | WordPress                   | WordPress itself       | The URL schemes below                                                                                                            |
+| 2012–2020 | Pelican on Apache           | `.htaccess` directives | [`2013-01-24` "Add redirects…"](https://github.com/kdeldycke/blog/commits/main), "Massive rework of feed redirects" `2013-01-25` |
+| 2020–2023 | Pelican on S3               | S3 routing rules       | "Replace old Apache directives to S3 redirection rules" `2020-10-30`                                                             |
+| 2023–     | Pelican on Cloudflare Pages | `_redirects`           | "Translate S3 redirects to Cloudflare's" `2023-03-02`                                                                            |
 
 The URL schemes the file keeps alive, oldest first:
 

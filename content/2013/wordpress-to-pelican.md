@@ -124,7 +124,6 @@ by this kind of pure HTML:
 <pre><code class="shell">
 (...)
 </code></pre>
-
 ```
 
 The magic command to perform that job is:

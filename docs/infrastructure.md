@@ -6,16 +6,16 @@ No account, zone or project identifier is recorded here. This repository is publ
 
 ## What the site actually runs on
 
-| Piece | Where | Notes |
-| --- | --- | --- |
-| Hosting | Cloudflare Pages project `kevin-deldycke-blog` | Created 2023-03-01, Free plan |
-| Domains | `kevin.deldycke.com` and `kevin-deldycke-blog.pages.dev` | The apex `deldycke.com` zone is separate and hosts other things |
-| Build | GitHub Actions, `.github/workflows/deploy.yaml` | Pelican, then jampack, then `wrangler pages deploy` |
-| Search index | Stork, built during the deploy job | `cargo install stork-search --version 1.6.0`, output served as `/search-index.st` |
-| Analytics | Cloudflare Web Analytics | Token lives in the project's `build_config`, injected by Cloudflare |
-| Redirects | `content/extra/_redirects` | Copied verbatim into `output/`, read by Pages at the edge |
-| Headers | `content/extra/_headers` | Sets feed and search-index content types |
-| Oversized files | R2 bucket `blog-files`, served at `files.deldycke.com` | Moved there by the deploy, since Pages rejects files over 25 MiB; see [oversized files](#oversized-files-live-in-r2) |
+| Piece           | Where                                                    | Notes                                                                                                                |
+| --------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Hosting         | Cloudflare Pages project `kevin-deldycke-blog`           | Created 2023-03-01, Free plan                                                                                        |
+| Domains         | `kevin.deldycke.com` and `kevin-deldycke-blog.pages.dev` | The apex `deldycke.com` zone is separate and hosts other things                                                      |
+| Build           | GitHub Actions, `.github/workflows/deploy.yaml`          | Pelican, then jampack, then `wrangler pages deploy`                                                                  |
+| Search index    | Stork, built during the deploy job                       | `cargo install stork-search --version 1.6.0`, output served as `/search-index.st`                                    |
+| Analytics       | Cloudflare Web Analytics                                 | Token lives in the project's `build_config`, injected by Cloudflare                                                  |
+| Redirects       | `content/extra/_redirects`                               | Copied verbatim into `output/`, read by Pages at the edge                                                            |
+| Headers         | `content/extra/_headers`                                 | Sets feed and search-index content types                                                                             |
+| Oversized files | R2 bucket `blog-files`, served at `files.deldycke.com`   | Moved there by the deploy, since Pages rejects files over 25 MiB; see [oversized files](#oversized-files-live-in-r2) |
 
 There are no Workers scripts, no KV namespaces and no D1 databases. R2 carries a single bucket, `blog-files`, holding the files too large for Pages. The blog is the only thing on this account that this repository is responsible for. Losing the repository would therefore cost the blog and nothing else: even the bucket's objects are recoverable, since each one is a file committed under `content/`.
 
@@ -70,20 +70,20 @@ Attaching one reintroduces a second, competing publisher for the same project, a
 `scripts/cloudflare_config.py` is the executable version of this table. Run it rather than trusting the table:
 
 ```bash
-python scripts/cloudflare_config.py --check   # diff live against declared, exit 1 on drift
-python scripts/cloudflare_config.py --apply   # write the declared values back
-python scripts/cloudflare_config.py --dump    # full live state, secrets redacted
+python scripts/cloudflare_config.py --check # diff live against declared, exit 1 on drift
+python scripts/cloudflare_config.py --apply # write the declared values back
+python scripts/cloudflare_config.py --dump  # full live state, secrets redacted
 ```
 
 The Docs workflow runs the same comparison with `repomatic cloudflare-pages --check`, in its `cloudflare-config-drift` job. The `site.*` keys in `pyproject.toml` declare the values it checks. That job reads `CLOUDFLARE_API_TOKEN` alone and derives the account from it. repomatic measured on 2026-08-16 that an account-owned token scoped to Pages Edit lists its own account through `GET /accounts`. The 403 hint in `scripts/cloudflare_config.py` says the opposite, and this repository's token has not been tried against that call yet: the job's first run settles it.
 
-| Setting | Stock default | Here | Why |
-| --- | --- | --- | --- |
-| `deployment_configs.*.compatibility_date` | project creation date | `2026-06-16` | Pins the Workers runtime for Pages Functions. Inert while there are no Functions, which is exactly why it drifts unnoticed. |
-| `deployment_configs.*.placement.mode` | `off` | `smart` | Smart Placement. Changes nothing measurable for a static site, costs nothing, and would otherwise look accidental. |
-| `deployment_configs.*.build_image_major_version` | `3` | `3` | Already current. v1 auto-migrates 2026-09-15, v2 on 2027-02-23, then no further versions. |
-| `source` | a `github` source block | `null` | Direct Upload only. A source block here would make Cloudflare a second publisher for the same project, with no build configuration capable of producing a usable site. |
-| `build_config.build_command` | empty | empty | Cloudflare never builds this project. A value appearing here means someone reconnected Git. |
+| Setting                                          | Stock default           | Here         | Why                                                                                                                                                                    |
+| ------------------------------------------------ | ----------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `deployment_configs.*.compatibility_date`        | project creation date   | `2026-06-16` | Pins the Workers runtime for Pages Functions. Inert while there are no Functions, which is exactly why it drifts unnoticed.                                            |
+| `deployment_configs.*.placement.mode`            | `off`                   | `smart`      | Smart Placement. Changes nothing measurable for a static site, costs nothing, and would otherwise look accidental.                                                     |
+| `deployment_configs.*.build_image_major_version` | `3`                     | `3`          | Already current. v1 auto-migrates 2026-09-15, v2 on 2027-02-23, then no further versions.                                                                              |
+| `source`                                         | a `github` source block | `null`       | Direct Upload only. A source block here would make Cloudflare a second publisher for the same project, with no build configuration capable of producing a usable site. |
+| `build_config.build_command`                     | empty                   | empty        | Cloudflare never builds this project. A value appearing here means someone reconnected Git.                                                                            |
 
 The "stock default" column is honest about its own confidence: the script tags each entry as `documented` or `inferred, unverified`. Only the build image row is quoted from Cloudflare's documentation. The rest are inferred from product behaviour and should be confirmed against a freshly created project before anyone relies on them.
 
@@ -109,12 +109,12 @@ A Cloudflare DNS API token would only ever be needed for TLS if a certificate we
 
 **Manage account → Audit logs** is the tool for answering "what is using this account". The **Actor Context** column is the one that matters:
 
-| Actor Context | Means |
-| --- | --- |
-| `dash` | A human in a browser |
-| `api` | Dashboard-driven API calls: `LOGIN`, `TOKEN_CREATE` |
-| `api_token` | A scoped API token |
-| *(empty)*, actor `system` | Cloudflare itself, mostly certificate renewal |
+| Actor Context             | Means                                               |
+| ------------------------- | --------------------------------------------------- |
+| `dash`                    | A human in a browser                                |
+| `api`                     | Dashboard-driven API calls: `LOGIN`, `TOKEN_CREATE` |
+| `api_token`               | A scoped API token                                  |
+| *(empty)*, actor `system` | Cloudflare itself, mostly certificate renewal       |
 
 Account-owned and user-owned tokens are distinguishable: an account-owned token logs actor `account` with an empty Actor Email, a user-owned one logs the owner's address. That is how a credential migration can be confirmed after the fact rather than assumed. They are also distinguishable at the API, and [in a way that looks like a broken credential](#the-rule-is-readable-over-the-api-after-all): an account-owned token is rejected outright by the user-scoped `/user/tokens/verify`.
 
@@ -227,13 +227,13 @@ This could not have been done in `content/extra/_redirects`. That file is served
 
 An edge rule of this kind can be snapshotted and reconciled the way `scripts/cloudflare_config.py` handles the Pages project, and an account-owned token is enough. Measured on 2026-08-15, against the sibling `mpm.run` zone rather than this one, with a token carrying `Zone → Read` and `Dynamic URL Redirects → Edit`:
 
-| Call | Result |
-| --- | --- |
-| `GET /zones?name={zone}` | zone resolved |
-| `GET /zones/{zone_id}/rulesets` | phases listed, `http_request_dynamic_redirect` among them |
-| `GET /zones/{zone_id}/rulesets/{ruleset_id}` | full rule bodies, expression and target included |
-| `PATCH /zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}` | target expression rewritten, live within seconds |
-| `GET /user/tokens/verify` | **HTTP 401**, error `1000` "Invalid API Token" |
+| Call                                                           | Result                                                    |
+| -------------------------------------------------------------- | --------------------------------------------------------- |
+| `GET /zones?name={zone}`                                       | zone resolved                                             |
+| `GET /zones/{zone_id}/rulesets`                                | phases listed, `http_request_dynamic_redirect` among them |
+| `GET /zones/{zone_id}/rulesets/{ruleset_id}`                   | full rule bodies, expression and target included          |
+| `PATCH /zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}` | target expression rewritten, live within seconds          |
+| `GET /user/tokens/verify`                                      | **HTTP 401**, error `1000` "Invalid API Token"            |
 
 The last row is the trap, and it is about the endpoint rather than the token: `/user/tokens/verify` is user-scoped, so an account-owned token (the `cfat_` prefix) fails it while every zone call above succeeds. A verify step is therefore the wrong thing to gate a script on — prove the credential against the zone it is meant to touch instead.
 

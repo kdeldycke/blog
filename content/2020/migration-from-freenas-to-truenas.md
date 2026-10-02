@@ -22,8 +22,8 @@ I currently run a [4 * 6 TB RAID-Z2 array]({filename}/2020/nas-hardware.md#raid-
 My plan consist in:
 
 1. Removing the encryption on the array, disk by disk;
-1. Then upgrade the array to the new OpenZFS 2.0;
-1. To finally re-activate the encryption later.
+2. Then upgrade the array to the new OpenZFS 2.0;
+3. To finally re-activate the encryption later.
 
 ## Logging in
 

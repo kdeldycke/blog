@@ -146,6 +146,7 @@ tags: Audio, CLI, divx, dvd, ffmpeg, Kdenlive, Linux, melt, mencoder, mlt, MP4, 
   ```
 
 Other resources:
+
 - [FFmpeg By Example](https://ffmpegbyexample.com)
 
 ## VLC

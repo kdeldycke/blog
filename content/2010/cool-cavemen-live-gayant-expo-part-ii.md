@@ -25,9 +25,9 @@ As a result, I ended with 3 video sources:
 
 1. A DVD-like video stream ([576i](https://en.wikipedia.org/wiki/576i)) produced by my consumer-grade camera ([now for sale at 0.01€ on ebay](https://twitter.com/kdeldycke/status/9299604161)). It produces 720x576 pixels [interlaced frames](https://en.wikipedia.org/wiki/Interlace) at 25 fps, with a [pixel ratio](https://en.wikipedia.org/wiki/Pixel_aspect_ratio) of 16:15 (giving 768x576 pixels frames at 1:1) and a final [display ratio](https://en.wikipedia.org/wiki/Display_aspect_ratio) of 4:3. All encoded as a 9 Mbps MPEG-2 stream in a MPEG-PS container.
 
-1. A [720p](https://en.wikipedia.org/wiki/720p) video stream: 1280x720 pixels progressive frames at 30 fps, with 1:1 pixel ratio and 16:9 display ratio, encoded as variable bitrate MJPEG stream in a QuickTime container.
+2. A [720p](https://en.wikipedia.org/wiki/720p) video stream: 1280x720 pixels progressive frames at 30 fps, with 1:1 pixel ratio and 16:9 display ratio, encoded as variable bitrate MJPEG stream in a QuickTime container.
 
-1. The already-edited video stream ([Half-D1](https://www.videohelp.com/glossary?H#Half%20D1)) from unidentified Sony cameras: 352x576 pixels interlaced frames at 25 fps, with a pixel ratio of 24:11 (giving 768x576 pixels frames at 1:1) and a final display ratio of 4:3. The file was a 6 Mbps MPEG-2 stream in a MPEG-PS container.
+3. The already-edited video stream ([Half-D1](https://www.videohelp.com/glossary?H#Half%20D1)) from unidentified Sony cameras: 352x576 pixels interlaced frames at 25 fps, with a pixel ratio of 24:11 (giving 768x576 pixels frames at 1:1) and a final display ratio of 4:3. The file was a 6 Mbps MPEG-2 stream in a MPEG-PS container.
 
 All those information were extracted thanks to `ffmeg`, `mplayer` and `tcprobe` (see [all the command lines involved]({filename}/2006/video-commands.md)).
 

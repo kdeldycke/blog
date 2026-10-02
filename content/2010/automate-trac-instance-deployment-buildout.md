@@ -188,8 +188,8 @@ $ svn co svn://trac.example.net:3690/my-repo-1
 From now on, and that's where the fun begins, each time a new Trac version is released on PyPI, I just have to:
 
 1. stop both Trac and Subversion standalone servers,
-1. run `./bin/buildout`, and
-1. restart both Subversion and Trac servers.
+2. run `./bin/buildout`, and
+3. restart both Subversion and Trac servers.
 
 That's enough to upgrade my instance.
 

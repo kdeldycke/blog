@@ -267,7 +267,7 @@ A [workaround can be found in this article
     ]({filename}/2010/maildir-deduplication-script-python.md) I
     wrote. It will help you clean-up your Maildir folder.
 
-01. That's it! You now have a standard Maildir of your Lotus Notes mails,
+22. That's it! You now have a standard Maildir of your Lotus Notes mails,
     located in your user home directory (`~/Maildir`):
 
 ```

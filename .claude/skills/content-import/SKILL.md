@@ -1,7 +1,7 @@
 ---
 name: content-import
 description: Import content from a third-party service into the blog as static, hand-curated data, and curate it. Use when you migrate or re-curate data that came from an external platform (Disqus comments today; tweets or Instagram posts tomorrow), or when you audit what an earlier import produced.
-argument-hint: "[path to the source export]"
+argument-hint: '[path to the source export]'
 ---
 
 # Import external content

@@ -47,7 +47,7 @@ Now let's create a minimal Nginx configuration file for this site:
 $ touch /etc/nginx/sites-available/example.com
 ```
 
-In this brand new file,  put the following directives:
+In this brand new file, put the following directives:
 
 ```nginx
 server {

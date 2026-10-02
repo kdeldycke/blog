@@ -14,52 +14,49 @@ It's a custom view I created this month [at work](https://www.smile.fr/Solutions
 The view above is produced by the following XML:
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
 <openerp>
- <data>
-  <!-- Multi product printing wizard -->
-  <record id="label_wizard_product_form" model="ir.ui.view">
-   <field name="name">
+  <data>
+    <record id="label_wizard_product_form" model="ir.ui.view">
+      <field name="name">
     label.wizard.product.form
    </field>
-   <field name="model">
+      <field name="model">
     label.wizard.product
    </field>
-   <field name="type">
+      <field name="type">
     form
    </field>
-   <field name="arch" type="xml">
-    <form string="Label Wizard">
-     <field colspan="4" name="line_ids" nolabel="1"/>
-     <group col="2" colspan="2">
-      <button icon="gtk-ok" name="action_print" string="Print" type="object"/>
-     </group>
-    </form>
-   </field>
-  </record>
-  <record id="label_wizard_product_line_tree" model="ir.ui.view">
-   <field name="name">
+      <field name="arch" type="xml">
+        <form string="Label Wizard">
+          <field colspan="4" name="line_ids" nolabel="1" />
+          <group col="2" colspan="2">
+            <button icon="gtk-ok" name="action_print" string="Print" type="object" />
+          </group>
+        </form>
+      </field>
+    </record>
+    <record id="label_wizard_product_line_tree" model="ir.ui.view">
+      <field name="name">
     label.wizard.product.line.tree
    </field>
-   <field name="model">
+      <field name="model">
     label.wizard.product.line
    </field>
-   <field name="type">
+      <field name="type">
     tree
    </field>
-   <field name="arch" type="xml">
-    <tree editable="bottom" string="Items">
-     <field name="product_template_id"/>
-     <field name="size_id"/>
-     <field name="main_color_id"/>
-     <field name="product_id"/>
-     <field name="quantity"/>
-    </tree>
-   </field>
-  </record>
- </data>
+      <field name="arch" type="xml">
+        <tree editable="bottom" string="Items">
+          <field name="product_template_id" />
+          <field name="size_id" />
+          <field name="main_color_id" />
+          <field name="product_id" />
+          <field name="quantity" />
+        </tree>
+      </field>
+    </record>
+  </data>
 </openerp>
-
 ```
 
 If you start searching a product template with the first field, you'll get a pop-up similar to this one:

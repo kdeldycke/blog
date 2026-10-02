@@ -27,13 +27,13 @@ Here is my procedure to make these mails pass through the conversion error:
 
 1. In Notes' edit mode, cut all inline pictures, one picture at a time;
 
-1. For each cut picture, paste it as a new image in the image editor of your choice ([Gimp](https://www.gimp.org) did the trick for me);
+2. For each cut picture, paste it as a new image in the image editor of your choice ([Gimp](https://www.gimp.org) did the trick for me);
 
-1. Save each image on your local disk;
+3. Save each image on your local disk;
 
-1. Now that all inline images are removed from the original mail, attach (but don't paste) to it all the images you saved in the previous step;
+4. Now that all inline images are removed from the original mail, attach (but don't paste) to it all the images you saved in the previous step;
 
-1. Finally, save mail modifications in Notes and you'll be able to move the mail without the conversion error.
+5. Finally, save mail modifications in Notes and you'll be able to move the mail without the conversion error.
 
 This is really dirty, and isn't bearable past a few mails. But that's the only solution I found so far. Of course if you have a superior/automated way to address this lame bug, I'll be happy to hear that! :)
 

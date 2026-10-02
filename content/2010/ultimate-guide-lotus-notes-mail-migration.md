@@ -25,7 +25,7 @@ to an IMAP server, like Gmail, etc. This works well and is [explained in
 details in this tutorial
 ](https://salesittech.blogspot.com/2009/02/transfer-lotus-notes-email-to-gmail-and.html).
 
-But sometimes your Notes client is behind firewalls and proxys. So you can't
+But sometimes your Notes client is behind firewalls and proxies. So you can't
 reach the Internet.
 
 And some other times, Lotus Notes clients are crippled and don't let you create

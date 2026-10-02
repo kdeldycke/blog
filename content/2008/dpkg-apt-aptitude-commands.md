@@ -98,7 +98,7 @@ tags: apt, aptitude, backport, CLI, Debian, dpkg, Linux, Ubuntu
   $ aptitude unhold kdenlive
   ```
 
-- List holded packages:
+- List held packages:
 
   ```shell-session
   $ dpkg --get-selections | grep hold

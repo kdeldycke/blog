@@ -185,7 +185,7 @@ A final test consist in getting some code from Subversion:
 $ svn co svn://trac.example.net:3690/my-repo-1
 ```
 
-From now on, and that's where the fun begins, each time a new Trac version is released on PyPi, I just have to:
+From now on, and that's where the fun begins, each time a new Trac version is released on PyPI, I just have to:
 
 1. stop both Trac and Subversion standalone servers,
 1. run `./bin/buildout`, and

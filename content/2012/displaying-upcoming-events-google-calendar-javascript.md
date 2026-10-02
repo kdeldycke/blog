@@ -1,8 +1,8 @@
 ---
 date: '2012-07-17'
-title: Displaying Upcoming Events from a Google Calendar in Javascript
+title: Displaying Upcoming Events from a Google Calendar in JavaScript
 category: English
-tags: events, Google Calendar, HTML, iCal, Javascript, JSON, RSS, Cool Cavemen
+tags: events, Google Calendar, HTML, iCal, JavaScript, JSON, RSS, Cool Cavemen
 ---
 
 I use Google Calendar to store all the past and future [concerts of my band](https://coolcavemen.com/concerts). Now I want to display on the band's website the list of upcoming events, based on the content of that calendar.
@@ -31,7 +31,7 @@ Now that we have a nicely sorted list of upcoming concerts, we'll get it's JSON 
 https://www.google.com/calendar/feeds/coolcavemen.com_h3432m0aeeq5c6dakki50giqeo%40group.calendar.google.com/public/full?orderby=starttime&sortorder=ascending&futureevents=true&alt=json
 ```
 
-And around this data feed, I've built a quick and dirty Javascript piece of code to display a nice list of upcoming concerts. Here is the source:
+And around this data feed, I've built a quick and dirty JavaScript piece of code to display a nice list of upcoming concerts. Here is the source:
 
 ```html
 <ul id="next-gigs">

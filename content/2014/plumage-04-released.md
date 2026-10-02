@@ -2,7 +2,7 @@
 date: '2014-02-15'
 title: Plumage 0.4 released
 category: English
-tags: Plumage, Pelican, Python, Jinja, theme, HTML, CSS, Javascript
+tags: Plumage, Pelican, Python, Jinja, theme, HTML, CSS, JavaScript
 ---
 
 [Plumage](https://github.com/kdeldycke/plumage) version 0.4 has just been released. It should also

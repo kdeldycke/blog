@@ -219,7 +219,7 @@ wipe pass  1/3 :    212992/312571224 kB (  0%)   Rate: 21233 kB/s
 
 ### ZFS
 
-- List all snaphots of the `tank/my-data` dataset:
+- List all snapshots of the `tank/my-data` dataset:
 
   ```shell-session
   $ zfs list -r -t snapshot tank/my-data

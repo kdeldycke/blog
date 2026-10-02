@@ -2,7 +2,7 @@
 date: '2013-04-23'
 title: Addon to restore search range in OpenERP 6.1
 category: English
-tags: OpenERP, Javascript, Backbone.js, jQuery, Web, addon
+tags: OpenERP, JavaScript, Backbone.js, jQuery, Web, addon
 ---
 
 In OpenERP 6.1, the default search widget for dates and floats [no longer feature a range](https://bugs.launchpad.net/openerp-web/+bug/926390/):
@@ -24,4 +24,4 @@ This module is based on an [open-source addon from Credativ](https://bazaar.laun
 
 Thus restoring the default behavior from OpenERP 6.0 that was ditched in 6.1.
 
-And if you need to dig deeper in the code, you'll quickly find out that the core of the module lie in the [`search.js` file](https://github.com/Smile-SA/smile_openerp_addons_6.1/blob/master/web_smile_search_range/static/src/js/search.js), which extend in Javascript the search fields models of our interests.
+And if you need to dig deeper in the code, you'll quickly find out that the core of the module lie in the [`search.js` file](https://github.com/Smile-SA/smile_openerp_addons_6.1/blob/master/web_smile_search_range/static/src/js/search.js), which extend in JavaScript the search fields models of our interests.

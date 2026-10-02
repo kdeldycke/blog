@@ -2,7 +2,7 @@
 date: '2011-01-04'
 title: Python commands
 category: English
-tags: ascii, Computer programming, date, dateutil, development, distutils, encoding, PEP8, PyPi, PDB, Python, socket, unicode, URL, urllib2, HTTP, PyLint, Fabric, pip, boltons
+tags: ascii, Computer programming, date, dateutil, development, distutils, encoding, PEP8, PyPI, PDB, Python, socket, unicode, URL, urllib2, HTTP, PyLint, Fabric, pip, boltons
 ---
 
 ## Strings
@@ -115,7 +115,7 @@ I maintain a set of default configuration files in my [`dotfiles` repository](ht
 
 - PDB: [`~/.pdbrc`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.pdbrc)
 - Pip: [`~/.pip/pip.conf`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.pip/pip.conf)
-- PyPi: [`~/.pypirc`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.pypirc)
+- PyPI: [`~/.pypirc`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.pypirc)
 - Pycodestyle: [`~/.config/pycodestyle`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.config/pycodestyle)
 - PyLint: [`~/.pylintrc`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.pylintrc)
 
@@ -127,13 +127,13 @@ I maintain a set of default configuration files in my [`dotfiles` repository](ht
   $ python ./setup.py sdist
   ```
 
-- Register, generate and upload to [PyPi](https://pypi.python.org) the current package as a source package, an egg and a dumb binary:
+- Register, generate and upload to [PyPI](https://pypi.python.org) the current package as a source package, an egg and a dumb binary:
 
   ```shell-session
   $ python ./setup.py register sdist bdist_egg bdist_dumb upload
   ```
 
-- Download Pygments' source distribution from PyPi, without dependencies ([source](https://stackoverflow.com/a/56773693)):
+- Download Pygments' source distribution from PyPI, without dependencies ([source](https://stackoverflow.com/a/56773693)):
 
   ```shell-session
   $ pip download --no-binary=:all: --no-deps pygments==2.14.0

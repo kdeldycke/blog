@@ -13,9 +13,9 @@ Here are some noisy photos I've taken with my Canon 7D and a 15-85mm f/3.5-5.6. 
 
 ![Woody Allen in his glasses standing among the crew behind the camera, another crew member blurred by movement across the foreground](midnight-in-paris-woody-allen.jpg)
 
-![Crew packed around a boom-mounted lamp and a large bounce board on Pont Alexandre III, with a white marquee and coiled cables at the roadside](midnight-in-paris-set-001.jpg)
+![Crew packed around a boom-mounted lamp and a large bounce board on the Alexander III bridge, with a white marquee and coiled cables at the roadside](midnight-in-paris-set-001.jpg)
 
-![Production notice taped around a lamppost, headed Pontchartrain Productions, warning residents of a night shoot on Pont Alexandre III on 11 August 2010](midnight-in-paris-set-002.jpg)
+![Production notice taped around a lamppost, headed Pontchartrain Productions, warning residents of a night shoot on the Alexander III bridge on 11 August 2010](midnight-in-paris-set-002.jpg)
 
 ![Floodlit colonnade and steps of the palace beside the bridge, with film lamps and traffic cones laid out along the closed-off street](midnight-in-paris-set-003.jpg)
 

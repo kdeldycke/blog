@@ -205,7 +205,13 @@ default.extend-ignore-re = [
   # 28 | ... so I attached a variable ND-filter to the lens ...
   #    |                              ^^
   #    |
-  " ND-filter",
+  # error: `ND` should be `AND`
+  #   --> ./content/2010/making-info-tgv-android-app-video.md:32:128
+  #    |
+  # 32 | ... in the corners from the ND filter](original-video-settings.png)
+  #    |                             ^^
+  #    |
+  " ND[- ]filter",
   # error: `Shure` should be `Sure`
   #   --> ./content/2010/making-info-tgv-android-app-video.md:68:154
   #    |

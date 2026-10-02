@@ -69,7 +69,7 @@ He planned to published the video, but the final editing step was postponed by s
 
 ## slowmoVideo, again
 
-Until last January when, after [some efforts]({filename}/2013/slowmo-video-ubuntu-12-10.md), I managed to [produce something with slowmoVideo]({filename}/2013/goodnight-video.md). We resurected the project.
+Until last January when, after [some efforts]({filename}/2013/slowmo-video-ubuntu-12-10.md), I managed to [produce something with slowmoVideo]({filename}/2013/goodnight-video.md). We resurrected the project.
 
 I applied the raw slowmoVideo transformation on the initial set of photos. And the result was good enough. But Tomasito wanted more, and stabilized all the 70 images of the original set by hand!
 

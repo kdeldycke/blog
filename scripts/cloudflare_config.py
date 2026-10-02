@@ -5,7 +5,7 @@ describes what a *build* would need, and this project is never built by Cloudfla
 Everything that actually shapes the live site (the compatibility date, Smart
 Placement, the build image) lives server-side in the project's `deployment_configs`
 and is invisible to anyone reading the repository. This module makes that state
-explicit, diffable and re-appliable.
+explicit, diffable and re-applicable.
 
 Three modes:
 

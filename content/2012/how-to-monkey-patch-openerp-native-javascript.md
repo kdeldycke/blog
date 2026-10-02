@@ -1,6 +1,6 @@
 ---
 date: '2012-02-21'
-title: How-to monkey-patch OpenERP's native Javascript
+title: How-to monkey-patch OpenERP's native JavaScript
 category: English
 tags: javascript, monkeypatch, OpenERP, Web, xml, ERP
 ---
@@ -84,7 +84,7 @@ ManyToOne.prototype.on_keydown = function(evt) {
 
 My goal is now to alter this default behavior, without touching the code in `m2o.js`.
 
-And [thanks to Bryan Forbes' article](https://www.reigndropsfall.net/2010/06/15/monkey-patching/), I engineered a method to [monkey patch](https://wikipedia.org/wiki/Monkey_patch) the original `ManyToOne.prototype.on_keydown` Javascript method.
+And [thanks to Bryan Forbes' article](https://www.reigndropsfall.net/2010/06/15/monkey-patching/), I engineered a method to [monkey patch](https://wikipedia.org/wiki/Monkey_patch) the original `ManyToOne.prototype.on_keydown` JavaScript method.
 
 Here is the code I added in the XML view, just below the `line_ids` field:
 
@@ -106,6 +106,6 @@ Here is the code I added in the XML view, just below the `line_ids` field:
 </html>
 ```
 
-The result of this is a nice looking pop-up which doesn't break any vanilla Javascript of the OpenERP web client:
+The result of this is a nice looking pop-up which doesn't break any vanilla JavaScript of the OpenERP web client:
 
 ![The same dropdown after the patch, the popup now widening to fit the longest suggestion instead of the field](variable-width-popup-list.png)

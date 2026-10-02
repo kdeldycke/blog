@@ -1,13 +1,13 @@
 ---
 date: '2012-05-29'
-title: Hacking OpenERP 6.0 User Interface with Javascript
+title: Hacking OpenERP 6.0 User Interface with JavaScript
 category: English
 tags: HTML, javascript, jquery, OpenERP, smile, ERP
 ---
 
-OpenERP 6.1's web client comes with a cleaner Javascript framework which [features some hook mechanism](https://planet.domsense.com/en/2012/01/openerp-new-web-client-6-1-javascript-hooks/) to simplify customization. In the mean time, I still have to work on older OpenERP 6.0 for customers who haven't migrated yet. So let me present you a tiny collection of ugly (but working) Javascript hacks I use to customize some aspects of the user interface.
+OpenERP 6.1's web client comes with a cleaner JavaScript framework which [features some hook mechanism](https://planet.domsense.com/en/2012/01/openerp-new-web-client-6-1-javascript-hooks/) to simplify customization. In the mean time, I still have to work on older OpenERP 6.0 for customers who haven't migrated yet. So let me present you a tiny collection of ugly (but working) JavaScript hacks I use to customize some aspects of the user interface.
 
-First, you have to learn how to inject Javascript code in the web client. My method is described in details in an article on [how-to monkey-patch OpenERP’s native Javascript]({filename}/2012/how-to-monkey-patch-openerp-native-javascript.md). Please read the later to understand how my hacks are supposed to work.
+First, you have to learn how to inject JavaScript code in the web client. My method is described in details in an article on [how-to monkey-patch OpenERP’s native JavaScript]({filename}/2012/how-to-monkey-patch-openerp-native-javascript.md). Please read the later to understand how my hacks are supposed to work.
 
 That being said, let's start with this simple snippet that will let you force the focus on a particular field, which is great to speed-up user data input on some complicated forms:
 
@@ -64,7 +64,7 @@ If you're only interested to hide the pager, use:
 $(".wrapper .pager").hide();
 ```
 
-And if you want to hide all action buttons but the "Save and Edit" one, the Javascript code is:
+And if you want to hide all action buttons but the "Save and Edit" one, the JavaScript code is:
 
 ```js
 $(".wrapper.action-buttons li a:not([onclick*='save_and_edit'])").hide();

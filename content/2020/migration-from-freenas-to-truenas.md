@@ -791,7 +791,7 @@ So remember the wise man who once said to **BACKUP YOUR F#@\$% POOL**!
 
 ## Bad hardware
 
-As I considered the issue above solved, it resurected on other devices, with variations of the same logs as above. All these errors randomly kicked HDDs out of the array. It was a nightmare.
+As I considered the issue above solved, it resurrected on other devices, with variations of the same logs as above. All these errors randomly kicked HDDs out of the array. It was a nightmare.
 
 At that point everything broke loose and couldn't find any solid explanation. I could only qualify the situation as general hardware issues.
 
@@ -823,6 +823,6 @@ Of all possible root causes, I listed these:
 
 After these serial failures, I realized I had no time to debug this whole affair, so I ended purchasing an official TrueNAS Mini X+ (8x cores 2.2GHz CPU, 32GB ECC DDR4 RAM, 2x 10G Base-T ports) from iXsystems.
 
-It cost me the same price as [my custom setup](/2020/05/nas-hardware/#final-configuration), minus the tarrif and import taxes. But comes with a 1 year warranty and support, and the peace of mind that the hardware is fully compatible with TrueNAS and thoroughly qualified for a NAS load.
+It cost me the same price as [my custom setup](/2020/05/nas-hardware/#final-configuration), minus the tariff and import taxes. But comes with a 1 year warranty and support, and the peace of mind that the hardware is fully compatible with TrueNAS and thoroughly qualified for a NAS load.
 
 And 2 years later, my TrueNAS Mini X+ is working fine without an issue. I should have bought it from the start.

@@ -2,7 +2,7 @@
 date: '2013-07-24'
 title: Plumage 0.2 released
 category: English
-tags: Plumage, Pelican, Python, Jinja, theme, HTML, CSS, Javascript
+tags: Plumage, Pelican, Python, Jinja, theme, HTML, CSS, JavaScript
 ---
 
 I've just made the specific design of the blog you're currently reading into a generic theme for [Pelican](https://getpelican.com). This theme now has a name: [Plumage](https://github.com/kdeldycke/plumage).

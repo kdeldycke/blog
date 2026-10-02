@@ -2,7 +2,7 @@
 date: '2011-12-06'
 title: 'Live Browser : a Python web app using Microsoft Live Connect API'
 category: English
-tags: API, Boilerplate, bootstrap, CherryPy, cloud-computing, Git, GitHub, Javascript, jquery, mako, Microsoft, Live connect, mongodb, OAuth, Python, Web
+tags: API, Boilerplate, bootstrap, CherryPy, cloud-computing, Git, GitHub, JavaScript, jquery, mako, Microsoft, Live connect, mongodb, OAuth, Python, Web
 ---
 
 5 months ago I was called by a recruiter for a position in a startup building cloud-computing solutions. At the end of my first interview with the engineers of the company, I was asked to write a little web application to test my technical abilities.

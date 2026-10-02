@@ -6,9 +6,7 @@ tags: Audio, CLI, Linux, subtitle, transcode, Video, avimerge, tcprobe, tccat, m
 ---
 
 ```{admonition} Unmaintained project
----
-class: warning
----
+:class: warning
 The [`transcode` CLI and its associated tools](https://web.archive.org/web/20200806075355/https://bitbucket.org/achurch_/transcode/wiki/Home) are no longer maintained.
 
 I recommend to use [FFmpeg]({filename}/2006/video-commands.md) instead.

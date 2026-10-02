@@ -99,7 +99,7 @@ based on a reference track extracted from the camera recording:
    name `2010-02-15--igor--audio-ref.wav`. We use this file as the reference
    audio track.
 
-1. Then, Thomas shift in time the `2010-01-29--igor--audio-desync.wav` file to
+3. Then, Thomas shift in time the `2010-01-29--igor--audio-desync.wav` file to
    precisely match the `2010-02-15--igor--audio-ref.wav` reference file, and
    save the result under the name `2010-02-16--igor--audio-sync.wav`. This is
    the file I import in Kdenlive and align with my video using the reference

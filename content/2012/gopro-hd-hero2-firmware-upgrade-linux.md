@@ -44,18 +44,18 @@ It's time to trigger the firmware upgrade:
 
 1. Keep the shutter button on the top pressed while turning the camera on.
 
-1. Release the shutter button.
+2. Release the shutter button.
 
-1. Press and release the power button. The camera front will display "press
+3. Press and release the power button. The camera front will display "press
    1".
 
-1. Again, press and release the power button. The camera will now display
+4. Again, press and release the power button. The camera will now display
    "press 2".
 
-1. Then press and release the power button, again. The camera is now
+5. Then press and release the power button, again. The camera is now
    installing the `v70` upgrade, then turn itself off.
 
-1. Power the camera on, to now upgrade to `v198`. The camera will turn itself
+6. Power the camera on, to now upgrade to `v198`. The camera will turn itself
    off at the end.
 
 You can now remove the `HD2-firmware.bin` file at the root of the camera, and

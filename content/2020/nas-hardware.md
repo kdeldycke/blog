@@ -201,7 +201,7 @@ So I settled on an ASRock Rack E3C246D2I:
 
 We're no longer fan-less, so I searched for the most silent cooling I could ever found. I went straight to Noctua for their reliability, performance and quieteness.
 
-I got the Noctua NH-L9i chromax.black, for LGA 1151 sockets CPUs and 4-pins PWM. Which also perfectly fit the low-profile requirement of my case (\< 57 mm).
+I got the Noctua NH-L9i chromax.black, for LGA 1151 sockets CPUs and 4-pins PWM. Which also perfectly fit the low-profile requirement of my case (< 57 mm).
 
 Surprisingly the black version was cheaper than the regular, brown variant.
 
@@ -233,8 +233,8 @@ The no-suffix and F variants are great, and their TDP are perfectly in range wit
 My final shortlist was:
 
 1. [Core i3-9300](https://www.servethehome.com/intel-core-i3-9300-benchmarks-and-review/) to max out cache and frequency
-1. Core i3-9300T same as above with lower frequency but safe thermals
-1. Core i3-9100 or i3-9100T as a nice fallback
+2. Core i3-9300T same as above with lower frequency but safe thermals
+3. Core i3-9100 or i3-9100T as a nice fallback
 
 I ended up with a **Core i3-9300T**, probably overpriced at the time of purchase, as it was harder and harder to find any of the reference above in retail (seems like Intel prioritizing higher SKUs to increase margins).
 
@@ -245,34 +245,34 @@ I ended up with a **Core i3-9300T**, probably overpriced at the time of purchase
 
 ### Initial plans
 
-| Part                 | Model                                                                                                         |  Quantity | Total (excl. shipping) | Notes                                       |
-| -------------------- | ------------------------------------------------------------------------------------------------------------- | --------: | ---------------------: | ------------------------------------------- |
-| 2.5" HDD             | Seagate BarraCuda Mobile - 4 TB                             |         4 |                €759.76 | Abandoned because of SMR.                   |
-| Small case           | SilverStone SST-ML05B                                       |         1 |                 €52.84 | Refunded: not enough 3.5" slots.            |
+| Part                 | Model                                                         |  Quantity | Total (excl. shipping) | Notes                                       |
+| -------------------- | ------------------------------------------------------------- | --------: | ---------------------: | ------------------------------------------- |
+| 2.5" HDD             | Seagate BarraCuda Mobile - 4 TB                               |         4 |                €759.76 | Abandoned because of SMR.                   |
+| Small case           | SilverStone SST-ML05B                                         |         1 |                 €52.84 | Refunded: not enough 3.5" slots.            |
 | Fans for case        | Noctua NF-A8 PWM, 4 pins, 80 mm                               |         2 |                 €31.80 | Refunded: only fit the case above.          |
-| Mini-ITX motherboard | Gigabyte GA-J3455-D3H                                 |         1 |                 €98.54 | Refunded because of Realtek NICs.           |
+| Mini-ITX motherboard | Gigabyte GA-J3455-D3H                                         |         1 |                 €98.54 | Refunded because of Realtek NICs.           |
 | RAM                  | Corsair CMSO16GX3M2C1600C11 16GB (2x8GB) DDR3 SODIMM 1600 MHz |         1 |                 €75.76 | Refunded: only fit for motherboard above.   |
 | Power supply         | Corsair SF450, modular, 450 W, 80+ Platinum                   |         1 |                €119.90 | Reused.                                     |
 | Flash drive          | SanDisk Ultra Fit 16 GB, USB 3.1                              |         1 |                  €9.59 | Reused.                                     |
-| SATA cable           | SATA 3 - 90° plugs                                     |         6 |                 €15.56 | Refunded: 90° plugs not fit for newer case. |
-|                      |                                                                                                               | **Total** |           **€1163.75** |                                             |
+| SATA cable           | SATA 3 - 90° plugs                                            |         6 |                 €15.56 | Refunded: 90° plugs not fit for newer case. |
+|                      |                                                               | **Total** |           **€1163.75** |                                             |
 
 ### Final configuration
 
 | Part                 | Model                                                                                                                                 |  Quantity | Total (excl. shipping) | Shipping | Notes                                                                                                                   |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------: | ---------------------: | -------: | ----------------------------------------------------------------------------------------------------------------------- |
-| 3.5" HDD             | Toshiba N300 - 6 TB                                        |         4 |                €696.89 |   €12.84 | Unit price: €168.30~€184.88                                                                                             |
-| Bigger case          | SilverStone SST-DS380        |         1 |                €145.18 |   €17.50 |                                                                                                                         |
-| Case fans            | Noctua NF-S12A PWM                                         |         3 |                 €59.70 |    €3.90 |                                                                                                                         |
-| Mini-ITX motherboard | ASRock Rack E3C246D2I                                   |         1 |                €324.84 |   €21.05 | [Upgrade both BMC and BIOS](https://www.asrockrack.com/general/productdetail.asp?Model=E3C246D2I#Download).             |
+| 3.5" HDD             | Toshiba N300 - 6 TB                                                                                                                   |         4 |                €696.89 |   €12.84 | Unit price: €168.30~€184.88                                                                                             |
+| Bigger case          | SilverStone SST-DS380                                                                                                                 |         1 |                €145.18 |   €17.50 |                                                                                                                         |
+| Case fans            | Noctua NF-S12A PWM                                                                                                                    |         3 |                 €59.70 |    €3.90 |                                                                                                                         |
+| Mini-ITX motherboard | ASRock Rack E3C246D2I                                                                                                                 |         1 |                €324.84 |   €21.05 | [Upgrade both BMC and BIOS](https://www.asrockrack.com/general/productdetail.asp?Model=E3C246D2I#Download).             |
 | CPU                  | [Intel Core i3-9300T](https://www.cpu-monkey.com/en/cpu-intel_core_i3_9300t-923) Coffee Lake-R, 4 cores, 3.2GHz, 8MiB L3 cache        |         1 |                €174.90 |    €9.98 |                                                                                                                         |
-| CPU cooler           | Noctua NH-L9i chromax.black                       |         1 |                 €49.90 |    €0.99 | Shipped with thermal paste.                                                                                             |
-| RAM                  | Kingston KSM26ES8/8ME 8GB 2666MHz DDR4 ECC CL19                                       |         2 |                €137.76 |          |                                                                                                                         |
-| Power supply         | Corsair SF450, modular, 450 W, 80+ Platinum                                           |         1 |                €119.90 |          | Check serial number: this [model has been recalled](https://www.anandtech.com/show/15829/corsair-sf-series-psu-recall). |
-| Flash drive          | SanDisk Ultra Fit 16 GB, USB 3.1                                                      |         1 |                  €9.59 |          |                                                                                                                         |
-| SATA cable           | SATA 3 - straight plug                                 |         3 |                  €6.99 |          |                                                                                                                         |
+| CPU cooler           | Noctua NH-L9i chromax.black                                                                                                           |         1 |                 €49.90 |    €0.99 | Shipped with thermal paste.                                                                                             |
+| RAM                  | Kingston KSM26ES8/8ME 8GB 2666MHz DDR4 ECC CL19                                                                                       |         2 |                €137.76 |          |                                                                                                                         |
+| Power supply         | Corsair SF450, modular, 450 W, 80+ Platinum                                                                                           |         1 |                €119.90 |          | Check serial number: this [model has been recalled](https://www.anandtech.com/show/15829/corsair-sf-series-psu-recall). |
+| Flash drive          | SanDisk Ultra Fit 16 GB, USB 3.1                                                                                                      |         1 |                  €9.59 |          |                                                                                                                         |
+| SATA cable           | SATA 3 - straight plug                                                                                                                |         3 |                  €6.99 |          |                                                                                                                         |
 | OCuLink cable        | [Supermicro CBL-SAST-0933](https://store.supermicro.com/supermicro-50cm-oculink-to-4-sata-cable-cbl-sast-0933.html) OCuLink to 4 SATA |         1 |                 €29.76 |   €12.01 |                                                                                                                         |
-| Probe                | 10K thermal wire sensor                               |         1 |                  €0.25 |    €1.16 | Attached to HDDs.                                                                                                       |
+| Probe                | 10K thermal wire sensor                                                                                                               |         1 |                  €0.25 |    €1.16 | Attached to HDDs.                                                                                                       |
 |                      |                                                                                                                                       | **Total** |           **€1755.66** |   €79.43 |                                                                                                                         |
 
 Switching from 2.5" to 3.5" increased the budget by 50%, but I got:
@@ -303,7 +303,7 @@ Need more space? We have a couple of options:
 
 1. **Buy new 6 TB drives** to expand the RAIDZ array. Plain and simple. The NAS has been designed this way. Use it. The current motherboard support up to 8 SATA drives, thanks to our pre-purchased OCuLink cable. And the case already has 4 free 3.5" bays.
 
-1. An alternative consist in upgrading the base capacity of each disk. Just **purchase 4 new identical drive, all bigger than 6 TB**. Swap from the active array one, and one only, old disk with a brand new, bigger disk. Resilver. Repeat 4 times. Then grow the ZFS vdev. You can now sell the old 6 TB drives. This solution might be more future-proof depending on the \$/TB sweet-spot and age of the 6TB disk.
+2. An alternative consist in upgrading the base capacity of each disk. Just **purchase 4 new identical drive, all bigger than 6 TB**. Swap from the active array one, and one only, old disk with a brand new, bigger disk. Resilver. Repeat 4 times. Then grow the ZFS vdev. You can now sell the old 6 TB drives. This solution might be more future-proof depending on the \$/TB sweet-spot and age of the 6TB disk.
 
 ### Drives
 
@@ -315,8 +315,8 @@ Need more space? We have a couple of options:
 
 In my research I discovered stronger cooler, capable of handling higher base TDP. Here a list of potential upgrades:
 
-| Part           | Model                                                         |                                            Max TDP | Noise Level |  Air Flow | Air Pressure |  Price | Notes                                             |
-| -------------- | ------------------------------------------------------------- | -------------------------------------------------: | ----------: | --------: | -----------: | -----: | ------------------------------------------------- |
+| Part           | Model         |                                            Max TDP | Noise Level |  Air Flow | Air Pressure |  Price | Notes                                             |
+| -------------- | ------------- | -------------------------------------------------: | ----------: | --------: | -----------: | -----: | ------------------------------------------------- |
 | Heatsink + Fan | Noctua NH-L9i | [65 W](https://noctua.at/en/nh_l9i_tdp_guidelines) |    23.6 dBA | 57.5 m³/h |              | €49.90 | Current cooler for reference. Shipped with paste. |
 | Heatsink + Fan | Cryorig C7 Cu |      [115 W](http://www.cryorig.com/c7cu.php#spec) |      30 dBA |  40.5 CFM |    2.8 mmH2O |        | Shipped with paste.                               |
 | Heatsink + Fan | Cryorig C7 G  |       [125 W](http://www.cryorig.com/c7g.php#spec) |      30 dBA |  40.5 CFM |    2.8 mmH2O |        | Shipped with paste.                               |

@@ -13,8 +13,8 @@ The only annoying thing in 10.10 is the non-responding touchpad. But a [fix can 
 
 1. Edit `/etc/default/grub` to include `GRUB_CMDLINE_LINUX="i8042.nopnp"`
 
-1. Run `sudo update-grub`
+2. Run `sudo update-grub`
 
-1. Reboot
+3. Reboot
 
 Now about the laptop itself: construction quality is below my previous MacBook (cheap plastic instead of aluminum) and battery autonomy is not impressive. A bios update seems to address the latter. Haven't done it yet as it requires to re-install Windows (*sigh*). But overall that's a good lightweight machine to get things done, especially with its 8 Gb of RAM, 4 cores and a SSD! :)

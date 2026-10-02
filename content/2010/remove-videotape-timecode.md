@@ -38,13 +38,13 @@ rectangle over these dots to hide them. Here is how to do it:
 
 1. Open your original file in Avidemux;
 
-1. Click on the `Filters` button;
+2. Click on the `Filters` button;
 
-1. Go to `Transform`, then `Blacken Borders` and click on the `+` button;
+3. Go to `Transform`, then `Blacken Borders` and click on the `+` button;
 
-1. Use the dialog to set a 2 pixels top border;
+4. Use the dialog to set a 2 pixels top border;
 
-1. Now you have to export the result using a reasonable video codec, and
+5. Now you have to export the result using a reasonable video codec, and
    that's it!
 
 ![Avidemux video filter manager with the Blacken borders filter added, its dialog setting the top border to 2 pixels and the rest to zero](avidemux-add-black-border.png)

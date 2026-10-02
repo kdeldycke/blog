@@ -224,7 +224,7 @@ $ echo `git log --pretty=oneline master | tail -n1 | cut -d ' ' -f 1` `git show-
 $ git svn dcommit
 ```
 
-The last command will not end well, with Git complaining about unmerged differences. This is [likely due to my additional commit](https://plugins.trac.wordpress.org/changeset/336352)  removing the empty folder left by git-svn. Fortunately Git suggest something in its log:
+The last command will not end well, with Git complaining about unmerged differences. This is [likely due to my additional commit](https://plugins.trac.wordpress.org/changeset/336352) removing the empty folder left by git-svn. Fortunately Git suggest something in its log:
 
 ```text
 If you are attempting to commit  merges, try running:

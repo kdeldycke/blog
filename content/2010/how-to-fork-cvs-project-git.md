@@ -22,9 +22,9 @@ experiment with [Git](https://git-scm.com) (at last!).
 Here is my plan:
 
 1. Make an exact copy of Drupify's code base in my GitHub repository.
-1. Hack it in this playground.
-1. ???
-1. [Profit!](https://knowyourmeme.com/memes/profit) :D
+2. Hack it in this playground.
+3. ???
+4. [Profit!](https://knowyourmeme.com/memes/profit) :D
 
 Problem:
 [Drupify lives in a CVS repository](https://drupalcode.org/viewvc/drupal/contributions/themes/drupify/).

@@ -13,24 +13,24 @@ here is a glorious list of meta falsehoods:
 ## Falsehoods
 
 1. Falsehoods are true.
-1. Falsehoods are false.
-1. Falsehoods are universal.
-1. Falsehoods do not change with time.
-1. There's only one way to express a falsehood.
-1. No falsehoods overlap another.
-1. There are no falsehoods which are mutually exclusive.
-1. A falsehood correspond to a real-world usage.
+2. Falsehoods are false.
+3. Falsehoods are universal.
+4. Falsehoods do not change with time.
+5. There's only one way to express a falsehood.
+6. No falsehoods overlap another.
+7. There are no falsehoods which are mutually exclusive.
+8. A falsehood correspond to a real-world usage.
 
 ## Falsehood lists
 
-9. All falsehoods can be listed.
-1. Falsehood lists are a new trend.
-1. Falsehood lists are a [good way of communication](http://cachestocaches.com/2019/8/myths-list-antipattern/).
-1. Falsehood lists are regularly updated.
-1. There exists a falsehoods list that is entirely true.
-1. Falsehood lists covers one subject.
-1. Falsehood lists are terse.
-1. Falsehood lists are illustrated with counter-examples.
+09. All falsehoods can be listed.
+10. Falsehood lists are a new trend.
+11. Falsehood lists are a [good way of communication](http://cachestocaches.com/2019/8/myths-list-antipattern/).
+12. Falsehood lists are regularly updated.
+13. There exists a falsehoods list that is entirely true.
+14. Falsehood lists covers one subject.
+15. Falsehood lists are terse.
+16. Falsehood lists are illustrated with counter-examples.
 
 ## List format
 

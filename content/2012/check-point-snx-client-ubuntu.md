@@ -7,7 +7,7 @@ tags: check point, Linux, Network, snx, SSL, Ubuntu, VPN
 
 Last month I had no other alternative but to reach a server through a [Check Point](https://wikipedia.org/wiki/Check_Point)'s VPN. Fortunately the editor provides a Linux client to access its proprietary stack.
 
-The version I found to work on my Ubuntu 11.04 is the _SSL Network Extender (SNX) R71_ package that [can be downloaded there](https://supportcontent.checkpoint.com/file_download?id=10656)  ([source](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk41808)).
+The version I found to work on my Ubuntu 11.04 is the _SSL Network Extender (SNX) R71_ package that [can be downloaded there](https://supportcontent.checkpoint.com/file_download?id=10656) ([source](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk41808)).
 
 Just for reference, the build working for me is numbered `800005013`, and here is a copy of what to expect when the connection succeed:
 

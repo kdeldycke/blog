@@ -15,25 +15,25 @@ $ dpkg-reconfigure exim4-config
 
 Here are the options I choose in each step of the wizard:
 
-1. Choose `Mail sent by smarthost; received via SMTP or fetchmail`.
+01. Choose `Mail sent by smarthost; received via SMTP or fetchmail`.
 
-1. System mail name: `server.deldycke.com`.
+02. System mail name: `server.deldycke.com`.
 
-1. IP addresses to listen on for incoming SMTP connections: `127.0.0.1 ; ::1` (which is the default proposed value).
+03. IP addresses to listen on for incoming SMTP connections: `127.0.0.1 ; ::1` (which is the default proposed value).
 
-1. Other destinations for which mail is accepted: leave blank.
+04. Other destinations for which mail is accepted: leave blank.
 
-1. Machines to relay mail for: leave blank.
+05. Machines to relay mail for: leave blank.
 
-1. Machine handling outgoing mail for this host (smarthost): `smtp.gmail.com::587`.
+06. Machine handling outgoing mail for this host (smarthost): `smtp.gmail.com::587`.
 
-1. Hide local mail name in outgoing mail: `No`.
+07. Hide local mail name in outgoing mail: `No`.
 
-1. Keep number of DNS-queries minimal (Dial-on-Demand): `No`.
+08. Keep number of DNS-queries minimal (Dial-on-Demand): `No`.
 
-1. Mailboxes format: `mbox`.
+09. Mailboxes format: `mbox`.
 
-1. Split configuration into small files: `No`.
+10. Split configuration into small files: `No`.
 
 All these parameters you just answered are saved in the `/etc/exim4/update-exim4.conf.conf`:
 

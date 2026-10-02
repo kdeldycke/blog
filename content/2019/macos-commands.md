@@ -68,7 +68,7 @@ tags: CLI, macOS, Apple, OSX, PluginKit, TimeMachine, network, DNS, diskutil
   ```shell-session
   $ diskutil eraseVolume free free /dev/disk4s1
   ```
-  
+
 - List shared folders in iCloud:
 
   ```shell-session

@@ -25,7 +25,7 @@ Here is how I installed `nlconverter` on a Windows 2000 (SP4) machine:
 
    ![Final installer screen thanking Mark Hammond for the Windows expertise behind Python for Windows](005-python-266-install-on-windows-2000.png)
 
-1. Then [Python for Windows extensions](https://sourceforge.net/projects/pywin32/) ([build 214 for Python 2.6 in my case](https://sourceforge.net/projects/pywin32/files/pywin32/Build%20214/pywin32-214.win32-py2.6.exe/download)):
+2. Then [Python for Windows extensions](https://sourceforge.net/projects/pywin32/) ([build 214 for Python 2.6 in my case](https://sourceforge.net/projects/pywin32/files/pywin32/Build%20214/pywin32-214.win32-py2.6.exe/download)):
 
    ![pywin32 setup wizard opening on the package description for build 214 by Mark Hammond, its buttons in French](001-pywin32-214-install-on-windows-2000.png)
 
@@ -35,11 +35,11 @@ Here is how I installed `nlconverter` on a Windows 2000 (SP4) machine:
 
    ![pywin32 post-install log reporting registered DLLs and confirming the extensions were successfully installed](004-pywin32-214-install-on-windows-2000.png)
 
-1. Finally I had to [download the latest `icalendar` archive](https://pypi.python.org/pypi/icalendar), then extract the `\iCalendar-1.2\src\icalendar` folder to `C:\Python26\Lib\site-packages\`:
+3. Finally I had to [download the latest `icalendar` archive](https://pypi.python.org/pypi/icalendar), then extract the `\iCalendar-1.2\src\icalendar` folder to `C:\Python26\Lib\site-packages\`:
 
    ![7-Zip window open on the iCalendar source archive next to an Explorer window on Python's site-packages, where the extracted icalendar folder now sits](extract-icalendar-python-package-on-windows.png)
 
-1. Next step is to [download nlconverter](https://code.google.com/p/nlconverter/downloads) itself and extract it:
+4. Next step is to [download nlconverter](https://code.google.com/p/nlconverter/downloads) itself and extract it:
 
    ![7-Zip showing the 13 MB winnlc-alpha-1 archive next to an Explorer window on C:, where the extracted winnlc-alpha-1 folder is highlighted](nlconverter-install-on-windows.png)
 
@@ -63,7 +63,7 @@ Again, most of the things I'm writing here are based on [nlconverter's FAQ](http
 
    ![Firefox on the Google Code page for notes2mbox.py, with a save dialog pointed at the winnlc-alpha-1 folder](download-notes2mbox-python-script.png)
 
-1. Now we'll modify the `notes2mbox.py` script to set the password (via the `notesPasswd` variable) and location (`notesNsfPath` variable) of the `.nsf` file. Here are the modifications I applied:
+2. Now we'll modify the `notes2mbox.py` script to set the password (via the `notesPasswd` variable) and location (`notesNsfPath` variable) of the `.nsf` file. Here are the modifications I applied:
 
    ```diff
    --- notes2mbox.py.orig	2010-09-02 13:49:58.000000000 +0200
@@ -81,7 +81,7 @@ Again, most of the things I'm writing here are based on [nlconverter's FAQ](http
     db = NlconverterLib.getNotesDb(notesNsfPath, notesPasswd)
    ```
 
-1. Before running the script, we have to register a Notes DLL used by nlconverter:
+3. Before running the script, we have to register a Notes DLL used by nlconverter:
 
    ```bat
    regsvr32 "C:\Program Files\Notes\nlsxbe.dll"
@@ -95,7 +95,7 @@ Again, most of the things I'm writing here are based on [nlconverter's FAQ](http
    C:\winnlc-alpha-1>SET Path=%Path%;C:\Python26
    ```
 
-1. Now we can run the `notes2mbox.py` script:
+4. Now we can run the `notes2mbox.py` script:
 
    ```bat
    C:\winnlc-alpha-1>C:\Python26\python.exe notes2mbox.py

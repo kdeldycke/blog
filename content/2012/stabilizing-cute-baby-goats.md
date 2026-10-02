@@ -75,7 +75,7 @@ I told you I was disappointed by the results. For example, in the first shot of 
 
 Even in shots where the contrast is in our favor, software stabilization don't always produce nice output. If by chance the tracking points are set on the right objects (those that should be considered motionless), the results may not be pleasing, as it may expose inappropriate skewed perspective, shifting motion-blur and spacial deformation.
 
-While a little bit smarter, [YouTube's embedded stabilization effect](https://youtube-global.blogspot.com/2011/03/lights-camera-edit-new-features-for.html) still suffer from these same short-comings. If it  tries to smooth out consecutive transformations better than `vid.stab`, it still fails to produce nice output devoid of unattractive artifacts.
+While a little bit smarter, [YouTube's embedded stabilization effect](https://youtube-global.blogspot.com/2011/03/lights-camera-edit-new-features-for.html) still suffer from these same short-comings. If it tries to smooth out consecutive transformations better than `vid.stab`, it still fails to produce nice output devoid of unattractive artifacts.
 
 Another tool worth trying is [VirtualDub](https://www.virtualdub.org), which you can run under [Wine](https://www.winehq.org) and leverage its [deshaker plugin](https://www.guthspot.se/video/deshaker.htm). But I didn't tested it.
 

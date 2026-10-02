@@ -53,7 +53,7 @@ tags: burning, Compact disc, cdrdao, cdrecord, CLI, DVD, Hardware, Linux, mkisof
   $ fuseiso -p dvd.img /media/dvd-image/
   ```
 
-- Convert a [Nero's proprietary `.nrg` CD image](<https://en.wikipedia.org/wiki/NRG_(file_format)>) to standard ISO file:
+- Convert a [Nero's proprietary `.nrg` CD image](https://en.wikipedia.org/wiki/NRG_(file_format)) to standard ISO file:
 
   ```shell-session
   $ nrg2iso dvd-image.nrg dvd-image.iso

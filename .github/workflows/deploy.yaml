@@ -120,7 +120,7 @@ jobs:
       # install. On the workflow whose output reaches readers, that is the one
       # that mattered most.
       - name: Install npm
-        run: >
+        run: > # zizmor: ignore[adhoc-packages]
           npm install npm@12.1.0 --global --ignore-scripts --no-progress
           --no-update-notifier --no-fund --no-audit
       # Version-pinned because `--locked` does not do it: that flag freezes the

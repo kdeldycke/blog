@@ -109,7 +109,7 @@ jobs:
       # the version silently stops being bumped. The cooldown itself comes from
       # the workflow-level env, which npm reads as its `min-release-age` config.
       - name: Install npm
-        run: >
+        run: > # zizmor: ignore[adhoc-packages]
           npm install npm@12.1.0 --global --ignore-scripts --no-progress
           --no-update-notifier --no-fund --no-audit
       # Pinned as in deploy.yaml, where the reasoning sits: `--locked` freezes the

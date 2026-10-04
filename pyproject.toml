@@ -323,7 +323,12 @@ ini_options.xfail_strict = true
 # translation step and performs no merge: whatever is written here is the whole policy, and
 # declaring the table at all is what discards repomatic/data/lychee.toml. The bundled
 # entries are therefore restated below rather than inherited, verbatim and in their bundled
-# order. Only the first entry and `twitter\.com` are specific to this repo.
+# order. Only the first entry, `twitter\.com` and the entries after `githubstatus\.com` are
+# specific to this repo, as is everything outside `exclude`.
+# A 429 says the server is up and throttling the crawl, not that the page is gone, so it
+# passes: Blogger, Google Groups and Noctua answer every run with it. Setting the key
+# replaces lychee's default list, which is restated first.
+accept = [ "100..=103", "200..=299", "429" ]
 exclude = [
   # Pelican's internal link markers are resolved at build time, so they only ever exist
   # in the Markdown source. lychee reads that source and rewrites `]({attach}foo.jpg)`
@@ -374,7 +379,37 @@ exclude = [
   "^https://star-history\\.com/.*$",
   # githubstatus.com returns 405 to HEAD requests from bots.
   "githubstatus\\.com",
+  # These fail nearly every CI run with a 403, 503 or 999, a redirect loop, a bot challenge,
+  # a refused handshake or a timeout, while serving the page to a browser. Their links stay
+  # live for readers rather than archived. Anchored for the reason `x\.com` gives above, so
+  # a Wayback snapshot of one of these pages is still checked.
+  "^https://(askubuntu|stackoverflow)\\.com/",
+  "^https://(magiclantern|vim)\\.wikia\\.com/",
+  "^https://(store|www)\\.supermicro\\.com/",
+  "^https://devoteam\\.com/",
+  "^https://forum\\.xda-developers\\.com/",
+  "^https://genius\\.com/",
+  "^https://leefilters\\.com/",
+  "^https://openhub\\.net/",
+  "^https://plugins\\.trac\\.wordpress\\.org/",
+  "^https://venuereport\\.com/",
+  "^https://www\\.asrockrack\\.com/",
+  "^https://www\\.fsf\\.org/",
+  "^https://www\\.gnu\\.org/",
+  "^https://www\\.indiegogo\\.com/",
+  "^https://www\\.issihosts\\.com/",
+  "^https://www\\.linkedin\\.com/",
+  "^https://www\\.myspace\\.com/",
+  "^https://www\\.reddit\\.com/",
+  "^https://www\\.videohelp\\.com/",
+  "^https://www\\.winehq\\.org/",
+  # Cloudflare dashboard deep links, which pre-fill a token form in docs/infrastructure.md.
+  # They only resolve inside a logged-in session.
+  "^https://dash\\.cloudflare\\.com/",
 ]
+# Hundreds of links point at Wayback Machine snapshots, and the Internet Archive refuses
+# connections from a client that requests them in a burst. Two at a time, two seconds apart.
+hosts."web.archive.org" = { concurrency = 2, request_interval = "2s" }
 
 [tool.repomatic]
 # `sync-gitignore` rebuilds .gitignore from gitignore.io and appends this key, in that

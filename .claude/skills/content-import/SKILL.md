@@ -74,6 +74,8 @@ The blog absorbs content from services it stops using. Each import follows the c
 
 Use the CDX API: `https://web.archive.org/cdx/search/cdx?url={url}&closest={YYYYMMDD}&sort=closest&limit=1&filter=statuscode:200&output=json`. Space requests by several seconds. A burst earns HTTP 429 for hours, and each refused request can extend it: wait out a 429 for minutes, but retry a timeout after a few seconds. Strip `#fragments` before a lookup.
 
+Open a capture before linking it: a `200` capture can hold a bot-challenge page or an error page in place of the content. Keep a `#fragment` on the archived link only when the capture defines it as an `id`: lychee `0.24.2` does not match an `<a name>` anchor, so drop that fragment.
+
 ### Mass edits with agents
 
 - Split the work by whole threads, so each agent sees a full conversation.

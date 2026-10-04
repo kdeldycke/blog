@@ -5,7 +5,7 @@ category: English
 tags: search, Social, Twitter
 ---
 
-Had an issue with [ÜberCart](https://www.ubercart.org/) tonight.
+Had an issue with [ÜberCart](https://web.archive.org/web/20100228034803/http://www.ubercart.org/) tonight.
 
 Was sure I already solved it.
 

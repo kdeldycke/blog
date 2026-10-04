@@ -15,7 +15,7 @@ That video was mostly shot with my Canon EOS 7D in 1080p at 24fps, with a Tamron
 
 The final video also include footage from various people in the audience:
 
-- Jim from [Maomium](https://maomium.com) tested during the concert its brand new Sony Alpha SLT-A33, equipped with a Sony 18-55mm f/3.5-5.6 SAM DT zoom lens, which produces nice 1080i streams at 50 fps;
+- Jim from [Maomium](https://web.archive.org/web/20070509042126/http://www.maomium.com/) tested during the concert its brand new Sony Alpha SLT-A33, equipped with a Sony 18-55mm f/3.5-5.6 SAM DT zoom lens, which produces nice 1080i streams at 50 fps;
 
 - Loïc filmed in 720p/30fps with [Tomasito](https://coolcavemen.com/biography/tomasito/)'s Canon PowerShot SX200IS (which was used to produce [Omashay](https://omashay.com/)'s [_Wish You Looked at Me_ music video]({filename}/2011/making-of-omashay-wish-you-looked-at-me-music-video.md));
 

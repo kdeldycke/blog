@@ -109,6 +109,6 @@ tags: ALAC, ASF, Audio, CLI, cue-list, FLAC, Linux, lossless, midi, Ogg, shntool
 
 Other related resources:
 
-- [Sox examples](https://linuxcommand.org/man_pages/soxexam1.html)
+- [Sox examples](https://web.archive.org/web/20061209220211/http://linuxcommand.org/man_pages/soxexam1.html)
 - [Audio Processing
   Pipelines](https://web.archive.org/web/20140325123348/https://linuxgazette.net/issue73/chung.html)

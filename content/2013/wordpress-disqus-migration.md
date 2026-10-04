@@ -17,7 +17,7 @@ Articles of this blog features a lots of code. Comments are no exception and
 embed snippets too. Code blocks are rendered by the [SyntaxHighlighter Evolved
 WordPress plugin](https://wordpress.org/extend/plugins/syntaxhighlighter/). This
 extension use square brackets to enclose code. [Disqus uses standard HTML
-tags](https://help.disqus.com/customer/portal/articles/665057).
+tags](https://web.archive.org/web/20130129203443/http://help.disqus.com/customer/portal/articles/665057).
 
 Let's update this notation directly in WordPress database:
 
@@ -35,7 +35,7 @@ So I manually updated WordPress comments to remove occurrences of `<ul>` and
 [bullet](https://en.wikipedia.org/wiki/Bullet_%28typography%29).
 
 Another issue: if [Disqus support images in
-comment](https://blog.disqus.com/post/3764930816/fun-with-images), in imported
+comment](https://web.archive.org/web/20130125092858/http://blog.disqus.com/post/3764930816/fun-with-images), in imported
 comments they are left as HTML tags and therefore not rendered by Disqus. I was
 the only one on my blog posting images in comments. So I simply moved them to
 the corresponding parent article.

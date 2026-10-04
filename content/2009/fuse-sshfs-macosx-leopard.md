@@ -12,22 +12,22 @@ of [`sftp://`](https://wikipedia.org/wiki/SSH_file_transfer_protocol) URLs via a
 don't have any built-in mechanism of that kind.
 
 To get similar features in Leopard, we have to rely on [MacFuse
-](https://code.google.com/p/macfuse/) and [sshfs
-](https://fuse.sourceforge.net/sshfs.html). I'll explain here how I've installed
+](https://code.google.com/archive/p/macfuse/) and [sshfs
+](https://web.archive.org/web/20090830015250/http://fuse.sourceforge.net/sshfs.html). I'll explain here how I've installed
 these components on Mac OS X Leopard.
 
 ![MacFUSE_Banner](MacFUSE_Banner.png)
 
 First, [download the latest MacFuse `dmg`
-](https://code.google.com/p/macfuse/downloads/list) and install it. FYI, the
+](https://code.google.com/archive/p/macfuse/downloads) and install it. FYI, the
 version I've got was `2.0.3,2`.
 
 Then, download the sshfs executable for Leopard, either the [gzipped version
-](https://osxbook.com/download/sshfs/sshfs-static-leopard.gz) or the binary
+](https://web.archive.org/web/20141130190316/http://osxbook.com/download/sshfs/sshfs-static-leopard.gz) or the binary
 [from the SVN
-](https://macfuse.googlecode.com/svn/trunk/filesystems/sshfs/binary/) as
+](https://web.archive.org/web/20090904082127/http://macfuse.googlecode.com/svn/trunk/filesystems/sshfs/binary/) as
 [explained in the MacFuse wiki
-](https://code.google.com/p/macfuse/wiki/MACFUSE_FS_SSHFS).
+](https://code.google.com/archive/p/macfuse/wikis/MACFUSE_FS_SSHFS.wiki).
 
 From a terminal, rename the binary:
 
@@ -50,7 +50,7 @@ $ sshfs user@myserver.net:/folder/ /Network/distant-folder -p 22
 
 I personally had a problem here: `sshfs` complained about a missing library. I
 fixed this by downloading the required file from the [MacFusion project
-](https://www.macfusionapp.org) and copying it beside the sshfs binary:
+](https://web.archive.org/web/20090908203627/http://www.macfusionapp.org/) and copying it beside the sshfs binary:
 
 ```shell-session
 $ sudo wget https://www.macfusionapp.org/trac/export/86/trunk/SSHFS/sshnodelay.so

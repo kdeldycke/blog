@@ -90,9 +90,9 @@ At that stage, I just helped him by creating the seamless split screens:
 
 ![Side-by-side comparison captioned raw footage on the left and color corrected on the right, the graded half noticeably warmer and brighter](where-is-she-color-grading-preview.jpg)
 
-As I said in [Kdenlive's forum](https://forum.kde.org/viewtopic.php?f=266&t=112313#p270103), the color correction was a first. I never worked on a project for which any serious color correction was done. Until *Where is she?*.
+As I said in [Kdenlive's forum](https://web.archive.org/web/20210614122419/https://forum.kde.org/viewtopic.php?f=266&t=112313#p270103), the color correction was a first. I never worked on a project for which any serious color correction was done. Until *Where is she?*.
 
-I was worried by the final look of it because, [as Marko pointed out](https://forum.kde.org/viewtopic.php?f=266&t=112313#p270102) in the thread, the footage was captured in all sorts of lighting conditions. It's hard to keep a consistent exposure between all these locations, especially with the tight latitude of a Canon 7D (even with a [fine-tuned neutral color profile](https://prolost.com/flat)).
+I was worried by the final look of it because, [as Marko pointed out](https://web.archive.org/web/20210614122419/https://forum.kde.org/viewtopic.php?f=266&t=112313#p270102) in the thread, the footage was captured in all sorts of lighting conditions. It's hard to keep a consistent exposure between all these locations, especially with the tight latitude of a Canon 7D (even with a [fine-tuned neutral color profile](https://prolost.com/flat)).
 
 Robin did all the color correction in Kdenlive and for him, it was a first too. The goal wasn't to create a strong style. Color grading was more or less a technical mean, to keep the exposure jumping from shot to shot. Robin invested lots of time in this project and the result exceeded our expectations. The final video is fairly consistent and the cut between scenes is smooth compared to the raw footage.
 

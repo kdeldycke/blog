@@ -84,13 +84,13 @@ over:
 
 Unfortunately we didn't found any of these themes matching the Cool Cavemen
 spirit (whatever that is). If these
-[alternatives were publicly discussed](https://coolcavemen.com/forums/topic/nouveaux-look-du-site/),
+[alternatives were publicly discussed](https://web.archive.org/web/20120105072510/http://coolcavemen.com/forums/topic/nouveaux-look-du-site/),
 we decided that no one was going to replace our previous theme.
 
 The final update we made was when our
 [Raw EP](https://coolcavemen.com/discography/raw/) was released. We basically
 applied filters on the header to match Raw's cover. We also updated our logo to
-use the one designed for us by [QPX](https://wqpx.wordpress.com/):
+use the one designed for us by [QPX](https://web.archive.org/web/20120806035017/http://wqpx.wordpress.com/):
 
 ![Final e107 theme for the Raw EP, the band photo pushed to high-contrast halftone beside a stencilled Cool Cavemen logo](coolcavemen.png)
 

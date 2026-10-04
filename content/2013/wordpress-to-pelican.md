@@ -31,7 +31,7 @@ Bandcamp](https://coolcavemen.com/2012/05/27/cool-cavemen-bandcamp-baisse-prix/)
 I merged [ZenPhoto galleries into
 WordPress]({filename}/2012/zenphoto-wordpress-migration.md).
 All WordPress sites I hosted [moved to
-wordpress.com](https://en.support.wordpress.com/moving-a-blog/#moving-from-wordpress-org).
+wordpress.com](https://web.archive.org/web/20130217042903/https://en.support.wordpress.com/moving-a-blog/#moving-from-wordpress-org).
 bbPress forums were closed: I [archived private forums to
 emails]({filename}/2012/converting-bbpress-forum-mailbox-archive.md),
 and [public ones to plain WordPress
@@ -57,7 +57,7 @@ I started my quest for a tool:
 - supported by an active community.
 
 After a little survey, the remaining contenders were
-[Pelican](https://getpelican.com) and [Nikola](https://nikola.ralsina.com.ar).
+[Pelican](https://getpelican.com) and [Nikola](https://getnikola.com/).
 
 If I like Nikola for its fast release cycles and huge list of configurable
 features, I ultimately choose Pelican. I found it was easier for the latter to

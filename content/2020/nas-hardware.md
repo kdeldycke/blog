@@ -141,7 +141,7 @@ Some reviews here and there called upon its capricious nature. To play it safe I
 
 I tested the setup for a couple of days and everything worked great.
 
-But I overlooked one issue: [Realtek ethernet NICs are shit](https://www.reddit.com/r/freenas/comments/bul9gq/so_are_realtek_nics_just_complete_garbage_when_it/). It's written everywhere on discussions boards, even in [FreeNAS hardware requirements](https://www.freenas.org/hardware-requirements/) (*Intel recommended* they said...). And [FreeNAS maintainers are fed up with support requests](https://jira.ixsystems.com/browse/NAS-106392?focusedCommentId=112302&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-112302):
+But I overlooked one issue: [Realtek ethernet NICs are shit](https://www.reddit.com/r/freenas/comments/bul9gq/so_are_realtek_nics_just_complete_garbage_when_it/). It's written everywhere on discussions boards, even in [FreeNAS hardware requirements](https://www.freenas.org/hardware-requirements/) (*Intel recommended* they said...). And [FreeNAS maintainers are fed up with support requests](https://ixsystems.atlassian.net/browse/NAS-106392?focusedCommentId=112302):
 
 > we have neither time nor information to debug all zillions of permanently buggy Realtek NICs models
 
@@ -315,11 +315,11 @@ Need more space? We have a couple of options:
 
 In my research I discovered stronger cooler, capable of handling higher base TDP. Here a list of potential upgrades:
 
-| Part           | Model         |                                            Max TDP | Noise Level |  Air Flow | Air Pressure |  Price | Notes                                             |
-| -------------- | ------------- | -------------------------------------------------: | ----------: | --------: | -----------: | -----: | ------------------------------------------------- |
-| Heatsink + Fan | Noctua NH-L9i | [65 W](https://noctua.at/en/nh_l9i_tdp_guidelines) |    23.6 dBA | 57.5 m³/h |              | €49.90 | Current cooler for reference. Shipped with paste. |
-| Heatsink + Fan | Cryorig C7 Cu |      [115 W](http://www.cryorig.com/c7cu.php#spec) |      30 dBA |  40.5 CFM |    2.8 mmH2O |        | Shipped with paste.                               |
-| Heatsink + Fan | Cryorig C7 G  |       [125 W](http://www.cryorig.com/c7g.php#spec) |      30 dBA |  40.5 CFM |    2.8 mmH2O |        | Shipped with paste.                               |
+| Part           | Model         |                                                                                  Max TDP | Noise Level |  Air Flow | Air Pressure |  Price | Notes                                             |
+| -------------- | ------------- | ---------------------------------------------------------------------------------------: | ----------: | --------: | -----------: | -----: | ------------------------------------------------- |
+| Heatsink + Fan | Noctua NH-L9i |                                       [65 W](https://noctua.at/en/nh_l9i_tdp_guidelines) |    23.6 dBA | 57.5 m³/h |              | €49.90 | Current cooler for reference. Shipped with paste. |
+| Heatsink + Fan | Cryorig C7 Cu | [115 W](https://web.archive.org/web/20200518022727/http://www.cryorig.com/c7cu.php#spec) |      30 dBA |  40.5 CFM |    2.8 mmH2O |        | Shipped with paste.                               |
+| Heatsink + Fan | Cryorig C7 G  |  [125 W](https://web.archive.org/web/20200518023016/http://www.cryorig.com/c7g.php#spec) |      30 dBA |  40.5 CFM |    2.8 mmH2O |        | Shipped with paste.                               |
 
 All coolers above are:
 
@@ -334,8 +334,8 @@ Airflow can be converted:
 Other candidates to check dimensions:
 
 - [Alpenföhn® Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)
-- [ThermalRight AXP-100 C65](http://thermalright.com/product/axp-100-c65/)
-- [ThermalRight AXP-100-Full Copper](http://thermalright.com/product/axp-100-full-copper/)
+- [ThermalRight AXP-100 C65](https://www.thermalright.com/product/axp-100-c65/)
+- [ThermalRight AXP-100-Full Copper](https://www.thermalright.com/product/axp-100-full-copper/)
 
 Upgrading the cooler will open-up more options for the CPUs below.
 
@@ -363,7 +363,7 @@ The one I ended up with is good enough for the years to come. Only a dramatic ch
 
 At which point these extra-features might be nice-to-have:
 
-- Integrated 10G NICs (latest model being [Intel X710 controller, supported by FreeBSD](https://ark.intel.com/content/www/us/en/ark/products/189534/intel-ethernet-controller-x710-at2.html)), with a preference for SFP+ port to use a DAC cable.
+- Integrated 10G NICs (latest model being [Intel X710 controller, supported by FreeBSD](https://web.archive.org/web/20200806200117/https://ark.intel.com/content/www/us/en/ark/products/189534/intel-ethernet-controller-x710-at2.html)), with a preference for SFP+ port to use a DAC cable.
 - A complete fan-less design.
 - The upcoming AMD's Zen 3 architecture (more cores and L3 cache, better price/performance). But double check for ECC support, as [ECC is not officially supported on Ryzen](https://news.ycombinator.com/item?id=23835862).
 
@@ -383,4 +383,4 @@ Lots of ZFS features are on the way:
 
 ## Epilog
 
-After a number of failures and instability, I finally [scrapped all that hardware](/2020/12/migration-from-freenas-to-truenas/#Epilog), and replaced my custom configuration with an official TrueNAS Mini X+ (8x cores 2.2GHz CPU, 32GB ECC DDR4 RAM, 2x 10G Base-T ports) from iXsystems.
+After a number of failures and instability, I finally [scrapped all that hardware]({filename}/2020/migration-from-freenas-to-truenas.md#epilog), and replaced my custom configuration with an official TrueNAS Mini X+ (8x cores 2.2GHz CPU, 32GB ECC DDR4 RAM, 2x 10G Base-T ports) from iXsystems.

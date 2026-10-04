@@ -109,7 +109,7 @@ We'll now root the phone.
 
 3. Plug that card to your computer.
 
-4. Download [King Root](https://kingroot.net) for Android (v5.3.7 in my case). Copy the `.apk` file to the SD card.
+4. Download [King Root](https://web.archive.org/web/20191216100705/https://kingroot.net/) for Android (v5.3.7 in my case). Copy the `.apk` file to the SD card.
 
 5. Unmount and remove the card from the computer. Insert it back into the phone, and mount it.
 
@@ -117,7 +117,7 @@ We'll now root the phone.
 
 7. Connect to wifi, go to Google Play store and install a file browser. My personal favorite: [Amaze File Manager](https://play.google.com/store/apps/details?id=com.amaze.filemanager).
 
-8. Use the file manager to browse into the SD card, [find the APK, install it and run KingRoot](https://kingroot.net/tutorials).
+8. Use the file manager to browse into the SD card, [find the APK, install it and run KingRoot](https://web.archive.org/web/20191117144848/https://kingroot.net/tutorials).
 
 ## Flash Custom Recovery
 

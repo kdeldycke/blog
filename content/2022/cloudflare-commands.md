@@ -52,7 +52,7 @@ tags: cloud, cloud computing, saas, iaas, paas, development, CLI, dns, cloudflar
 CloudFlare have several redirection options:
 
 - [Pages redirects](https://developers.cloudflare.com/pages/platform/redirects/): for static sites hosted on CloudFlare, via a `_redirects` file.
-- [Page Rules](https://support.cloudflare.com/hc/en-us/articles/200172286-Configuring-URL-forwarding-or-redirects-with-Cloudflare-Page-Rules)
+- [Page Rules](https://developers.cloudflare.com/rules/page-rules/how-to/url-forwarding/)
 
 ### Pages redirects
 

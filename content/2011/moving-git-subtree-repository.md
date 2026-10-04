@@ -5,7 +5,7 @@ category: English
 tags: code, Git, GitHub, Regular expression
 ---
 
-Coming from Subversion (and with [Plone collective repository](https://dev.plone.org/collective/browser) structure in mind), I've [recently moved all my tiny software projects]({filename}/2010/git-commit-history-reconstruction.md) in a big standalone Git repository (named `kev-code`). Now that I figured out that GitHub allows you to create unlimited amount of repositories, as long as they are open-source public projects, it make sense to emancipate some of my projects to their own repository. How do I move a sub-tree to its own repository? That's what I talk about in this article.
+Coming from Subversion (and with [Plone collective repository](https://web.archive.org/web/20070826171223/http://dev.plone.org/collective/browser/) structure in mind), I've [recently moved all my tiny software projects]({filename}/2010/git-commit-history-reconstruction.md) in a big standalone Git repository (named `kev-code`). Now that I figured out that GitHub allows you to create unlimited amount of repositories, as long as they are open-source public projects, it make sense to emancipate some of my projects to their own repository. How do I move a sub-tree to its own repository? That's what I talk about in this article.
 
 First, there is an automated way of performing this task with [git-subtree](https://github.com/apenwarr/git-subtree). You should try it first. For some reasons I didn't investigate, git-subtree didn't worked for me. So I'll explain now how I did it by hand.
 

@@ -84,4 +84,4 @@ This CSS was tested against the version 1.7.2 of _Contextual Related Posts_, and
 
 ![Output options tab of the plugin, setting the heading markup, the list and item tags, and the thumbnail placement and 150 pixel size limits](contextual-related-posts-config.png)
 
-And FYI, my post default thumbnail is from KDE's [Oxygen icon set](https://www.oxygen-icons.org/), which I found on my system in `/usr/share/icons/oxygen/128x128/apps/knotes.png`.
+And FYI, my post default thumbnail is from KDE's [Oxygen icon set](https://web.archive.org/web/20120405115043/http://www.oxygen-icons.org/), which I found on my system in `/usr/share/icons/oxygen/128x128/apps/knotes.png`.

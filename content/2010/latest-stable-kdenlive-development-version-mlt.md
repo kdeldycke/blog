@@ -5,9 +5,9 @@ category: English
 tags: apt-get, aptitude, dpkg, Git, Kdenlive, Kubuntu, Ubuntu, mlt, Video
 ---
 
-Today I stumble upon a bug in the Kdenlive 0.7.8 running on my Kubuntu 10.10: the crop filter was messing with the display ratio of my video clips. Digging the web I [found a bug report](https://www.kdenlive.org/mantis/view.php?id=1814) that was really close to my problem. According to the comments, this issue was fixed in the upcoming version of MLT. Is that bug the one I encountered? The only way to find out was to install the development version of MLT. Here is how I did it...
+Today I stumble upon a bug in the Kdenlive 0.7.8 running on my Kubuntu 10.10: the crop filter was messing with the display ratio of my video clips. Digging the web I [found a bug report](https://web.archive.org/web/20101206082837/http://kdenlive.org/mantis/view.php?id=1814) that was really close to my problem. According to the comments, this issue was fixed in the upcoming version of MLT. Is that bug the one I encountered? The only way to find out was to install the development version of MLT. Here is how I did it...
 
-First, make sure to [use the latest stable Kdenlive stack](https://www.kdenlive.org/download-kdenlive-0) for you system. For me, the [Sunab's alternative repository for Kubuntu 10.10](https://launchpad.net/~sunab/+archive/kdenlive-release/?field.series_filter=maverick) was the ultimate source:
+First, make sure to [use the latest stable Kdenlive stack](https://web.archive.org/web/20101205182044/http://kdenlive.org/download-kdenlive-0) for you system. For me, the [Sunab's alternative repository for Kubuntu 10.10](https://launchpad.net/~sunab/+archive/kdenlive-release/?field.series_filter=maverick) was the ultimate source:
 
 ```shell-session
 $ sudo apt-get update && sudo apt-get install kdenlive
@@ -37,13 +37,13 @@ Let's get MLT sources:
 $ git clone git://mltframework.org/mlt.git
 ```
 
-The command above will give you the latest development version. But if you target a particular revision (like [commit 21a3f68](https://mltframework.org/gitweb/mlt.git?p=mltframework.org/mlt.git;a=commit;h=21a3f68d56ce1237eb6510cdf03ebfc40b5641c2) in my case), you have to use this additional command:
+The command above will give you the latest development version. But if you target a particular revision (like [commit 21a3f68](https://github.com/mltframework/mlt/commit/21a3f68d56ce1237eb6510cdf03ebfc40b5641c2) in my case), you have to use this additional command:
 
 ```shell-session
 $ git checkout 21a3f68
 ```
 
-We can now follow the [procedure detailed in the Kdenlive manual](https://www.kdenlive.org/user-manual/downloading-and-installing-kdenlive/installing-source/installing-mlt-rendering-engine):
+We can now follow the [procedure detailed in the Kdenlive manual](https://web.archive.org/web/20101205214035/http://kdenlive.org/user-manual/downloading-and-installing-kdenlive/installing-source/installing-mlt-rendering-engine):
 
 ```shell-session
 $ cd mlt
@@ -57,7 +57,7 @@ That's it! Now you can launch Kdenlive, and if you run the wizard, you'll see th
 
 ![Kdenlive's French MLT engine check listing version 0.5.11 as correct, with green ticks against the melt, avformat, DV, QImage and title modules](kdenlive-with-mlt-dev.png)
 
-Oh, and by the way, it [fixed my problem with the crop filter](https://mltframework.org/gitweb/mlt.git?p=mltframework.org/mlt.git;a=commitdiff;h=21a3f68d56ce1237eb6510cdf03ebfc40b5641c2)! :)
+Oh, and by the way, it [fixed my problem with the crop filter](https://github.com/mltframework/mlt/commit/21a3f68d56ce1237eb6510cdf03ebfc40b5641c2)! :)
 
 Finally, if you want to revert the mess we created on the system, you have to remove the MLT we built in place:
 

@@ -19,7 +19,7 @@ Now, I have a Debian server as a target system. Unfortunately, eAccelerator is
 not bundled in Lenny. Browsing the web, I found some personal repositories of
 people kindly sharing their deb packages, like
 [Andrew McMillan](https://andrew.mcmillan.net.nz/node/70) and
-[schnuckelig.eu](https://www.schnuckelig.eu/blog/debian-lenny-eaccelerator-packages-amd64-20090527).
+[schnuckelig.eu](https://web.archive.org/web/20090908034250/http://www.schnuckelig.eu/blog/debian-lenny-eaccelerator-packages-amd64-20090527).
 The former provides a version of eAccelerator for the `i386`, the latter for the
 `amd64` architecture. In this how-to, I've combined the 2 repositories to give
 both 32 bits and 64 bits users a chance to use eAccelerator on Lenny.

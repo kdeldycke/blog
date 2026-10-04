@@ -14,4 +14,4 @@ MenuBar=Disabled
 
 This tip is interesting because you can also apply it for any KDE application that doesn't support this feature.
 
-For example, in [kmail](https://kmail.kde.org), you can add the "`MenuBar=Disabled`" statement in "`[Main Window]`" section: this will have the same effect as in konqueror.
+For example, in [kmail](https://web.archive.org/web/20060901050821/http://kmail.kde.org/), you can add the "`MenuBar=Disabled`" statement in "`[Main Window]`" section: this will have the same effect as in konqueror.

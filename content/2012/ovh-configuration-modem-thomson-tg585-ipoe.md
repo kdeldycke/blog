@@ -9,11 +9,11 @@ tags: ADSL, dslam, ipoe, Modem, nra, ovh, PPPoE, telnet, thomson
 
 OVH migre l'un après l'autre ses [points de collecte ADSL](https://www.ovh.fr/adsl/degroupage-nra-ovh.xml) vers leur infrastructure interne. Lors de la bascule, il faut reconfigurer son modem pour qu'il se connecte directement en `IPoE` et non plus en `PPPoE`.
 
-J'ai souscrit à l'[offre no!Box](https://www.ovh.fr/adsl/no_box.xml) avec un modem [Thomson TG-585 v8](https://www.technicolorbroadbandpartner.com/dsl-modems-gateways/products/product-detail.php?id=214&seg=3). Ce modem ne supporte pas par défaut le protocole `IPoE`. Vous devez le reconfigurer, mais la procédure indiquée par OVH dans leur mails n'est pas très claire.
+J'ai souscrit à l'[offre no!Box](https://www.ovh.fr/adsl/no_box.xml) avec un modem [Thomson TG-585 v8](https://web.archive.org/web/20120622115612/http://www.technicolorbroadbandpartner.com/dsl-modems-gateways/products/product-detail.php?id=214&seg=3). Ce modem ne supporte pas par défaut le protocole `IPoE`. Vous devez le reconfigurer, mais la procédure indiquée par OVH dans leur mails n'est pas très claire.
 
 ![Telnet session into the router, its ASCII-art honeycomb banner filling the terminal above the administrator prompt](thomson-tg585-router-login.png)
 
-En fait, il faut appliquer la même procédure que celle indiquée pour le modem dit "PRO". On trouve ces [instructions sur le wiki d'OVH](https://guide.ovh.com/ADSLConfigIpoe), et je vous confirme qu'elles fonctionnent parfaitement pour le modem Thomson TG-585.
+En fait, il faut appliquer la même procédure que celle indiquée pour le modem dit "PRO". On trouve ces [instructions sur le wiki d'OVH](https://web.archive.org/web/20120825192437/http://guide.ovh.com/ADSLConfigIpoe), et je vous confirme qu'elles fonctionnent parfaitement pour le modem Thomson TG-585.
 
 Et donc, après s’être connecté depuis un terminal sous Linux en telnet:
 

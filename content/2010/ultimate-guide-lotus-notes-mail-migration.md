@@ -278,7 +278,7 @@ My ultimate action was to [convert the Dovecot maildir to Kmail maildir
 ]({filename}/2007/how-to-import-a-maildir-folder-to-kmail.md),
 as I wanted to use Kmail to finally upload everything in Gmail. But you can use
 anything that suit your needs, like [thunderbird
-](https://www.mozillamessaging.com/thunderbird/) or any mail conversion tools.
+](https://www.thunderbird.net/) or any mail conversion tools.
 
 ## Method #4: Lotus Notes client v8.5 on Mac OS X Leopard
 

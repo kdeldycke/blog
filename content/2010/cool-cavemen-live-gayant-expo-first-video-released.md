@@ -9,7 +9,7 @@ After several months of work, [nit-picking]({filename}/2010/remove-videotape-tim
 
 https://www.youtube.com/watch?v=qE-bis-wYxs
 
-This video was taken during the biggest Cool Cavemen's concert in 2009. We were playing at [Gayant Expo](https://www.gayantexpoconcerts.com) ("_largest french venue in the north of Paris_" as they said in their commercial leaflets...). It was April 17th, during [Cartel des Mines](https://fr.wikipedia.org/wiki/Cartel_des_Mines), a student festival organized by [a group of engineering schools](https://wikipedia.org/wiki/Ecole_des_Mines).
+This video was taken during the biggest Cool Cavemen's concert in 2009. We were playing at [Gayant Expo](https://www.gayantexpoconcerts.com) ("_largest french venue in the north of Paris_" as they said in their commercial leaflets...). It was April 17th, during [Cartel des Mines](https://web.archive.org/web/20130915201740/http://fr.wikipedia.org/wiki/Cartel_des_Mines), a student festival organized by [a group of engineering schools](https://wikipedia.org/wiki/Ecole_des_Mines).
 
 As the whole concert was filmed, I plan to release a new song every one or two weeks. I can't promise a regular release cycle as I edit videos along the way. And of course, it also depends on my available free time...
 

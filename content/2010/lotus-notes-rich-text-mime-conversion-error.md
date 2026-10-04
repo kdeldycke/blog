@@ -11,7 +11,7 @@ Today I encountered a strange error while using Lotus Notes. I had a "_Cannot co
 
 This was triggered when I tried to move certain mails from one account to another. And to add insult to injury, this nasty and dangerous error will make you loose data.
 
-Let's say you want to cut and paste a batch of 10 mails. Then that error occurs while Notes paste the 3rd message. It means you'll loose the last 7 messages of your batch. Why? The 10 messages will be removed from their original location on cutting, and the last 7 messages will be trapped in the copy buffer. Isn't that a reasonable reason to [hate Lotus Notes](https://www.codinghorror.com/blog/2006/02/lotus-notes-survival-of-the-unfittest.html)?
+Let's say you want to cut and paste a batch of 10 mails. Then that error occurs while Notes paste the 3rd message. It means you'll loose the last 7 messages of your batch. Why? The 10 messages will be removed from their original location on cutting, and the last 7 messages will be trapped in the copy buffer. Isn't that a reasonable reason to [hate Lotus Notes](https://blog.codinghorror.com/lotus-notes-survival-of-the-unfittest/)?
 
 Anyway. After several tests and experiments, I finally found the common property shared by all those reluctant messages. They all have inline images embedded in the body of the mail, like the one below:
 

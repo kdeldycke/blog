@@ -29,11 +29,11 @@ Here is my plan:
 Problem:
 [Drupify lives in a CVS repository](https://drupalcode.org/viewvc/drupal/contributions/themes/drupify/).
 
-Solution: Git features a [`cvsimport`](https://kernel.org/pub/software/scm/git-core/docs/git-cvsimport.html)
+Solution: Git features a [`cvsimport`](https://web.archive.org/web/20100103122009/http://www.kernel.org/pub/software/scm/git-core/docs/git-cvsimport.html)
 command.
 
 Before going further, we need to install
-[`cvsps`](https://web-beta.archive.org/web/20160125062146/https://www.cobite.com:80/cvsps/). For [MacPorts](https://www.macports.org)
+[`cvsps`](https://web.archive.org/web/20160125062146/http://www.cobite.com/cvsps/). For [MacPorts](https://www.macports.org)
 users, this is as simple as:
 
 ```shell-session
@@ -119,7 +119,7 @@ too:
 ![The same repository after the branch filter, GitX now listing 34 commits because every one appears twice, once under its original refs/original ref](gitx-confused-by-git-branch-filter-backups.png)
 
 But
-[according Jakub Narębski on the Git mailing-list](https://n2.nabble.com/Removing-some-files-from-history-tp1344670p1344919.html),
+[according Jakub Narębski on the Git mailing-list](https://web.archive.org/web/20090402171321/http://n2.nabble.com/Removing-some-files-from-history-td1344670.html),
 we can safely removes Git's backups:
 
 ```shell-session

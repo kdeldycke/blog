@@ -7,10 +7,10 @@ tags: GitHub, Python, Apple, macOS, Linux, Windows, BitBar, Homebrew, Cask, node
 Last time I [mentioned
 ]({filename}/2016/bitbar-package-manager-v13.md) my *Package
 Manager Plugin*, it was a simple [standalone Python script for BitBar
-](https://getbitbar.com/plugins/Dev/MetaPackageManager/meta_package_manager.7h.py).
+](https://web.archive.org/web/20170221024438/https://getbitbar.com/plugins/Dev/MetaPackageManager/meta_package_manager.7h.py).
 
 The BitBar plugin is [still actively maintained
-](https://meta-package-manager.readthedocs.io/en/develop/bitbar.html), but all
+](https://mpm.run/bar-plugin/), but all
 its core functionalities are now provided by an independent Python module:
 [Meta Package Manager](https://pypi.python.org/pypi/meta-package-manager). The
 latest version, [2.3.0, has recently been released
@@ -26,7 +26,7 @@ Ambitious because there is [too many package managers
 ](https://en.wikipedia.org/wiki/List_of_software_package_management_systems)
 out there, all with their own idiosyncrasies. So much that I had to compile a
 list of [Falsehoods Programmers Believe About Package Managers
-](https://meta-package-manager.readthedocs.io/en/develop/falsehoods.html).
+](https://mpm.run/falsehoods/).
 
 And silly because, well, `mpm` actually [tries to implement
 ](https://github.com/kdeldycke/meta-package-manager/issues/10) an XKCD joke:

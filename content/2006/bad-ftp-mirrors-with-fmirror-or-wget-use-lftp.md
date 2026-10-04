@@ -25,7 +25,7 @@ This work perfectly on small websites. But on my biggest one (hundreds of MB), w
 *** glibc detected *** double free or corruption (top): 0x08097750 ***
 ```
 
-It seems to be a known limitation of wget: "Wget has got serious problems retrieving huge sites" ([source: "Possible Alternatives to WGET"](https://www.ccp14.ac.uk/mirror/wget.htm)).
+It seems to be a known limitation of wget: "Wget has got serious problems retrieving huge sites" ([source: "Possible Alternatives to WGET"](https://web.archive.org/web/20060427035018/http://www.ccp14.ac.uk/mirror/wget.htm)).
 
 So I went back to basics by using the good old `lftp`, which is efficient and reliable. Here is the command:
 

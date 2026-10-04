@@ -9,4 +9,4 @@ v2.5.0](https://pypi.python.org/pypi/meta-package-manager/2.5.0) has just been
 released.
 
 See the [changelog for more
-info](https://meta-package-manager.readthedocs.io/en/stable/changelog.html).
+info](https://mpm.run/changelog/).

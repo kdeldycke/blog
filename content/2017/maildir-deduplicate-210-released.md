@@ -12,4 +12,4 @@ Main change in this version is the ability to catch all and skip duplicate sets
 containing unparsable mails due to bad encoding.
 
 Read the [full changelog here
-](https://maildir-deduplicate.readthedocs.io/en/develop/changelog.html).
+](https://kdeldycke.github.io/mail-deduplicate/changelog.html).

@@ -11,7 +11,7 @@ First, here is [Blue Curve](https://templates.libreoffice.org/template-center/bl
 
 ![blue-curve-preview](blue-curve-preview.jpg)
 
-You can [download the file](https://templates.libreoffice.org/template-center/blue-curve-1/releases/1.0/blue-curve.otp) from the [official LibreOffice templates](https://templates.libreoffice.org/template-center) website.
+You can [download the file](https://templates.libreoffice.org/template-center/blue-curve-1/releases/1.0/blue-curve.otp) from the [official LibreOffice templates](https://extensions.libreoffice.org/en/extensions?Tags%5B%5D=118) website.
 
 Second presentation template is [Fancy Window Frame](https://templates.libreoffice.org/template-center/fancy-window-frame):
 

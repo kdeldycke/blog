@@ -17,4 +17,4 @@ Now this will keep any client sessions opened for 12 hours (12h * 60 minutes = 7
 
 Problem solved!
 
-Oh, and another way to address this issue consist in implementing some kind of Single Sign-On. And you know what? We have that in store thanks to the [`smile_sso` module for OpenERP](https://github.com/Smile-SA/smile_openerp_addons_6.0/tree/master/smile_sso)! :)
+Oh, and another way to address this issue consist in implementing some kind of Single Sign-On. And you know what? We have that in store thanks to the [`smile_sso` module for OpenERP](https://github.com/tejastank/smile_openerp_addons_6.0/tree/master/smile_sso)! :)

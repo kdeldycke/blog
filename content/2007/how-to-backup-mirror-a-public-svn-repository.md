@@ -37,7 +37,7 @@ example) as if it was a normal SVN repository!
 
 **_Update_**: If you want to generate a vanilla SVN dump out of your SVK local
 mirror, as suggest by [Thomas Mølhave](https://moelhave.dk) in his
-"[Remote Backup Of A Subversion (svn) Repository](https://moelhave.dk/2006/07/remote-mirroring-a-subversion-svn-repository/)"
+"[Remote Backup Of A Subversion (svn) Repository](https://web.archive.org/web/20070505062431/http://moelhave.dk/2006/07/remote-mirroring-a-subversion-svn-repository/)"
 blog post, use `svnadmin`:
 
 ```shell-session

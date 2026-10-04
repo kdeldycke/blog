@@ -96,7 +96,7 @@ tags: calendar, CLI, date, epoch, find, Linux, recode, sed, VIM, Markdown, Perl,
   $ find ./* -iname "*.md" -exec perl -0777 -i -pe "s/\(https:\/\/www\.amazon\.com\/dp\/(.*?)\)/\(https:\/\/amzn\.com\/\1\)/gs" "{}" \;
   ```
 
-- Remove lines matching a regex (encoding [particular markdown TOC entries](https://github.com/kdeldycke/awesome-iam/commit/295a4fa4229c5966ce4bc207704e32fb6f1491d6#diff-c81593a3651bf87f58345cd819edad71R24)), save the result in place and save a backup of the original content in a `.bak` file:
+- Remove lines matching a regex (encoding [particular markdown TOC entries](https://github.com/kdeldycke/awesome-iam/blob/295a4fa4229c5966ce4bc207704e32fb6f1491d6/.github/workflows/lint.yaml#L24)), save the result in place and save a backup of the original content in a `.bak` file:
 
   ```shell-session
   $ gawk -i inplace -v INPLACE_SUFFIX=.bak '!/^- \[(Contribute|Contributing|Licence|License)\]\(#.+\)$/{print}' ./readme.md
@@ -254,7 +254,7 @@ tags: calendar, CLI, date, epoch, find, Linux, recode, sed, VIM, Markdown, Perl,
   $ env LC_TIME=en date +"%a %b %d %Y"
   ```
 
-- Get the number of seconds since [epoch](https://en.wikipedia.org/wiki/Epoch_%28reference_date%29#Notable_epoch_dates_in_computing):
+- Get the number of seconds since [epoch](https://en.wikipedia.org/wiki/Epoch_%28computing%29#Notable_epoch_dates_in_computing):
 
   ```shell-session
   $ date +%s
@@ -282,5 +282,5 @@ tags: calendar, CLI, date, epoch, find, Linux, recode, sed, VIM, Markdown, Perl,
 ## Additional References
 
 - [CLI text processing with GNU awk](https://learnbyexample.github.io/learn_gnuawk/awk-introduction.html)
-- A list of [`sed` one-liners](http://sed.sourceforge.net/sed1line.txt).
+- A list of [`sed` one-liners](https://web.archive.org/web/20061213120811/http://sed.sourceforge.net/sed1line.txt).
 - [PDF commands]({filename}/2006/pdf-commands.md)

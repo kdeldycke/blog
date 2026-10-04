@@ -14,7 +14,7 @@ After 15+ years of relevant engineering work, and 3+ years of hands-on managemen
 
 Enabling engineers, leading managers, and make them feels productive is the most impactful thing I can bring to the table. So I'm always **on the lookout for a high-tech management position, at a fast growing start-up** with ambitious vision.
 
-The most relevant experience was in [growing a team from 0 to 12](https://devtomanager.com/interviews/kevin-deldycke/) at a [cloud computing provider](https://scaleway.com). We built up the whole [IAM ecosystem](https://github.com/kdeldycke/awesome-iam), as well as the [Billing and Payment stack](https://github.com/kdeldycke/awesome-billing).
+The most relevant experience was in [growing a team from 0 to 12](https://web.archive.org/web/20200807175758/https://devtomanager.com/interviews/kevin-deldycke/) at a [cloud computing provider](https://scaleway.com). We built up the whole [IAM ecosystem](https://github.com/kdeldycke/awesome-iam), as well as the [Billing and Payment stack](https://github.com/kdeldycke/awesome-billing).
 
 ## Achievements
 
@@ -32,7 +32,7 @@ The most relevant experience was in [growing a team from 0 to 12](https://devtom
   developer]({filename}/2011/top-1-percent-open-source-developer.md).
 
 - 🌟 21,000+ GitHub stars collected on my repositories. The most popular being the one about [Falsehoods Programmers Believe
-  in](https://github.com/kdeldycke/awesome-falsehood). It is regularly [featured in popular media](https://github.com/kdeldycke/awesome-falsehood/blob/main/assets/in-the-media.md).
+  in](https://github.com/kdeldycke/awesome-falsehood). It is regularly [featured in popular media](https://github.com/kdeldycke/kdeldycke/blob/main/in-the-media.md).
 
 - 💵 Wrote the [best open-source
   payroll]({filename}/2008/best-open-source-payroll-software.md)
@@ -46,7 +46,7 @@ The most relevant experience was in [growing a team from 0 to 12](https://devtom
 
 ## Interviews
 
-- 👔 [VP of Engineering at Scaleway](https://devtomanager.com/interviews/kevin-deldycke/) (Developer to Manager, 2020) - In which I go back on my career transition from Software Developer to Enginneering Manager, and growing a team from 0 to 12 to care about a critical part of a cloud provider.
+- 👔 [VP of Engineering at Scaleway](https://web.archive.org/web/20200807175758/https://devtomanager.com/interviews/kevin-deldycke/) (Developer to Manager, 2020) - In which I go back on my career transition from Software Developer to Enginneering Manager, and growing a team from 0 to 12 to care about a critical part of a cloud provider.
 
 - 🧘‍♂️ [Bien-être au travail](https://putaindecode.io/podcasts/s01e09-dotjs-react-native-bien-etre-au-travail) (Putain de code, S01E09, 2018) - I was invited in this French podcast to discuss well-being at work. Sounds dull, but it was a great opportunity for the hosts to share their personal anecdotes and stories on the job, and for me to comment on my first few months as a rookie manager.
 
@@ -64,7 +64,7 @@ Everything is [on LinkedIn](https://www.linkedin.com/in/kevindeldycke/).
 - [*OpenERP for IT Service companies*](https://www.slideshare.net/openobject/openerp-openerp-for-it-service-companies-smile) - OpenERP Partner Days, 2012, Belgium.
 - *ERP5 business template and express wizard technology demonstration* - [EMPOSME](https://cordis.europa.eu/project/id/18071) (Enterprise Modelling and Performance Optimisation for SMEs), 2006, Ireland.
 - *ERP5 Design and Architecture* - [COFENIS 2006](https://web.archive.org/web/20130730225618/http://www.confenis.org/confenis2006/www.confenis.org/index6ea96ea9.html?q=photos&PHPSESSID=a6c772ef8dfbd7d71854f1cc9da4a1e6) - [IFIP](http://en.wikipedia.org/wiki/IFIP) international Conference on Research and Practical Issues of Enterprise Information Systems, 2006, Vienna, Austria.
-- [*Develop your own ERP with ERP5 Business Templates*](https://web.archive.org/web/20050924101245/https://www.erp5.org/sections/documentation/articles/erp5_developer_tutor3829/downloadFile/file/Tutorial-Kevin-en.pdf?nocache=1114902907.39) - [Solution Linux / Paris Open Source Summit](http://www.solutionslinux.fr), 2005, France.
+- [*Develop your own ERP with ERP5 Business Templates*](https://web.archive.org/web/20050924101245/https://www.erp5.org/sections/documentation/articles/erp5_developer_tutor3829/downloadFile/file/Tutorial-Kevin-en.pdf?nocache=1114902907.39) - [Solution Linux / Paris Open Source Summit](https://web.archive.org/web/20040612011444/http://www.solutionslinux.fr/), 2005, France.
 
 ## About this site
 

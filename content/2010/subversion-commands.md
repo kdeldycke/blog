@@ -79,7 +79,7 @@ Other alternative: use [ack](https://beyondgrep.com/).
   $ find -type f -not -regex ".*\/.svn\/.*" -name "*˜*" -print -exec svn delete "{}" \;
   ```
 
-- In a repository structure containing sub-projects (thinks of [Plone's collective repository](https://svn.plone.org/svn/collective/) as an example), get the list of all folders in all trunks, while ignoring subversion metadata folders:
+- In a repository structure containing sub-projects (thinks of [Plone's collective repository](https://web.archive.org/web/20070701061128/http://svn.plone.org/svn/collective/) as an example), get the list of all folders in all trunks, while ignoring subversion metadata folders:
 
   ```shell-session
   $ find ./ -type d -regex ".*\/trunk\/?.*" -not -regex ".*\/.svn\/?.*" -print

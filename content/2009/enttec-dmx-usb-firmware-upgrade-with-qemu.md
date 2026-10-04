@@ -6,7 +6,7 @@ tags: DMX, enttec, firmware, Hardware, Linux, Qemu, Stage lighting, USB
 ---
 
 A year ago, I brought a
-[Enttec Pro USB/DMX widget](https://www.enttec.com/dmxusb.php). Since then, a new
+[Enttec Pro USB/DMX widget](https://web.archive.org/web/20081121003007/http://www.enttec.com/dmxusb.php). Since then, a new
 firmware was released. If it doesn't fix any critical bug to me, I still _have
 to_ upgrade it (don't mind asking why... ;) ). And to make things fun (read
 "dangerous"), I choose to do it with Qemu.
@@ -56,7 +56,7 @@ $ qemu -m 512 -usb -usbdevice host:0403:6001 -hda ./qemu-win-xp-with-freestyler.
 
 Alternatively, you can "hotplug" the USB device once inside Qemu. This can be
 done by calling the
-[Qemu interactive shell](https://www.nongnu.org//qemu/qemu-doc.html#SEC11) by
+[Qemu interactive shell](https://web.archive.org/web/20090519075718/http://www.nongnu.org/qemu/qemu-doc.html#SEC11) by
 pressing ++ctrl+alt+2++ simultaneously. Then, to hotplug the USB device, type:
 
 ```shell-session

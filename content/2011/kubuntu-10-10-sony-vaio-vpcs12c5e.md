@@ -9,7 +9,7 @@ Here are some (old) notes regarding the installation of Kubuntu on my Sony Vaio 
 
 First I have to tell you that everything is working fine and out of the box with Kubuntu 10.10. This include: Bluetooth, HDMI out (tested with a Full-HD monitor), Sound out, VGA, USB, CD Burning, WiFi, Networking, Keyboard backlight & SD Card reader.
 
-The only annoying thing in 10.10 is the non-responding touchpad. But a [fix can be found on Ubuntu forums](https://ubuntuforums.org/showpost.php?p=9806445&postcount=9):
+The only annoying thing in 10.10 is the non-responding touchpad. But a fix can be found on Ubuntu forums (`https://ubuntuforums.org/showpost.php?p=9806445&postcount=9`):
 
 1. Edit `/etc/default/grub` to include `GRUB_CMDLINE_LINUX="i8042.nopnp"`
 

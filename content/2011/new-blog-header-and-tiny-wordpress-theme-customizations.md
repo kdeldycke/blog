@@ -5,15 +5,15 @@ category: English
 tags: artwork, CSS, maomium, WordPress, Ubercart
 ---
 
-I maintain a bunch of websites for friends on my server. In this context, [Maomium](https://maomium.com)'s owner owed me some bucks for his `.com` domain name. Here is the envelope I received yesterday with a check:
+I maintain a bunch of websites for friends on my server. In this context, [Maomium](https://web.archive.org/web/20070509042126/http://www.maomium.com/)'s owner owed me some bucks for his `.com` domain name. Here is the envelope I received yesterday with a check:
 
 ![Hand-addressed kraft envelope with French stamps lying on dark wood, next to the card it held: a pen-and-ink bird of prey trailing swirling tendrils, under a round monogram](maomium-thank-you-artwork.jpg)
 
 Now that's what I call a personalized letter! This original artwork is so great that I had to share it.
 
-The hours he put creating this original artwork mirror the effort I invested maintaining his digital properties (a [WordPress blog](https://maomium.com), a [Drupal-based online store](https://www.ubercart.org) and a [ZenPhoto gallery](https://maomium.com/zenphoto/)). That's the best thank you note I have received so far! :)
+The hours he put creating this original artwork mirror the effort I invested maintaining his digital properties (a [WordPress blog](https://web.archive.org/web/20070509042126/http://www.maomium.com/), a [Drupal-based online store](https://web.archive.org/web/20100228034803/http://www.ubercart.org/) and a [ZenPhoto gallery](https://web.archive.org/web/20101224145846/http://maomium.com/zenphoto/)). That's the best thank you note I have received so far! :)
 
-Jim from Maomium is a really talented artist and really deserve attention. He used to have an [online shop](https://shop.maomium.com) where you can buy his paintings and customized furnitures. But we shut it down some weeks ago. Its replacement is not available yet, so if you want to buy him unique hand-made piece of art, don't hesitate to get in touch with him at [jim@maomium.com](mailto:jim@maomium.com).
+Jim from Maomium is a really talented artist and really deserve attention. He used to have an online shop (`https://shop.maomium.com`) where you can buy his paintings and customized furnitures. But we shut it down some weeks ago. Its replacement is not available yet, so if you want to buy him unique hand-made piece of art, don't hesitate to get in touch with him at [jim@maomium.com](mailto:jim@maomium.com).
 
 And with Jim's approval, I now use his letter's artwork as my blog image header. It's much better than the default theme image! ;)
 

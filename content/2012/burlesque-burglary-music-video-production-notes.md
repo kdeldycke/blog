@@ -90,9 +90,9 @@ These are in fact generic blinders (mounted on a standard microphone stand) I us
 I augmented this setup by reusing two household halogen lamps from the studio, and placed them on the right and left sides.
 
 I gelled all the lights with a [Lee 216 White Diffusion filter
-](https://www.leefilters.com/lighting/colour-details.html#216). The blinders had
+](https://leefilters.com/lighting/colour-effect-lighting-filters/#216). The blinders had
 an additional layer of [Lee 205 Half-CTO filter
-](https://www.leefilters.com/lighting/colour-details.html#205). In retrospect,
+](https://leefilters.com/lighting/colour-effect-lighting-filters/#205). In retrospect,
 these CTOs were unnecessary because, unknown to me, the lamps were already
 producing a color-temperature of 3200k.
 
@@ -135,7 +135,6 @@ All of these were hand-drawn by Cécile, then recomposed later in Gimp:
 ![Cécile leaning over a light table in a darkened room, inking the title lettering by hand with a box of coloured pencils beside her](burlesque-burglary-logo-drawing.jpg)
 
 Finally, I exported the video with different combination of lossless video and
-audio codecs, but some were [not digested by YouTube
-](https://productforums.google.com/forum/#!category-topic/youtube/uploading-videos/HbSKO8xd8xY):
+audio codecs, but some were not digested by YouTube (`https://productforums.google.com/forum/#!category-topic/youtube/uploading-videos/HbSKO8xd8xY`):
 
 ![YouTube upload row for the uncompressed cut, marked with a red error icon reading failed, unable to convert video file](youtube-upload-failed.png)

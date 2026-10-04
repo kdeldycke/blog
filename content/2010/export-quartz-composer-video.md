@@ -61,7 +61,7 @@ I first tried the [Export to Movie](https://quartzcomposer.com/plugins/1-export-
 0x00001d2b
 ```
 
-So I tried the old trick of [importing compositions in iMovie](https://blogs.ipona.com/james/archive/2005/05/05/1040.aspx). If this was possible in the past with iMovie '06, [Apple removed this feature in iMovie '09](https://www.quartzcompositions.com/phpBB2/viewtopic.php?t=594).
+So I tried the old trick of [importing compositions in iMovie](https://web.archive.org/web/20101008045750/http://blogs.ipona.com/james/archive/2005/05/05/1040.aspx). If this was possible in the past with iMovie '06, Apple removed this feature in iMovie '09 (`https://www.quartzcompositions.com/phpBB2/viewtopic.php?t=594`).
 
 My last chance was another plugin: [Movie Exporter
 ](https://quartzcomposer.com/plugins/6-movie-exporter) (`v0.0.20091011`). As the

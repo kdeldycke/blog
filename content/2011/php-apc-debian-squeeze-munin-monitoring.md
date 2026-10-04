@@ -5,7 +5,7 @@ category: English
 tags: apx, Debian, Debian Squeeze, munin, nginx, PHP, Server, Web
 ---
 
-Installing [APC](https://php.net/manual/en/book.apc.php) on Debian Squeeze is
+Installing [APC](https://web.archive.org/web/20110717193327/http://www.php.net/manual/en/book.apc.php) on Debian Squeeze is
 as simple as installing the package:
 
 ```shell-session
@@ -16,10 +16,10 @@ In my case this package come from the PHP bundle distributed by the [Dotdeb
 repository](https://www.dotdeb.org).
 
 If installing APC is easy, monitoring it with Munin requires some extra
-manipulations. There is currently no good [APC plugin available on Munin
-Exchange](https://exchange.munin-monitoring.org/plugins/search?keyword=apc). So
+manipulations. There is currently no good APC plugin available on Munin
+Exchange (`https://exchange.munin-monitoring.org/plugins/search?keyword=apc`). So
 we'll use the external [munin-php-apc
-project](https://code.google.com/p/munin-php-apc/) instead.
+project](https://code.google.com/archive/p/munin-php-apc/) instead.
 
 The latter can't get APC statistics by itself: it need an extra PHP file to be
 served locally. As you can read in my previous article, [my Munin is powered by

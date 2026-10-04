@@ -59,7 +59,7 @@ tags: CLI, Databases, MySQL, SQL, SQL, cron
   $ watch -n 1 mysqladmin --user=XXXXX --password=XXXXX processlist
   ```
 
-- Get the list of default configuration parameters the server will use regardless of the values set in config files ([source](https://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html)):
+- Get the list of default configuration parameters the server will use regardless of the values set in config files ([source](https://web.archive.org/web/20100214101144/http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html)):
 
   ```shell-session
   $ mysqld --no-defaults --verbose --help

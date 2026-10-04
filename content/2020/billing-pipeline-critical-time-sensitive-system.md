@@ -53,7 +53,7 @@ As a manager, **I'm the only one responsible** for allowing the team to disregar
 
 > Once again, and unfortunately for us, the project was using [`arrow`](https://github.com/arrow-py/arrow)
 
-The reason I choose `arrow` at the time was practical. It was the only Python library actively maintained that was providing [date-aware ceiling and flooring methods](https://arrow.readthedocs.io/en/stable/#ranges-spans). I wouldn't have been able to tame the side-effects of quantization without those.
+The reason I choose `arrow` at the time was practical. It was the only Python library actively maintained that was providing [date-aware ceiling and flooring methods](https://arrow.readthedocs.io/en/stable/guide.html#ranges-spans). I wouldn't have been able to tame the side-effects of quantization without those.
 
 ## Time reference
 
@@ -83,4 +83,4 @@ BTW, `pytest` is powerful, but feels magical at times. I spent more time working
 
 That good flakiness has a name: [fuzzing](https://en.wikipedia.org/wiki/Fuzzing)! 😉
 
-[![Dilbert's random number generator](https://assets.amuniversal.com/321a39e06d6401301d80001dd8b71c47)](https://dilbert.com/strip/2001-10-25)
+[![Dilbert's random number generator](https://assets.amuniversal.com/321a39e06d6401301d80001dd8b71c47)](https://web.archive.org/web/20201012020052/https://dilbert.com/strip/2001-10-25)

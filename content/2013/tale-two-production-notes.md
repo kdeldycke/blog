@@ -23,7 +23,7 @@ But the experiment failed and I abandoned this endeavor. Instead of slow-motion,
 
 ## Blender
 
-The original photos were not consistent. To make them work as a slideshow, they required some stabilization. I tried the new [tracking features of Blender](https://wiki.blender.org/index.php/Doc:2.6/Manual/Motion_Tracking):
+The original photos were not consistent. To make them work as a slideshow, they required some stabilization. I tried the new [tracking features of Blender](https://web.archive.org/web/20130420171725/http://wiki.blender.org/index.php/Doc:2.6/Manual/Motion_Tracking):
 
 ![Blender motion tracking on the slideshow, tracker crosses scattered over the canvas and the room, with the 2D stabilization panel and its track list open on the right](blender-timlapse-stabilization.jpg)
 
@@ -79,7 +79,7 @@ After this herculean task, I cropped & resized the images to fit the 1080p resol
 $ convert -resize 1920x1080 -background black -gravity center -extent 1920x1080 ./manually-stab-keyframes/* pict%04d.png
 ```
 
-[As for Goodnight]({filename}/2013/goodnight-video.md), we tried to get rid of the wide black bars on the sides. [QPX](https://wqpx.wordpress.com) created for us a mask made of paint strokes:
+[As for Goodnight]({filename}/2013/goodnight-video.md), we tried to get rid of the wide black bars on the sides. [QPX](https://web.archive.org/web/20120806035017/http://wqpx.wordpress.com/) created for us a mask made of paint strokes:
 
 ![Black and white mask, a white centre with ragged paint-stroke edges eating into the black bars down either side](video-mask.png)
 

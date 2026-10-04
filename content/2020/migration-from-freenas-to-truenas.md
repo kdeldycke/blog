@@ -11,7 +11,7 @@ The upgrade itself is quite straightforward by the way of the GUI. But things ge
 
 Upgrading from FreeNAS to TrueNAS will render your encrypted pool unavailable. FreeNAS relies on [`geli`](https://en.wikipedia.org/wiki/Geli_%28software%29)'s block-layer disk encryption and is considered legacy. TrueNAS moved to native ZFS encryption at the dataset level.
 
-We have no choice but to convert it. And [there is no easy path](https://www.truenas.com/docs/hub/initial-setup/storage/encryption/#conversion-from-geli) but destroying the pool and recreating it. 😱
+We have no choice but to convert it. And [there is no easy path](https://web.archive.org/web/20210123040723/https://www.truenas.com/docs/hub/initial-setup/storage/encryption/#conversion-from-geli) but destroying the pool and recreating it. 😱
 
 So first things first: **BACKUP YOUR POOL**!
 
@@ -785,7 +785,7 @@ errors: No known data errors
 
 And off we went, spending another 7 hours of resilvering, but back on track in the migration process.
 
-All in all, RAID-Z2 saved my ass here. Lesson learned: **a disk failure during heavy-duty operations is [no longer a statistically rare event](/2020/05/nas-hardware/#raid-array)**.
+All in all, RAID-Z2 saved my ass here. Lesson learned: **a disk failure during heavy-duty operations is [no longer a statistically rare event]({filename}/2020/nas-hardware.md#raid-array)**.
 
 So remember the wise man who once said to **BACKUP YOUR F#@\$% POOL**!
 
@@ -815,7 +815,7 @@ Of all possible root causes, I listed these:
 
 - **Shitty controller**: most likely possibility.
 
-  I only encountered this behaviour while rebuilding the array. So under load the disk controllers on the motherboard might have just given up. All disks are managed by the [Intel C246 chipset](https://ark.intel.com/content/www/us/en/ark/products/147326/intel-c246-chipset.html).
+  I only encountered this behaviour while rebuilding the array. So under load the disk controllers on the motherboard might have just given up. All disks are managed by the [Intel C246 chipset](https://web.archive.org/web/20210213052813/https://ark.intel.com/content/www/us/en/ark/products/147326/intel-c246-chipset.html).
 
   A solution to explore would be to [reduce SATA speed in FreeBSD kernel](https://forums.freebsd.org/threads/ata-4-timeouts-continue-after-disk-replacement-on-new-12-0-installation-issues-with-nvidia-mcp51.69770/).
 
@@ -823,6 +823,6 @@ Of all possible root causes, I listed these:
 
 After these serial failures, I realized I had no time to debug this whole affair, so I ended purchasing an official TrueNAS Mini X+ (8x cores 2.2GHz CPU, 32GB ECC DDR4 RAM, 2x 10G Base-T ports) from iXsystems.
 
-It cost me the same price as [my custom setup](/2020/05/nas-hardware/#final-configuration), minus the tariff and import taxes. But comes with a 1 year warranty and support, and the peace of mind that the hardware is fully compatible with TrueNAS and thoroughly qualified for a NAS load.
+It cost me the same price as [my custom setup]({filename}/2020/nas-hardware.md#final-configuration), minus the tariff and import taxes. But comes with a 1 year warranty and support, and the peace of mind that the hardware is fully compatible with TrueNAS and thoroughly qualified for a NAS load.
 
 And 2 years later, my TrueNAS Mini X+ is working fine without an issue. I should have bought it from the start.

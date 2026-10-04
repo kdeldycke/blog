@@ -17,8 +17,8 @@ $ cat /media/9016-4EF8/MISC/version.txt
 ```
 
 Since then a [new firmware was released
-](https://gopro.com/support/hd-hero2-firmware-update/) (called the ["ProTune
-feature" update](https://gopro.com/software-app/cineform-studio/)) which adds
+](https://web.archive.org/web/20121201085152/http://gopro.com/support/hd-hero2-firmware-update/) (called the ["ProTune
+feature" update](https://web.archive.org/web/20121201084842/http://gopro.com/software-app/cineform-studio)) which adds
 higher video bitrate (35Mbps), a neutral color profile and 24 fps recording.
 But GoPro only provides installer for Windows and Mac OS X. Here is how I
 managed to upgrade the firmware under Ubuntu 12.04.

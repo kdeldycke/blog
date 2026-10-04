@@ -5,7 +5,7 @@ category: English
 tags: Android, Canon EOS 7D, ffmpeg, HTC, Kdenlive, Kubuntu, Ubuntu, Linux, Twitter, Uperto, Video, x264, YouTube, SoundUp studio
 ---
 
-Last week I was called by one of my co-worker from [Uperto](https://www.uperto.com) (the open-source division of [Devoteam](https://devoteam.com)). He knew I worked on some [video projects for my band](https://www.youtube.com/user/coolcavemen), so he asked me if I wanted to help him create one. The video was meant to be released 5 days later, so we clearly were in a hurry. However this was a great opportunity to play with my Canon EOS 7D, so I accepted! :)
+Last week I was called by one of my co-worker from [Uperto](https://web.archive.org/web/20110201110552/http://uperto.com/) (the open-source division of [Devoteam](https://devoteam.com)). He knew I worked on some [video projects for my band](https://www.youtube.com/user/coolcavemen), so he asked me if I wanted to help him create one. The video was meant to be released 5 days later, so we clearly were in a hurry. However this was a great opportunity to play with my Canon EOS 7D, so I accepted! :)
 
 ![Hand holding an HTC Desire, its pink Uperto home screen showing a flip clock at 19:03 and the Info TGV shortcut, with a thumb reaching for the icon](info-tgv-android-app-preview.jpg)
 
@@ -25,7 +25,7 @@ For this video, I choose to use my Sigma 30mm f/1.4 lens as it's the fastest len
 
 I wanted to reduce the depth of field as much as I can to emphasize the screen of the HTC Desire, as all the important "action" takes place in the plane of the phone's screen.
 
-So I set my 7D to record in 1080p at 25 fps, open the lens at f/1.4 and set the shutter speed to a [traditional 1/50s](https://en.wikipedia.org/wiki/Shutter_angle). I then set the ISO to 160 (which is the lowest [native ISO value available on the 7D](https://brendanhbanks.tumblr.com/post/392272676/the-5d-and-7ds-native-iso-levels-are-160-320)). Still, the final image was over-exposed so I attached a variable ND-filter to the lens and tuned it until I had an acceptable result. I finally customized the white balance to match the ambient light temperature.
+So I set my 7D to record in 1080p at 25 fps, open the lens at f/1.4 and set the shutter speed to a [traditional 1/50s](https://en.wikipedia.org/wiki/Shutter_angle). I then set the ISO to 160 (which is the lowest native ISO value available on the 7D (`https://brendanhbanks.tumblr.com/post/392272676/the-5d-and-7ds-native-iso-levels-are-160-320`)). Still, the final image was over-exposed so I attached a variable ND-filter to the lens and tuned it until I had an acceptable result. I finally customized the white balance to match the ambient light temperature.
 
 Here is a snapshot of this first test on my Samsung Galaxy S (notice the strong [vignetting](https://en.wikipedia.org/wiki/Vignetting) created by the ND-filter):
 
@@ -47,13 +47,13 @@ As you can see in the final video, I have some aliasing issues due to the [pixel
 
 Yes, I could have tried to put the phone on a stand but I really wanted to show the app on a real phone, into real hands, as to make it clear there was no special effects or compositing in action. The application is real, it's running on bare metal, it's not a mockup, showing that Uperto has tough engineers getting things done! ;)
 
-By the way, about hands: there a trick involved here. The left hand is mine, but the right one is my co-worker's. There was a big advantage using this technique: with an eye on the 7D's rear LCD monitor, I can fully concentrate on the image and micro-adjust the distance of the phone to the lens. In the same time, my co-worker can focus (pardon the pun) on the action and follow the script. The only time when you can see my right hand is when I take the [Acer Liquid E](https://mobile.acer.com/en/phones/liquide/) to demonstrate the propagation of messages via Twitter:
+By the way, about hands: there a trick involved here. The left hand is mine, but the right one is my co-worker's. There was a big advantage using this technique: with an eye on the 7D's rear LCD monitor, I can fully concentrate on the image and micro-adjust the distance of the phone to the lens. In the same time, my co-worker can focus (pardon the pun) on the action and follow the script. The only time when you can see my right hand is when I take the [Acer Liquid E](https://web.archive.org/web/20100926180136/http://mobile.acer.com/en/phones/liquide/) to demonstrate the propagation of messages via Twitter:
 
 ![Both phones held up side by side, the HTC Desire posting a tgvlab tweet from the app while the red Acer Liquid E shows the same tweet arriving on mobile Twitter](htc-desire-and-acer-liquid-e.png)
 
 ## Video editing
 
-For video editing, I knew I'll not be able to manipulate my 7D's files natively. At least not with the default packages bundled with my [Kubuntu 10.04](https://www.kubuntu.org/news/10.04-lts-release). So monday morning I started to compile the trunk version of [x264](https://www.videolan.org/developers/x264.html), [FFmpeg](https://ffmpeg.org) and [MLT](https://mltframework.org). Then I realized a brand new version of [Kdenlive (v0.7.8) was released](https://www.kdenlive.org/users/j-b-m/kdenlive-078-released). How did I missed such an important news about my favorite [NLE](https://en.wikipedia.org/wiki/Video_editing_software)? :) Compliments must go to the Kdenlive team for providing up to date packages and all their dependencies!
+For video editing, I knew I'll not be able to manipulate my 7D's files natively. At least not with the default packages bundled with my [Kubuntu 10.04](https://web.archive.org/web/20101206005343/http://www.kubuntu.org/news/10.04-lts-release). So monday morning I started to compile the trunk version of [x264](https://www.videolan.org/developers/x264.html), [FFmpeg](https://ffmpeg.org) and [MLT](https://mltframework.org). Then I realized a brand new version of [Kdenlive (v0.7.8) was released](https://www.kdenlive.org/users/j-b-m/kdenlive-078-released). How did I missed such an important news about my favorite [NLE](https://en.wikipedia.org/wiki/Video_editing_software)? :) Compliments must go to the Kdenlive team for providing up to date packages and all their dependencies!
 
 So I did the entire video editing with Kdenlive. Here is what the final project looks like in the timeline:
 
@@ -69,7 +69,7 @@ Let's talk audio now. I personally want to thanks [Tomasito, Cool Cavemen's saxo
 
 ![Shure Beta 57A taped to a Gorillapod standing on a desk, cabled to a laptop, the flexible ball-jointed legs curled into a loop](shure-beta-57a-microphone-on-gorillapod.jpg)
 
-I wanted to record the speech on my linux machine but I didn't managed to compile the [Line 6 open-source drivers](https://line6.com/community/thread/4031). In fact the module compiled but refused to load:
+I wanted to record the speech on my linux machine but I didn't managed to compile the [Line 6 open-source drivers](https://web.archive.org/web/20101012051945/http://line6.com/community/thread/4031). In fact the module compiled but refused to load:
 
 ```text
 Sep 20 22:02:47 kev-laptop kernel: [  717.905187] line6usb: Unknown symbol snd_rawmidi_receive
@@ -115,7 +115,7 @@ Against my will, and to not waste time, I resigned myself to use a Windows machi
 
 Again, as we were in a hurry, we didn't paid close attention to the way Arnaud was speaking in the mic. Thus the quality of the original take was not fantastic. To me it was good enough for the intended purpose.
 
-When I gave the raw recording to [Thomas](https://coolcavemen.com/biography/jimy-wong/) for mixing, he didn't take long for him to realize how bad we were at recording! Even without knowing how we proceed to record and what the setup looked like, he pointed out all the stuff we did wrong. I know him for a long time now, but he still amaze me with his technical and practical knowledge about audio stuff. I really want to thanks him for his help on this project!
+When I gave the raw recording to [Thomas](https://web.archive.org/web/20101008090111/http://coolcavemen.com/biography/jimy-wong/) for mixing, he didn't take long for him to realize how bad we were at recording! Even without knowing how we proceed to record and what the setup looked like, he pointed out all the stuff we did wrong. I know him for a long time now, but he still amaze me with his technical and practical knowledge about audio stuff. I really want to thanks him for his help on this project!
 
 ![Thomas at the mixing desk in his studio, lit amber, working across two monitors of audio tracks between a pair of nearfield speakers](tom-at-work-in-sound-up-studio.png)
 
@@ -123,7 +123,7 @@ By the way, if you're looking to record/mix/master any audio material (from a si
 
 ## Epilogue
 
-As I concentrated all my efforts towards the creation of the video, I don't have many details about the application development itself. But coding the android app was, without a doubt, the biggest chunk of work of this project. It involves two of our best Android developers (Jeremy and Paul) and [our in-house Photoshop geek](https://tilap.net) for the design. The project was lead by [Arnaud](https://www.infinityperl.org).
+As I concentrated all my efforts towards the creation of the video, I don't have many details about the application development itself. But coding the android app was, without a doubt, the biggest chunk of work of this project. It involves two of our best Android developers (Jeremy and Paul) and [our in-house Photoshop geek](https://web.archive.org/web/20101024052110/http://tilap.net/) for the design. The project was lead by [Arnaud](https://www.infinityperl.org).
 
 The whole project was completed in no time and virtually no budget thanks to the dedication and effort of Uperto's staff. Everybody in Uperto, from management to developers, was fantastic. It really makes this team unique.
 

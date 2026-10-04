@@ -5,11 +5,11 @@ category: English
 tags: AdWords, Google,, coupons, dropbox, Google, Kfilebox, Kubuntu, Ubuntu
 ---
 
-I started to use Dropbox 6 months ago at work, but I only use it for personal files since November. Now that I seamlessly integrated it on my Kubuntu thanks to [Kfilebox](https://kdropbox.deuteros.es), it quickly became clear that Dropbox will potentially be part of my everyday computer life. But before definitely integrate an external dependency to my workflow, I had to test Dropbox further, which requires me to go beyond the default 2Go account.
+I started to use Dropbox 6 months ago at work, but I only use it for personal files since November. Now that I seamlessly integrated it on my Kubuntu thanks to [Kfilebox](https://web.archive.org/web/20111220232818/http://kdropbox.deuteros.es/), it quickly became clear that Dropbox will potentially be part of my everyday computer life. But before definitely integrate an external dependency to my workflow, I had to test Dropbox further, which requires me to go beyond the default 2Go account.
 
 To maximize the free storage capacity of my account, I [completed all the basic installation steps](https://dropbox.com/gs) (earned me 250 Mb), then I [connected my Dropbox account with Twitter](https://dropbox.com/free) to get 500 Mb. I could have got more free space if I had a Facebook account or was a [student](https://dropbox.com/edu).
 
-What's left to enlarge your capacity is [referrals](https://dropbox.com/account#referrals). To speed up this process, and following the [steps of others](https://vladik.rikhter.org/2011/09/22/maxing-out-your-dropbox-referrals-how-i-got-16gb-for-less-than-10/), I setup an AdWords campaign (all of this triggered by a [post on Hacker News](https://news.ycombinator.com/item?id=3126173)).
+What's left to enlarge your capacity is [referrals](https://help.dropbox.com/storage-space/earn-space-referring-friends). To speed up this process, and following the [steps of others](https://web.archive.org/web/20111220125415/http://vladik.rikhter.org/2011/09/22/maxing-out-your-dropbox-referrals-how-i-got-16gb-for-less-than-10/), I setup an AdWords campaign (all of this triggered by a [post on Hacker News](https://news.ycombinator.com/item?id=3126173)).
 
 I only targeted the French audience because I feared the HN post would have temporarily inflated the cost of English keywords. Here are the daily stats of my campaign:
 

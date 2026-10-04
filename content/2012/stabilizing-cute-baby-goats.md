@@ -23,9 +23,9 @@ I tried to stabilize the shots but was really disappointed by the results. The f
 
 ![Raked photo of a screen scrolling the transcode stabilize log, listing the shakiness, accuracy, stepsize and mincontrast settings](transcode-stabilizer-log.jpg)
 
-The first tool I tried was [vid.stab](https://public.hronopik.de/vid.stab/), a Transcode plugin that is now part of Transcode itself. But the 1.1.5 version that is bundled with the current Ubuntu 11.10 is quite old.
+The first tool I tried was [vid.stab](http://public.hronopik.de/vid.stab/), a Transcode plugin that is now part of Transcode itself. But the 1.1.5 version that is bundled with the current Ubuntu 11.10 is quite old.
 
-I wanted to compile it from its [sources](https://github.com/georgmartius/vid.stab). But the [binary distribution](https://public.hronopik.de/vid.stab/download.php) available on the project website works out of the box. To save some effort, let's install the latter:
+I wanted to compile it from its [sources](https://github.com/georgmartius/vid.stab). But the [binary distribution](http://public.hronopik.de/vid.stab/download.php) available on the project website works out of the box. To save some effort, let's install the latter:
 
 ```shell-session
 $ wget https://public.hronopik.de/vid.stab/files/vid.stab-0.93-transcode-1.1-binary-x86_64.tgz
@@ -34,7 +34,7 @@ $ sudo mv ./vid.stab-0.93-transcode-1.1-binary-x84_64/filter_*.so /usr/lib/trans
 $ rm -rf ./vid.stab-0.93-transcode-1.1-binary-x8*
 ```
 
-Now, as explained in the [documentation](https://public.hronopik.de/vid.stab/features.php), you have to let transcode analyze the video:
+Now, as explained in the [documentation](http://public.hronopik.de/vid.stab/features.php), you have to let transcode analyze the video:
 
 ```shell-session
 $ transcode -J stabilize -i ./MVI_1714.MOV -y null,null -o dummy
@@ -75,7 +75,7 @@ I told you I was disappointed by the results. For example, in the first shot of 
 
 Even in shots where the contrast is in our favor, software stabilization don't always produce nice output. If by chance the tracking points are set on the right objects (those that should be considered motionless), the results may not be pleasing, as it may expose inappropriate skewed perspective, shifting motion-blur and spacial deformation.
 
-While a little bit smarter, [YouTube's embedded stabilization effect](https://youtube-global.blogspot.com/2011/03/lights-camera-edit-new-features-for.html) still suffer from these same short-comings. If it tries to smooth out consecutive transformations better than `vid.stab`, it still fails to produce nice output devoid of unattractive artifacts.
+While a little bit smarter, [YouTube's embedded stabilization effect](https://blog.youtube/news-and-events/lights-camera-edit-new-features-for/) still suffer from these same short-comings. If it tries to smooth out consecutive transformations better than `vid.stab`, it still fails to produce nice output devoid of unattractive artifacts.
 
 Another tool worth trying is [VirtualDub](https://www.virtualdub.org), which you can run under [Wine](https://www.winehq.org) and leverage its [deshaker plugin](https://www.guthspot.se/video/deshaker.htm). But I didn't tested it.
 

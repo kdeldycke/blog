@@ -5,11 +5,11 @@ category: English
 tags: Debian, Linux, nut, Server, Debian Squeeze, udev, UPS, USB, Regular expression
 ---
 
-My home server is protected by an [MGE Ellipse 750 UPS](https://www.mgeops.com/index.php/products__1/230v_products/ups/ellipse_asr) for years. I bought it for several reasons: it's affordable, has good capacity and is Ubuntu certified.
+My home server is protected by an [MGE Ellipse 750 UPS](https://web.archive.org/web/20090226031303/http://www.mgeops.com/index.php/products__1/230v_products/ups/ellipse_asr) for years. I bought it for several reasons: it's affordable, has good capacity and is Ubuntu certified.
 
 I also read back then [rumors](https://blog.mansonthomas.com/2008/10/setting-up-ups-link-with-ubuntu-server.html) implying that Nut's maintainer was employed by MGE. Having a hardware manufacturer employing a fellow open-source hacker has certainly influenced my purchase decision.
 
-MGE is no more and has been [merged with EATON](https://www.eaton.com/Eaton/OurCompany/NewsEvents/NewsReleases/CT_136576). But my UPS is still supported, and the release of Debian Squeeze is a good opportunity to consolidate my knowledge in the form of this tutorial.
+MGE is no more and has been [merged with EATON](https://web.archive.org/web/20111021213431/http://www.eaton.com/Eaton/OurCompany/NewsEvents/NewsReleases/CT_136576). But my UPS is still supported, and the release of Debian Squeeze is a good opportunity to consolidate my knowledge in the form of this tutorial.
 
 So here is how I setup Nut on Debian Squeeze to monitor my UPS.
 

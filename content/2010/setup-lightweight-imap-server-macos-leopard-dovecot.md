@@ -77,7 +77,7 @@ $ dovecot
 That's all!
 
 You can now access your local IMAP server with any client. Here is an example
-with [Thunderbird](https://www.mozillamessaging.com/thunderbird/):
+with [Thunderbird](https://www.thunderbird.net/):
 
 ![Thunderbird server settings for the local account, pointed at localhost on port 143 over STARTTLS with automatic checking switched off](thunderbird-macosx-local-imap-server-config.png)
 

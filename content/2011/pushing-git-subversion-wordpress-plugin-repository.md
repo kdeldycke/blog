@@ -154,7 +154,7 @@ $ git svn init --trunk=trunk --branches=branches --tags=tags https://plugins.svn
 
 Here you might want to do a `git svn fetch` as we did before. But this will take a while. Especially on WordPress plugin repository, as Git will browse all SVN revisions (more than 330.000 currently).
 
-To speed things up, and [following a tip from Nicolas Kuttler](https://www.nkuttler.de/post/using-git-for-wordpress-development/), we'll search for the revision we're interested in (the start of our plugin subfolder life), then fetch from here:
+To speed things up, and [following a tip from Nicolas Kuttler](https://kuttler.eu/en/post/using-git-for-wordpress-development/), we'll search for the revision we're interested in (the start of our plugin subfolder life), then fetch from here:
 
 ```shell-session
 $ svn log --limit 1 https://plugins.svn.wordpress.org/e107-importer
@@ -209,7 +209,7 @@ $ cd ..
 $ rm -rf e107-importer-git
 ```
 
-Now, if we replay the steps above, the `git rebase trunk` command will ends with loads of conflicts. The procedure is different this time and is [explained by Ikke](https://eikke.com/importing-a-git-tree-into-a-subversion-repository/).
+Now, if we replay the steps above, the `git rebase trunk` command will ends with loads of conflicts. The procedure is different this time and is [explained by Ikke](http://eikke.com/importing-a-git-tree-into-a-subversion-repository/).
 
 This involves [Git's graft](https://git.wiki.kernel.org/index.php/GraftPoint):
 

@@ -7,7 +7,7 @@ tags: code, feed, Git, GitHub, GPL, Pylons, Python, ruby, Ruby on Rails, Uperto,
 
 I've just open-sourced the [Feed Tracking Tool project](https://github.com/kdeldycke/feed-tracking-tool) (aka "FTT"), my first (and only) [Ruby on Rails](https://rubyonrails.org/) experience.
 
-This tool was developed within [Uperto](https://uperto.com), the company I currently work for, for its internal needs. The project had an ancestor written in 2006 that was based on [Pylons](https://pylonshq.com). It was a prototype and was barely working. Iterating over the abandoned Python code base was considered a waste of time. So in summer 2007, it was decided to rewrite this application from scratch.
+This tool was developed within [Uperto](https://web.archive.org/web/20110202140419/http://www.uperto.com/), the company I currently work for, for its internal needs. The project had an ancestor written in 2006 that was based on [Pylons](https://pylonshq.com). It was a prototype and was barely working. Iterating over the abandoned Python code base was considered a waste of time. So in summer 2007, it was decided to rewrite this application from scratch.
 
 As my co-worker was available and already played with Ruby on Rails, he was tasked to create the initial code base. I joined the project early on, as it was a great opportunity to play with the (then really trendy) Ruby on Rails framework.
 

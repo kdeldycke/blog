@@ -35,7 +35,7 @@ tags: CLI, echo, kernel, Linux, nohup, shell, system, cron, Regular expression, 
   $ echo $?
   ```
 
-- Run the last command as `root` ([source](https://blog.hardikr.com/post/2337320222/sudo-previous-command)):
+- Run the last command as `root` ([source](https://web.archive.org/web/20101221102958/http://blog.hardikr.com/post/2337320222/sudo-previous-command)):
 
   ```shell-session
   $ sudo !!

@@ -42,12 +42,12 @@ I not only edited this video. I also was in charge of the stage lighting design 
 ![working-on-grand-ma-003](working-on-grand-ma-003.jpg)
 
 It was the first time I had so much gear to work with (mostly
-[Martin Mac-2000](https://www.martin.com/product/product.asp?product=mac2000profile)
-and [Mac-700](https://martin.com/product/product.asp?product=mac700profile)),
+[Martin Mac-2000](https://web.archive.org/web/20130205212036/http://www.martin.com/product/product.asp?product=mac2000profile)
+and [Mac-700](https://web.archive.org/web/20130205212036/http://martin.com/product/product.asp?product=mac700profile)),
 including the full-size version of the
 [Grand-MA v1 lighting console](https://en.audiofanzine.com/automatic-lighting-console/ma-lighting/GrandMA-Fullsize/).
 A week before the show, I played with
-[GrandMA's emulator](https://www.malighting.com/en/products/control/grandma-onpc.html)
+[GrandMA's emulator](https://web.archive.org/web/20120923063902/http://www.malighting.com/en/products/control/grandma-onpc.html)
 to get a glimpse of that desk's philosophy.
 
 ![grandMA onPC visualiser rendering the rig on a black and white chequered stage, blue beams crossed with magenta and red washes](grand-ma-onpc-simulation.png)

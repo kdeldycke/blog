@@ -53,4 +53,4 @@ That's all!
 
 By the way, I think it's possible to perform the second and third step of this how-to in a single operation using `dd` only.
 
-_Update_: I missed it, but this issue is also described in the FAQ from the [unofficial #qemu wiki](https://kidsquid.com/cgi-bin/moin.cgi) (look at "[How do I resize a disk image?](https://kidsquid.com/cgi-bin/moin.cgi/FrequentlyAskedQuestions#head-b46370d3ad030e6c1712338f0e5112228c51212a)" question).
+_Update_: I missed it, but this issue is also described in the FAQ from the [unofficial #qemu wiki](https://web.archive.org/web/20070416033902/http://kidsquid.com/cgi-bin/moin.cgi) (look at "[How do I resize a disk image?](https://web.archive.org/web/20070408221556/http://www.kidsquid.com/cgi-bin/moin.cgi/FrequentlyAskedQuestions#head-b46370d3ad030e6c1712338f0e5112228c51212a)" question).

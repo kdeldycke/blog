@@ -31,7 +31,7 @@ Les partitions à créer sont de type Linux RAID. On pourra éventuellement fair
 
 Nous utiliserons `mdadm` pour la gestion de notre RAID.
 
-_Note_: A partir de la 10.1, la version de `webmin` fournie avec la Mandrake supporte `mdadm`. Pour arriver à nos fins par ce moyen, on pourras s'inspirer d'un [article sur la mise en place d'un RAID via webmin](https://froverio.online.fr/articles.php?lng=fr&pg=55).
+_Note_: A partir de la 10.1, la version de `webmin` fournie avec la Mandrake supporte `mdadm`. Pour arriver à nos fins par ce moyen, on pourras s'inspirer d'un [article sur la mise en place d'un RAID via webmin](https://web.archive.org/web/20050106202748/http://froverio.online.fr/articles.php?lng=fr&pg=55).
 
 Installation de mdadm:
 
@@ -196,8 +196,8 @@ Et enfin, pour le montage automatique au démarrage de notre serveur, il faut aj
 
 ## De la lecture complémentaire sur RAID 5 et LVM
 
-- [Notes on Building a Linux Storage Server, by Martin Smith](https://www.ethics-gradient.net/myth/storage.html)
-- [Gentoo Install on Software RAID mirror and LVM2 on top of RAID](https://gentoo-wiki.com/HOWTO_Gentoo_Install_on_Software_RAID_mirror_and_LVM2_on_top_of_RAID)
+- [Notes on Building a Linux Storage Server, by Martin Smith](https://web.archive.org/web/20050307031125/http://www.ethics-gradient.net/myth/storage.html)
+- [Gentoo Install on Software RAID mirror and LVM2 on top of RAID](https://web.archive.org/web/20050415000057/http://gentoo-wiki.com/HOWTO_Gentoo_Install_on_Software_RAID_mirror_and_LVM2_on_top_of_RAID)
 - [Disks are fun](https://scottstuff.net/blog/articles/2005/01/10/disks-are-fun)
 - [Anatomy of a Drive Failure](https://scottstuff.net/blog/articles/2005/01/08/anatomy-of-a-drive-failure)
-- [Changing RAID Drives Without Losing Data](https://www.digitalmapping.sk.ca/Networks/ExpandingRAID.htm)
+- [Changing RAID Drives Without Losing Data](https://web.archive.org/web/20050308123107/http://www.digitalmapping.sk.ca/Networks/ExpandingRAID.htm)

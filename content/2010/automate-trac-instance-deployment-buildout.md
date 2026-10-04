@@ -7,7 +7,7 @@ tags: buildout, htdigest, md5, Python, Red Hat, sasl, Subversion, trac, yum, Mer
 
 Recently, I started to contribute to [pbp.recipe.trac](https://pypi.python.org/pypi/pbp.recipe.trac), a [Buildout](https://www.buildout.org) recipe aimed to simplify the management and configuration of [Trac](https://trac.edgewall.org) instances.
 
-I've taken interest in [this piece of code](https://bitbucket.org/tarek/atomisator/src/tip/packages/pbp.recipe.trac/) the day I realized the Trac instance we used at work was still running on the old 0.10.x series. Even if we spend the majority of our time there, nobody has taken care of our little Trac: it was not updated for 3 years. If you add to this a sudden need for multi-repository support (as our team is adopting other internal projects), you have enough incentives to upgrade our Trac and automate its maintenance.
+I've taken interest in [this piece of code](https://archive.softwareheritage.org/swh:1:dir:6aa7594b3b6b81e0c5071df589d94b5ae087d73c;origin=https://bitbucket.org/tarek/atomisator;path=/packages/pbp.recipe.trac/) the day I realized the Trac instance we used at work was still running on the old 0.10.x series. Even if we spend the majority of our time there, nobody has taken care of our little Trac: it was not updated for 3 years. If you add to this a sudden need for multi-repository support (as our team is adopting other internal projects), you have enough incentives to upgrade our Trac and automate its maintenance.
 
 So here is how I migrated our legacy Trac 0.10 instance to a brand new 0.12 thanks to Buildout and pbp.recipe.trac.
 
@@ -71,7 +71,7 @@ trac-ini-additional = attachment   | max_size               | 26214400
                       svn          | tags                   | /*/tags/*
 ```
 
-I now encourage you to use my `buildout.cfg` above as a template and customize it to your needs. Please read [pbp.recipe.trac documentation](https://pypi.python.org/pypi/pbp.recipe.trac#detailed-documentation) carefully to set the recipe options to values you like.
+I now encourage you to use my `buildout.cfg` above as a template and customize it to your needs. Please read [pbp.recipe.trac documentation](https://web.archive.org/web/20110612121126/http://pypi.python.org/pypi/pbp.recipe.trac#detailed-documentation) carefully to set the recipe options to values you like.
 
 Before going further, we need a `bootstrap.py` script. This script will take care of all stuff required by a bare Python interpreter to handle a Buildout project from scratch. Let's download the latest version:
 
@@ -79,7 +79,7 @@ Before going further, we need a `bootstrap.py` script. This script will take car
 $ wget https://svn.zope.org/repos/main/zc.buildout/trunk/bootstrap/bootstrap.py
 ```
 
-Now we can initialize our Buildout environment. The `--distribute` option here is necessary to get [something more modern](https://pypi.python.org/pypi/distribute#about-the-fork) than the [abandoned `setuptools`](https://pypi.python.org/pypi/setuptools):
+Now we can initialize our Buildout environment. The `--distribute` option here is necessary to get [something more modern](https://web.archive.org/web/20101212062257/http://pypi.python.org/pypi/distribute/#about-the-fork) than the [abandoned `setuptools`](https://pypi.python.org/pypi/setuptools):
 
 ```shell-session
 $ python ./bootstrap.py --distribute

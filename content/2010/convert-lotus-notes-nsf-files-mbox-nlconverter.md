@@ -5,7 +5,7 @@ category: English
 tags: CLI, email, GUI, Lotus Notes, iCal, mbox, nlconverter, Python, Windows, Windows 2000, Mercurial
 ---
 
-There is a great piece of software called [nlconverter](https://code.google.com/p/nlconverter/). It's a tool designed to convert Lotus Notes' `.nsf` files to `mbox`. It rely on win32's COM/DDE API so it can only be used on Windows.
+There is a great piece of software called [nlconverter](https://github.com/pzia/nlconverter). It's a tool designed to convert Lotus Notes' `.nsf` files to `mbox`. It rely on win32's COM/DDE API so it can only be used on Windows.
 
 If you want to extract mails out of your `.nsf` database, this might be the tool you're looking for. Bonus point: it's written in Python! ;)
 
@@ -39,7 +39,7 @@ Here is how I installed `nlconverter` on a Windows 2000 (SP4) machine:
 
    ![7-Zip window open on the iCalendar source archive next to an Explorer window on Python's site-packages, where the extracted icalendar folder now sits](extract-icalendar-python-package-on-windows.png)
 
-4. Next step is to [download nlconverter](https://code.google.com/p/nlconverter/downloads) itself and extract it:
+4. Next step is to [download nlconverter](https://code.google.com/archive/p/nlconverter/downloads) itself and extract it:
 
    ![7-Zip showing the 13 MB winnlc-alpha-1 archive next to an Explorer window on C:, where the extracted winnlc-alpha-1 folder is highlighted](nlconverter-install-on-windows.png)
 
@@ -47,7 +47,7 @@ Here is how I installed `nlconverter` on a Windows 2000 (SP4) machine:
 
 First thing you have to do is to create an [export of your mails as a `.nsf` database]({filename}/2010/how-to-export-backup-lotus-notes-mails.md). Follow the previous link to get the instructions.
 
-Now let's convert this `nsf` to a `mbox`. [nlconverter's FAQ](https://code.google.com/p/nlconverter/wiki/Faq) tells you to run the `gui.exe` program to perform the conversion.
+Now let's convert this `nsf` to a `mbox`. [nlconverter's FAQ](https://github.com/pzia/nlconverter/blob/master/FAQ) tells you to run the `gui.exe` program to perform the conversion.
 
 Unfortunately it didn't work for me:
 
@@ -57,9 +57,9 @@ So I tried the alternative approach by using the command line.
 
 ## `nlconverter` command line
 
-Again, most of the things I'm writing here are based on [nlconverter's FAQ](https://code.google.com/p/nlconverter/wiki/Faq):
+Again, most of the things I'm writing here are based on [nlconverter's FAQ](https://github.com/pzia/nlconverter/blob/master/FAQ):
 
-1. First, we have to [download the `notes2mbox.py` script](https://nlconverter.googlecode.com/hg/notes2mbox.py) from [nlconverter's mercurial repository](https://code.google.com/p/nlconverter/source/browse/), as this file is not distributed in the `winnlc-alpha-1.zip` archive I unzipped previously. Let's put `notes2mbox.py` in `C:\winnlc-alpha-1\`:
+1. First, we have to [download the `notes2mbox.py` script](https://github.com/pzia/nlconverter/blob/master/notes2mbox.py) from [nlconverter's mercurial repository](https://github.com/pzia/nlconverter), as this file is not distributed in the `winnlc-alpha-1.zip` archive I unzipped previously. Let's put `notes2mbox.py` in `C:\winnlc-alpha-1\`:
 
    ![Firefox on the Google Code page for notes2mbox.py, with a save dialog pointed at the winnlc-alpha-1 folder](download-notes2mbox-python-script.png)
 

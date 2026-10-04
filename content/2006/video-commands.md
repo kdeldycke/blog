@@ -85,7 +85,7 @@ tags: Audio, CLI, divx, dvd, ffmpeg, Kdenlive, Linux, melt, mencoder, mlt, MP4, 
 
 - Concatenate a series of videos and transcode the audio output to a `flac`
   file. This [only works with certain multimedia
-  container](https://ffmpeg.org/faq.html#SEC29) (MPEG-1, MPEG-2 PS, DV):
+  container](https://ffmpeg.org/faq.html#How-can-I-concatenate-video-files_003f) (MPEG-1, MPEG-2 PS, DV):
 
   ```shell-session
   $ cat ./M2U01802.MPG ./M2U01803.MPG ./M2U01804.MPG | ffmpeg -i - -acodec flac ./output.flac

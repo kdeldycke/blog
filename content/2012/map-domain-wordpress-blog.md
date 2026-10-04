@@ -16,4 +16,4 @@ The zone-check error is: [TEST SOA record exists]: answer refused by the server:
 
 This errors is mostly due to the use of a non-US domain.
 
-To fix this `SOA`-related issues, the only extra step required consist in [asking WordPress.com to set a zone record](https://en.support.wordpress.com/domain-mapping/dns-zone-records/) on their servers. After that, you can proceed to the [standard mapping procedure](https://en.support.wordpress.com/domain-mapping/map-existing-domain/#instructions-for-mapping-an-existing-domain).
+To fix this `SOA`-related issues, the only extra step required consist in [asking WordPress.com to set a zone record](https://web.archive.org/web/20120731153846/http://en.support.wordpress.com/domain-mapping/dns-zone-records/) on their servers. After that, you can proceed to the [standard mapping procedure](https://web.archive.org/web/20120726053726/http://en.support.wordpress.com/domain-mapping/map-existing-domain/#instructions-for-mapping-an-existing-domain).

@@ -40,7 +40,7 @@ $ fdisk -l /dev/sdb
 $ fdisk -l /dev/sdc
 ```
 
-"Linux raid partitions" (type code "`fd`") are still there. Good. I assumed here that disks where not physically damaged. Maybe I should have looked at [S.M.A.R.T.](https://en.wikipedia.org/wiki/Self-Monitoring,_Analysis,_and_Reporting_Technology) data and statistics (via [smartmontools](https://smartmontools.sourceforge.net)). But remember, I'm lazy (and a bit crazy).
+"Linux raid partitions" (type code "`fd`") are still there. Good. I assumed here that disks where not physically damaged. Maybe I should have looked at [S.M.A.R.T.](https://en.wikipedia.org/wiki/Self-Monitoring,_Analysis,_and_Reporting_Technology) data and statistics (via [smartmontools](https://www.smartmontools.org/)). But remember, I'm lazy (and a bit crazy).
 
 The next step was to get information about the RAID array itself using:
 
@@ -116,7 +116,7 @@ $ fsck.ext3 -v /dev/md0
 $ mount /dev/md0
 ```
 
-I updated my [mdadm](https://neil.brown.name/blog/mdadm) configuration before rebooting my server:
+I updated my [mdadm](https://web.archive.org/web/20080718190124/http://neil.brown.name/blog/mdadm) configuration before rebooting my server:
 
 ```shell-session
 $ mdadm --detail --scan >> /etc/mdadm/mdadm.conf

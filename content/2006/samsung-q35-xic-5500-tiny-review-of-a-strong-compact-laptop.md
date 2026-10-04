@@ -7,7 +7,7 @@ tags: fdisk, Hardware, laptop, life, MacBook
 
 ![samsung-q35-xic-5500](samsung-q35-xic-5500.jpg)
 
-I'm the happy owner of a brand new [Samsung Q35 XIC-5500 laptop](https://www.samsung.com/fr/products/notebookcomputer/design/serieq/np_q35g001sef.asp?page=Specifications). Here is a review of the machine hardware, not the software.
+I'm the happy owner of a brand new [Samsung Q35 XIC-5500 laptop](https://web.archive.org/web/20061117204022/http://www.samsung.com/fr/products/notebookcomputer/design/serieq/np_q35g001sef.asp). Here is a review of the machine hardware, not the software.
 
 The hard disk of the machine is supposed to be a 120 GB one, and as usual a hidden partition is reserved for windows backups. I deleted this one and reformatted the whole disk. After this operation, fdisk (`fdisk -l /dev/hda`) report me a total usable space of 112.4 GiB. Not bad.
 

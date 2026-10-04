@@ -24,14 +24,14 @@ Hey wait. I wrote this module!
 And here is their final evaluation (0 is the lowest, 5 the highest note) of all
 payroll systems for each ERP (from page 88):
 
-| ERP                                                           | Evaluation  |
-| ------------------------------------------------------------- | ----------- |
-| [TinyERP](https://en.wikipedia.org/wiki/Odoo#Company_history) | ★☆☆☆☆ (1/5) |
-| [OpenBravo](https://en.wikipedia.org/wiki/Openbravo)          | ☆☆☆☆☆ (0/5) |
-| [Neogia](https://sourceforge.net/projects/neogia/)            | ☆☆☆☆☆ (0/5) |
-| [ERP5](https://en.wikipedia.org/wiki/ERP5)                    | ★★★★☆ (4/5) |
-| [Adempiere](https://en.wikipedia.org/wiki/Adempiere)          | ☆☆☆☆☆ (0/5) |
-| [Compiere GPL](https://en.wikipedia.org/wiki/Compiere)        | ☆☆☆☆☆ (0/5) |
+| ERP                                                    | Evaluation  |
+| ------------------------------------------------------ | ----------- |
+| [TinyERP](https://en.wikipedia.org/wiki/Odoo#History)  | ★☆☆☆☆ (1/5) |
+| [OpenBravo](https://en.wikipedia.org/wiki/Openbravo)   | ☆☆☆☆☆ (0/5) |
+| [Neogia](https://sourceforge.net/projects/neogia/)     | ☆☆☆☆☆ (0/5) |
+| [ERP5](https://en.wikipedia.org/wiki/ERP5)             | ★★★★☆ (4/5) |
+| [Adempiere](https://en.wikipedia.org/wiki/Adempiere)   | ☆☆☆☆☆ (0/5) |
+| [Compiere GPL](https://en.wikipedia.org/wiki/Compiere) | ☆☆☆☆☆ (0/5) |
 
 As you can see I not only got the first place: I wiped out the competition.
 
@@ -61,14 +61,14 @@ This document was enough of a reference to be cited in a couple of academic pape
 2006 to 2009:
 
 - [A comparison of Open Source ERP
-  Systems](https://www.big.tuwien.ac.at/app/uploads/2016/10/Herzog_paper.pdf#page=77)
+  Systems](https://web.archive.org/web/20190918123002/https://www.big.tuwien.ac.at/app/uploads/2016/10/Herzog_paper.pdf#page=77)
 
 - [A Research on Corporate ERP Systems used for Supermarket Supply Chain
   Inventory Management in
   Turkey](https://www.slideshare.net/slideshow/embed_code/key/mHgCdv01fE9KsL?startSlide=13)
 
-- [Open Source Enterprise Resource Planning
-  Systems](https://behdasht.gov.ir/uploads/101_195_baresiye%20ERP%20haye%20matn%20baz.pdf)
+- Open Source Enterprise Resource Planning
+  Systems (`https://behdasht.gov.ir/uploads/101_195_baresiye%20ERP%20haye%20matn%20baz.pdf`)
 
 - [Comparatif ERP5 /
   COMPIERE](https://web.archive.org/web/20101010002846/https://wiki.itin.fr/index.php/Comparatif_ERP5_/_COMPIERE_MT09_FR)

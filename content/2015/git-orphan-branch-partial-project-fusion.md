@@ -18,7 +18,7 @@ Git]({filename}/2011/ftt-migration-subversion-git.md), and
 cleaning]({filename}/2011/moving-git-subtree-repository.md).
 
 Should we really keep revisiting the subject again and again? Yes, cause things
-have changed! [Since v1.7.2](https://git-scm.com/docs/git-checkout/1.7.2), Git
+have changed! [Since v1.7.2](https://web.archive.org/web/20150627141623/http://git-scm.com/docs/git-checkout/1.7.2), Git
 supports orphan branches. And we'll now use them to keep unrelated branches
 sharing the same root until their merging point.
 

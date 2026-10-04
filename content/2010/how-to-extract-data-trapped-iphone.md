@@ -61,7 +61,7 @@ example here are voice messages:
 ![Finder column view of the Library folder, its Voicemail subfolder holding two .amr recordings, two plists and voicemail.db](iphone-voicemessages-location.png)
 
 Again, `.amr` files here are playable as-is, like [VLC
-](https://www.videolan.org/vlc/) or [mplayer](https://www.mplayerhq.hu).
+](https://www.videolan.org/vlc/) or [mplayer](https://mplayerhq.hu/).
 
 Most, if not all, other kind of data and metadata are stored in SQLite
 databases (`.db` files). The best GUI I found to manipulate with these files

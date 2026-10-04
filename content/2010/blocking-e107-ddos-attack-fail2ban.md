@@ -26,7 +26,7 @@ why this blog and all Cool Cavemen's websites were dead during half of july.
 Now [everything is back to
 normal](https://twitter.com/kdeldycke/status/19250530728) (I hope), thanks to
 [`fail2ban`](https://www.fail2ban.org). I created a set of rules ([based on this
-article](https://eromang.zataz.com/2010/07/13/byroenet-casper-bot-search-e107-rce-scanner/))
+article](https://web.archive.org/web/20100720043900/http://eromang.zataz.com/2010/07/13/byroenet-casper-bot-search-e107-rce-scanner/))
 to dynamically catch
 [dDOS](https://en.wikipedia.org/wiki/Denial-of-service_attack) attempts and ban
 all IP addresses involved. Here is how I configured `fail2ban`...

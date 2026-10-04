@@ -20,7 +20,7 @@ $ git init
 ```
 
 But after reading
-[some documentation](https://www-cs-students.stanford.edu/~blynn/gitmagic/apa.html#_initial_commit)
+[some documentation](http://www-cs-students.stanford.edu/~blynn/gitmagic/apa.html#_initial_commit)
 and user experiences on the web, it looks like Git has some limitations when
 dealing with the root of a repository history. As I plan to heavily manipulate
 the commit history (to do some kind of

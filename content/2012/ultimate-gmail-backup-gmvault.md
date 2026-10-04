@@ -9,7 +9,7 @@ For several weeks, I started a quest to find the best solution to locally backup
 
 I [tried `offline-imap`]({filename}/2012/backup-gmail-offlineimap.md), but it is bidirectional and can push back to your Gmail account local mistakes. Then I [played with `mbsync`]({filename}/2012/gmail-backup-mbsync.md), but it [doesn't support sub-folders/tags](https://www.mail-archive.com/isync-devel@lists.sourceforge.net/msg00220.html).
 
-I finally found the Holy Grail in [Gmvault](https://gmvault.org/), a recent open-source project especially designed for the task and all its subtleties.
+I finally found the Holy Grail in [Gmvault](https://web.archive.org/web/20120925124651/http://gmvault.org/), a recent open-source project especially designed for the task and all its subtleties.
 
 To install it on Ubuntu, starts by getting [distribute](https://pypi.python.org/pypi/distribute), a Python dependency:
 
@@ -111,7 +111,7 @@ Successfully installed gmvault argparse Logbook IMAPClient gdata
 Cleaning up...
 ```
 
-Now [for authentication, please read the documentation](https://gmvault.org/in_depth.html#authentication). It's quite easy and straightforward.
+Now [for authentication, please read the documentation](https://web.archive.org/web/20121015184634/http://gmvault.org/in_depth.html#authentication). It's quite easy and straightforward.
 
 Finally, to start the backup of your remote Gmail account, just launch:
 

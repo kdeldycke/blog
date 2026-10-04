@@ -5,7 +5,7 @@ category: English
 tags: backend, identity-management, infrastructure, payments, startup, billing, career, interview, management, scaleway, iam
 ---
 
-This interview was [originally published](https://devtomanager.com/interviews/kevin-deldycke/) for the [Developer to Manager](https://devtomanager.com) project, which is collecting experience and advice from engineering managers about their transition from software development.
+This interview was [originally published](https://web.archive.org/web/20200807175758/https://devtomanager.com/interviews/kevin-deldycke/) for the [Developer to Manager](https://web.archive.org/web/20200222191503/https://devtomanager.com/) project, which is collecting experience and advice from engineering managers about their transition from software development.
 
 ---
 
@@ -33,7 +33,7 @@ In 2013 I joined a [brand new R&D team](https://medium.com/scaleway-cloud/thank-
 
 Scaleway’s founding team (I was behind the camera). All engineers & tech leads, no managers.
 
-After a [successful launch](https://techcrunch.com/2014/11/13/online-labs-designed-its-own-arm-servers-to-take-on-aws-digitalocean/) and incremental iterations, we got a huge investment to [scale the whole thing up](https://blog.scaleway.com/2017/scaleway-enters-a-new-growth-phase/) - both the platform itself and the organization around it. We not only had to grow, but also merge with the 20-year old established hosting company we were attached to. It was explosive, but in a good sense; it put new life in our venture.
+After a [successful launch](https://techcrunch.com/2014/11/13/online-labs-designed-its-own-arm-servers-to-take-on-aws-digitalocean/) and incremental iterations, we got a huge investment to [scale the whole thing up](https://web.archive.org/web/20191115002504/https://blog.scaleway.com/2017/scaleway-enters-a-new-growth-phase/) - both the platform itself and the organization around it. We not only had to grow, but also merge with the 20-year old established hosting company we were attached to. It was explosive, but in a good sense; it put new life in our venture.
 
 The original founding group was disbanded and people were spread out in a massive reorganization. It's like the job of the vast majority of employees changed overnight. Everybody was busy structuring the company, planning products and recruiting. There was so much to do. I loved the frenzy.
 

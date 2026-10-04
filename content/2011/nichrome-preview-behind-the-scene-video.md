@@ -30,7 +30,7 @@ audio/video synchronizations and tempo deviations.
 I shot with my Canon EOS 7D (1080p, 23.976 fps, 1/50s shutter speed) and a Tokina 11-16mm f/2.8 wide open. I used this lens over my 8mm f/3.5 Fish-Eye to save the distorting effects of the latter for others projects.
 
 Shades of magenta were produced by 2
-[PAR-56 LED cans](https://www.boutique-electroconcept.com/product_info.php?cPath=39_53&products_id=361)
+PAR-56 LED cans (`https://www.boutique-electroconcept.com/product_info.php?cPath=39_53&products_id=361`)
 (controlled in DMX with [QLC](https://qlc.sourceforge.net/)). I did not initially
 planned to bring them, but they were lying in the trunk of my car and I never
 filmed them, so I took the opportunity. Unfortunately, as you can see in the

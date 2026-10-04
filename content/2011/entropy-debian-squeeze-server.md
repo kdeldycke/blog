@@ -11,7 +11,7 @@ While generating a GPG key on my server, I got the following error:
 Not enough random bytes available. Please do some other work to give the OS a chance to collect more entropy! (Need 283 more bytes)
 ```
 
-That's a [well known issue](https://otrs.menandmice.com/otrs/public.pl?Action=PublicFAQ&ItemID=122) on headless servers. Thanks to a [comment on Hacker News](https://news.ycombinator.com/item?id=2703349), I knew there was a way to fix this thanks to software entropy generator, like the [havege daemon](https://www.issihosts.com/haveged/).
+That's a [well known issue](https://web.archive.org/web/20120420185013/http://otrs.menandmice.com/otrs/public.pl?Action=PublicFAQ&ItemID=122) on headless servers. Thanks to a [comment on Hacker News](https://news.ycombinator.com/item?id=2703349), I knew there was a way to fix this thanks to software entropy generator, like the [havege daemon](https://www.issihosts.com/haveged/).
 
 My server is running Debian Squeeze. Luckily, a [package is available](https://packages.debian.org/squeeze-backports/haveged) in the backport repository. All we have to do is to add the latter in our source list before installing `haveged`:
 

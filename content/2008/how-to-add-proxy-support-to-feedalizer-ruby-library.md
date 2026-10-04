@@ -9,7 +9,7 @@ tags: feed, feedalizer, hpricot, HTTP, parsing, proxy, RSS, Ruby, Ruby on Rails
 
 Here is a little code snippet which
 [monkey-patch](https://en.wikipedia.org/wiki/Monkey_patch)
-[Feedalizer](https://termos.vemod.net/feedalizer) to let it grab web content
+[Feedalizer](https://qerub.se/feedalizer) to let it grab web content
 through a HTTP proxy:
 
 ```ruby
@@ -37,7 +37,7 @@ project, lay in the `environment.rb` file, but I wonder if this is the right
 place and the right way of doing it... Anyway, it works for me! :)
 
 **Update**: A [post from Matthew Higgins' blog that answer my
-question](https://www.strictlyuntyped.com/2008/06/rails-where-to-put-other-files.html)
+question](https://web.archive.org/web/20080716184328/http://www.strictlyuntyped.com/2008/06/rails-where-to-put-other-files.html)
 above has just shown up in my feed aggregator. What's he telling us? That I'm a
 naughty programmer :
 

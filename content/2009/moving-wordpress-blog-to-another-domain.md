@@ -8,7 +8,7 @@ tags: Apache, CLI, find, grep, Hosting, Linux, MySQL, SQL, sed, Server, WordPres
 ![qpx-site-domain-migration](qpx-site-domain-migration.png)
 
 I provide hosting for free to some of my friends. One of them,
-[QPX](https://wqpx.wordpress.com/), had a side project called *Lich'ti*. But
+[QPX](https://web.archive.org/web/20120806035017/http://wqpx.wordpress.com/), had a side project called *Lich'ti*. But
 the latter is no longer active, so he decided to not renew the `lich-ti.fr`
 domain.
 
@@ -22,7 +22,7 @@ original situation at any moment! What works for me will not necessary works
 for you...
 
 To play nice with your visitors, you can
-[setup a temporary maintenance page](https://www.milienzo.com/2007/05/16/how-to-display-a-maintenance-page-whilst-upgrading-wordpress/)
+[setup a temporary maintenance page](https://web.archive.org/web/20090904081616/http://www.milienzo.com/2007/05/16/how-to-display-a-maintenance-page-whilst-upgrading-wordpress/)
 while we're performing the migration.
 
 Let's start the migration by replacing, in the files served by Apache, all

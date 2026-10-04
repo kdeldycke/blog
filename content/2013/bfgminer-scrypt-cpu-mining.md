@@ -6,13 +6,13 @@ tags: scrypt, CPU, Linux, BFGMiner, crypto-currency, Bitcoin, Litecoin, Kubuntu 
 ---
 
 I wanted to try
-[mining](https://en.wikipedia.org/wiki/Bitcoin_miners#Bitcoin_mining) on my
+[mining](https://en.wikipedia.org/wiki/Bitcoin_protocol#Mining) on my
 Kubuntu 13.04. Not to get rich, but simply to verify that the production of
 [crypto-currencies](https://en.wikipedia.org/wiki/Cryptocurrency) really was
 decentralized, and also to learn how-to mine.
 
 I first tried mining [Bitcoin](https://bitcoin.org) with
-[BFGMiner](https://bfgminer.org). I choose the later over
+[BFGMiner](https://web.archive.org/web/20130502101446/http://bfgminer.org/). I choose the later over
 [cgminer](https://github.com/ckolivas/cgminer) because that's the only one I
 found to be readily [available from an Ubuntu
 PPA](https://launchpad.net/~unit3/+archive/bfgminer):

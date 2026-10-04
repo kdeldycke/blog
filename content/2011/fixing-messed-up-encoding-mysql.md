@@ -7,7 +7,7 @@ tags: Character encoding, Databases, e107, Latin-1, MySQL, SQL, PHP, sed, SQL, u
 
 Currently working on my [e107 Importer plugin](https://wordpress.org/extend/plugins/e107-importer/), I was confronted today with badly-encoded data coming from my databases.
 
-e107 migrated to full UTF-8 [years ago](https://e107.org/comment.php?comment.news.735), but I must have messed the upgrade process at the time. That was my conclusion when I took a close look to my tables: all of them seems to be set to Latin-1 but contain UTF-8 data. Here are screenshots from [SQLBuddy](https://www.sqlbuddy.com) (a great light-weight MySQL manager) showing just that:
+e107 migrated to full UTF-8 [years ago](https://e107.org/comment.php?comment.news.735), but I must have messed the upgrade process at the time. That was my conclusion when I took a close look to my tables: all of them seems to be set to Latin-1 but contain UTF-8 data. Here are screenshots from [SQLBuddy](https://web.archive.org/web/20110226231940/http://sqlbuddy.com/) (a great light-weight MySQL manager) showing just that:
 
 ![phpMyAdmin table overview of the e107 database, every table listed with a latin1 charset](e107-latin1-encoded-mysql-tables.png)
 
@@ -53,4 +53,4 @@ And now, accentuated characters appears as they should in our database, meaning 
 
 ![The same forum rows after the fix, the French accents rendering properly again in words like activés and problème](fixed-utf8-data-in-tables.png)
 
-PS: I [found another alternative method](https://en.gentoo-wiki.com/wiki/Convert_latin1_to_UTF-8_in_MySQL#Alternative_Method) (look at the end of the linked page) which consists of temporarily handling `TEXT` fields as `BLOB`, to have MySQL treat them as binary content (thus skipping character transcoding). Haven't tested this but sounds tricky.
+PS: I [found another alternative method](https://web.archive.org/web/20110310114711/http://en.gentoo-wiki.com/wiki/Convert_latin1_to_UTF-8_in_MySQL#Alternative_Method) (look at the end of the linked page) which consists of temporarily handling `TEXT` fields as `BLOB`, to have MySQL treat them as binary content (thus skipping character transcoding). Haven't tested this but sounds tricky.

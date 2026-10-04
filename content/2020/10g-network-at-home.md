@@ -9,7 +9,7 @@ Into my [journey building a NAS for the home office]({filename}/2020/nas-hardwar
 
 ## Internet access
 
-I'm already equipped with a [Freebox Delta Server](https://www.systemplus.fr/wp-content/uploads/2019/08/SP19459_Freebox-Delta-Server_system_plus_consulting_sample.pdf) with 10 Gbps fiber downlink, 600 Mbps uplink. We can plan a multi-step upgrade.
+I'm already equipped with a [Freebox Delta Server](https://web.archive.org/web/20190919011158/https://www.systemplus.fr/wp-content/uploads/2019/08/SP19459_Freebox-Delta-Server_system_plus_consulting_sample.pdf) with 10 Gbps fiber downlink, 600 Mbps uplink. We can plan a multi-step upgrade.
 
 ## NAS
 
@@ -31,12 +31,12 @@ There is plenty of SFP+ modules to choose from. I selected the MikroTik S+RJ10 t
 
 At the end the cabinet was equipped with:
 
-| Part        | Model                                 |  Quantity | Total (excl. shipping) | Notes                                                                                                                                     |
-| ----------- | ------------------------------------- | --------: | ---------------------: | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Switch      | MikroTik CRS305-1G-4S+in              |         1 |                €144.01 | [Limited to 2 RJ45 transceivers, after which it gets too hot](https://wiki.mikrotik.com/wiki/S%2BRJ10_general_guidance#General_Guidance). |
-| Transceiver | MikroTik S+RJ10                       |         1 |                 €66.04 |                                                                                                                                           |
-| Cable       | 10Gtek SFP+ Direct Attach Copper - 1m |         1 |                 €24.99 |                                                                                                                                           |
-|             |                                       | **Total** |            **€235.04** |                                                                                                                                           |
+| Part        | Model                                 |  Quantity | Total (excl. shipping) | Notes                                                                                                                                                                                |
+| ----------- | ------------------------------------- | --------: | ---------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Switch      | MikroTik CRS305-1G-4S+in              |         1 |                €144.01 | [Limited to 2 RJ45 transceivers, after which it gets too hot](https://web.archive.org/web/20200407031522/https://wiki.mikrotik.com/wiki/S%2BRJ10_general_guidance#General_Guidance). |
+| Transceiver | MikroTik S+RJ10                       |         1 |                 €66.04 |                                                                                                                                                                                      |
+| Cable       | 10Gtek SFP+ Direct Attach Copper - 1m |         1 |                 €24.99 |                                                                                                                                                                                      |
+|             |                                       | **Total** |            **€235.04** |                                                                                                                                                                                      |
 
 ## Office switch
 

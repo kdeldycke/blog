@@ -52,7 +52,7 @@ I'm quite surprised downgrades are allowed. 🤔 It seems out of character. Ther
 
 I got lucky and found the previous `20200612` firmware referenced in [`https://ftp.hp.com/pub/networking/software/pfirmware/pfirmware.glf`](https://ftp.hp.com/pub/networking/software/pfirmware/pfirmware.glf).
 
-There you'll get a direct link to the `.rfu` file (Remote Firmware Update):[`http://ftp.hp.com/pub/networking/software/pfirmware/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu`](http://ftp.hp.com/pub/networking/software/pfirmware/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu).
+There you'll get a direct link to the `.rfu` file (Remote Firmware Update):[`https://web.archive.org/web/20201110124329/http://ftp.hp.com/pub/networking/software/pfirmware/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu`](https://web.archive.org/web/20201110124329/http://ftp.hp.com/pub/networking/software/pfirmware/HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu).
 
 And just in case it disappear from its original location, here is [a copy]({attach}HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu).
 
@@ -81,7 +81,7 @@ $ lpr -P HP_Color_LaserJet_M254dw_0 /Users/kde/Downloads/HP_Color_LaserJet_Pro_M
 
 Nothing gets printed to the console.
 
-I don't know what happens here but it seems the `.rfu` file is pushed to the printer's queue, and then gets consumed as any other printable document. See, [the RFU file format is a matryoshka doll](https://www.jsof-tech.com/unpacking-hp-firmware-updates-part-1/) embedding printing commands, encoded data and raw NAND code.
+I don't know what happens here but it seems the `.rfu` file is pushed to the printer's queue, and then gets consumed as any other printable document. See, [the RFU file format is a matryoshka doll](https://web.archive.org/web/20201110153012/https://www.jsof-tech.com/unpacking-hp-firmware-updates-part-1/) embedding printing commands, encoded data and raw NAND code.
 
 After a minute or two, the printers reboots and upgrades itself:
 

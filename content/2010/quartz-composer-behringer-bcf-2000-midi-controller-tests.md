@@ -21,4 +21,4 @@ Here is the video, which I edited with [Kdenlive](https://www.kdenlive.org):
 
 https://www.youtube.com/watch?v=I8JN40Vq_do
 
-The audio is sourced from [Jamendo](https://jamendo.com). It's the track [One Year](https://jamendo.com/track/556566) written by [Paolo Lunardi](https://jamendo.com/artist/Paolo_Lunardi) for his album [Essential](https://jamendo.com/album/64689), and released under a [Creative Common BY-SA v3.0 license](https://creativecommons.org/licenses/by-sa/3.0/) (thus making my video subject to the same license).
+The audio is sourced from [Jamendo](https://jamendo.com). It's the track [One Year](https://web.archive.org/web/20111215214618/http://www.jamendo.com/en/track/556566) written by [Paolo Lunardi](https://web.archive.org/web/20100831043155/http://www.jamendo.com/en/artist/Paolo_Lunardi) for his album [Essential](https://web.archive.org/web/20110113150924/http://www.jamendo.com/en/album/64689), and released under a [Creative Common BY-SA v3.0 license](https://creativecommons.org/licenses/by-sa/3.0/) (thus making my video subject to the same license).

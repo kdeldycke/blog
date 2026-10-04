@@ -76,7 +76,7 @@ Now we have to configure our HTTP server to make the administration interface
 available from the web. If Apache is the recommended server to use with
 Mailman, Nginx is already running on my machine, so let's use it instead.
 
-First, as [explained on Nginx wiki](https://wiki.nginx.org/Fcgiwrap) we need to
+First, as [explained on Nginx wiki](https://web.archive.org/web/20110901213605/http://wiki.nginx.org/Fcgiwrap) we need to
 install `fcgiwrap`:
 
 ```shell-session
@@ -128,7 +128,7 @@ server {
 ```
 
 The configuration above is a mix between [the one available on Nginx
-wiki](https://wiki.nginx.org/Mailman) and the
+wiki](https://web.archive.org/web/20111018112949/http://wiki.nginx.org/Mailman) and the
 `/usr/share/doc/fcgiwrap/examples/nginx.conf` example file that come with the
 Debian package.
 

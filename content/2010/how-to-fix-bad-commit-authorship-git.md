@@ -39,7 +39,7 @@ The commit I want to change is the latest in history, so I'll use the `--amend` 
 $ git commit --amend --author 'Kevin Deldycke <kevin@deldycke.com>'
 ```
 
-After this, here is how the local branches looks like in [gitg](https://trac.novowork.com/gitg/):
+After this, here is how the local branches looks like in [gitg](https://web.archive.org/web/20100219234841/http://trac.novowork.com/gitg/):
 
 ![gitg after the amend, master pointing at a commit authored by Kevin Deldycke while origin/HEAD and origin/master still sit on the identical commit credited to kevin](amended-git-commit-in-gitg.png)
 

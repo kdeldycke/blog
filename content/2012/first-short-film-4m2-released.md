@@ -5,9 +5,7 @@ Category: Front Page
 tags: Canon EOS 7D, cinematography, film, narrative, short, short film, Video, youtube
 ---
 
-_4m²_, the first narrative short film I work on, was just made [available on YouTube](https://www.youtube.com/watch?v=91y6L3QKiRk). I wasn't expecting a public release that fast (and this makes a really pleasant surprise), so I had no time to prepare a more detailed article. I'll try to write one soon, but in the mean time, enjoy the final result of a great teamwork:
-
-https://www.youtube.com/watch?v=91y6L3QKiRk
+_4m²_, the first narrative short film I work on, was just made available on YouTube. I wasn't expecting a public release that fast (and this makes a really pleasant surprise), so I had no time to prepare a more detailed article. I'll try to write one soon, but in the mean time, enjoy the final result of a great teamwork:
 
 And here are the official stills of the short:
 

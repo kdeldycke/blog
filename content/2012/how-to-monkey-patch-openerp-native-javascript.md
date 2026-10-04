@@ -9,7 +9,7 @@ Here is a classic editable list in [OpenERP v6.0](https://www.openerp.com/node/6
 
 ![OpenERP editable list of items with columns for product template, size, main colour, product and quantity, the existing rows blacked out](editable-list.png)
 
-It's a custom view I created this month [at work](https://www.smile.fr/Solutions/ERP) for one of our customer to let him select a list of products, then batch-print their labels on stickers.
+It's a custom view I created this month [at work](https://web.archive.org/web/20120218101822/http://www.smile.fr/Solutions/ERP) for one of our customer to let him select a list of products, then batch-print their labels on stickers.
 
 The view above is produced by the following XML:
 
@@ -67,9 +67,9 @@ As you can see, these kind of pop-up inherits the width of their parent field, w
 
 Now I want to get rid of this behavior and let the pop-up menu take all the necessary width it needs to fully display its content.
 
-My instinct told me that this default style could easily be overridden with some static CSS directives. But digging deeper into [OpenERP web client code](https://bazaar.launchpad.net/~openerp/openobject-client-web/6.0/files), I realized that the width is dynamically set by the `many2one` widget itself.
+My instinct told me that this default style could easily be overridden with some static CSS directives. But digging deeper into [OpenERP web client code](https://archive.softwareheritage.org/browse/origin/directory/?origin_url=https://code.launchpad.net/~openerp/openobject-client-web/6.0), I realized that the width is dynamically set by the `many2one` widget itself.
 
-The code responsible for this behavior is located in the [`addons/openerp/static/javascript/m2o.js`](https://bazaar.launchpad.net/~openerp/openobject-client-web/6.0/view/head:/addons/openerp/static/javascript/m2o.js) file, in the [`ManyToOne.prototype.on_keydown`](https://bazaar.launchpad.net/~openerp/openobject-client-web/6.0/view/head:/addons/openerp/static/javascript/m2o.js#L267) method:
+The code responsible for this behavior is located in the [`addons/openerp/static/javascript/m2o.js`](https://archive.softwareheritage.org/swh:1:cnt:154bbae157c9fc30435f0d4addca123b513246f7;origin=https://code.launchpad.net/~openerp/openobject-client-web/6.0;path=/addons/openerp/static/javascript/m2o.js) file, in the [`ManyToOne.prototype.on_keydown`](https://archive.softwareheritage.org/swh:1:cnt:154bbae157c9fc30435f0d4addca123b513246f7;origin=https://code.launchpad.net/~openerp/openobject-client-web/6.0;path=/addons/openerp/static/javascript/m2o.js;lines=271) method:
 
 ```javascript
 ManyToOne.prototype.on_keydown = function(evt) {

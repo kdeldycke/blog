@@ -9,7 +9,7 @@ Last year I published two articles on hacking OpenERP 6.0 user interface, one to
 
 Both methods are based on an injection of inline JavaScript code via XML view definition. In OpenERP 6.1, as [highlighted by Timothy](https://kevin.deldycke.com/2012/how-to-monkey-patch-openerp-native-javascript/#comment-769313088) you can no longer leverage this dirty trick: JavaScript is stripped out of the XML stream.
 
-But I found new ways of hacking OpenERP's web client in 6.1. Following these discoveries, I've created a the [experimental `web_smile_hide_buttons` addon](https://github.com/Smile-SA/smile_openerp_addons_6.1/tree/master/web_smile_hide_buttons/) to hide the hard-coded `create` and `duplicate` buttons on `form` views.
+But I found new ways of hacking OpenERP's web client in 6.1. Following these discoveries, I've created a the experimental `web_smile_hide_buttons` addon (`https://github.com/Smile-SA/smile_openerp_addons_6.1/tree/master/web_smile_hide_buttons/`) to hide the hard-coded `create` and `duplicate` buttons on `form` views.
 
 This module is not generic: it just demonstrate how to distribute dirty patches to the web client. It currently:
 
@@ -18,7 +18,7 @@ This module is not generic: it just demonstrate how to distribute dirty patches 
 - Hide `create` and `duplicate` button on all read-only `form` views,
 - Only apply these transformations to a configurable subset of models.
 
-The core of the module lies in the [`/static/src/js/custom.js`](https://github.com/Smile-SA/smile_openerp_addons_6.1/blob/master/web_smile_hide_buttons/static/src/js/custom.js) file. Here is an excerpt of that file, which sums-up my hacks:
+The core of the module lies in the `/static/src/js/custom.js` (`https://github.com/Smile-SA/smile_openerp_addons_6.1/blob/master/web_smile_hide_buttons/static/src/js/custom.js`) file. Here is an excerpt of that file, which sums-up my hacks:
 
 ```javascript
 openerp.web_smile_hide_buttons = function(openerp) {
@@ -69,6 +69,6 @@ openerp.web_smile_hide_buttons = function(openerp) {
 };
 ```
 
-As you can see in the [full version of the code above](https://github.com/Smile-SA/smile_openerp_addons_6.1/blob/master/web_smile_hide_buttons/static/src/js/custom.js), I tried to hide `create` entries of `many2one` context menus, but failed to.
+As you can see in the full version of the code above (`https://github.com/Smile-SA/smile_openerp_addons_6.1/blob/master/web_smile_hide_buttons/static/src/js/custom.js`), I tried to hide `create` entries of `many2one` context menus, but failed to.
 
 And to make the module really complete, I still have to find a way to hide `create` & `modify` entries of `many2one` drop-down menus. If you have some working code that's doing this, feel free to send me a pull request on GitHub.

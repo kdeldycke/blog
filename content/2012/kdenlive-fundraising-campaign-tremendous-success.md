@@ -9,7 +9,7 @@ Two months ago [I made a donation to Kdenlive
 ]({filename}/2012/200-dollars-kdenlive-contribution.md)
 fundraising campaign and I just found out that I'm the biggest contributor. And
 like other \$100+ contributors, I was offered a place to write a [testimonial
-](https://kdenlive.org/fundraising-campaign-2012):
+](https://web.archive.org/web/20120618015325/http://www.kdenlive.org/fundraising-campaign-2012):
 
 ![Donor list under a green 100 dollars and more heading, the top entry a 200 dollar pledge praising Kdenlive as the most stable video editor on Linux](kdenlive-testimonial.png)
 

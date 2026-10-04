@@ -5,7 +5,7 @@ category: English
 tags: HTML, javascript, jquery, OpenERP, smile, ERP
 ---
 
-OpenERP 6.1's web client comes with a cleaner JavaScript framework which [features some hook mechanism](https://planet.domsense.com/en/2012/01/openerp-new-web-client-6-1-javascript-hooks/) to simplify customization. In the mean time, I still have to work on older OpenERP 6.0 for customers who haven't migrated yet. So let me present you a tiny collection of ugly (but working) JavaScript hacks I use to customize some aspects of the user interface.
+OpenERP 6.1's web client comes with a cleaner JavaScript framework which [features some hook mechanism](https://web.archive.org/web/20120210124531/http://planet.domsense.com/en/2012/01/openerp-new-web-client-6-1-javascript-hooks/) to simplify customization. In the mean time, I still have to work on older OpenERP 6.0 for customers who haven't migrated yet. So let me present you a tiny collection of ugly (but working) JavaScript hacks I use to customize some aspects of the user interface.
 
 First, you have to learn how to inject JavaScript code in the web client. My method is described in details in an article on [how-to monkey-patch OpenERP’s native JavaScript]({filename}/2012/how-to-monkey-patch-openerp-native-javascript.md). Please read the later to understand how my hacks are supposed to work.
 
@@ -70,4 +70,4 @@ And if you want to hide all action buttons but the "Save and Edit" one, the Java
 $(".wrapper.action-buttons li a:not([onclick*='save_and_edit'])").hide();
 ```
 
-For the last set of hacks, there is a better way to act on each action button's visibility. You can use the [smile_buttons_access](https://github.com/Smile-SA/smile_openerp_addons_6.0/tree/master/smile_buttons_access) module which was created by my co-workers from [Smile](https://smile.fr). This web add-on will by default make the "create", "edit" and "delete" buttons sensible to the "create", "write" and "unlink" rights of the current user. But this module will let you pass some variables in the context to hide each one of these buttons independently.
+For the last set of hacks, there is a better way to act on each action button's visibility. You can use the smile_buttons_access (`https://github.com/Smile-SA/smile_openerp_addons_6.0/tree/master/smile_buttons_access`) module which was created by my co-workers from [Smile](https://smile.fr). This web add-on will by default make the "create", "edit" and "delete" buttons sensible to the "create", "write" and "unlink" rights of the current user. But this module will let you pass some variables in the context to hide each one of these buttons independently.

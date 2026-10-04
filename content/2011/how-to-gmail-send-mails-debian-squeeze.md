@@ -5,7 +5,7 @@ category: English
 tags: Debian, Exim, Gmail, Google Apps, Linux, email, Server, Debian Squeeze, RSA
 ---
 
-Here is quick guide on how I configured Exim 4 to let a Debian Squeeze server send mails through a GMail account. This article is just a rip-off of [a tutorial I found on the web](https://www.manu-j.com/blog/wordpress-exim4-ubuntu-gmail-smtp/75/), which is itself an updated version of [a Debian's Wiki page](https://wiki.debian.org/GmailAndExim4).
+Here is quick guide on how I configured Exim 4 to let a Debian Squeeze server send mails through a GMail account. This article is just a rip-off of [a tutorial I found on the web](https://www.manu-j.com/blog/wordpress-exim4-ubuntu-gmail-smtp/75/), which is itself an updated version of [a Debian's Wiki page](https://web.archive.org/web/20110504193123/http://wiki.debian.org/GmailAndExim4).
 
 Debian come with Exim (v4.72) pre-installed: it's the default MTA on this distribution. There is absolutely no need to install extra packages. Let's start right away by calling Exim's configuration wizard:
 

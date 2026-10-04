@@ -37,4 +37,4 @@ Here are some screenshots of the resulting 3D desktop:
 
 ![opengl-software-and-3d-desktop-flicker-bug.jpg](opengl-software-and-3d-desktop-flicker-bug.jpg)
 
-As you can see there is still some bugs but I had to test many software to find one which had problems with the 3D desktop. Except [Celestia](https://www.shatters.net/celestia), everything was working as usual. Beside this, I just had to redefine some shortcuts in [Compiz](https://compiz.org) (to match the default KDE shortcuts) and I was feeling at home! :)
+As you can see there is still some bugs but I had to test many software to find one which had problems with the 3D desktop. Except [Celestia](https://celestiaproject.space/), everything was working as usual. Beside this, I just had to redefine some shortcuts in [Compiz](https://web.archive.org/web/20061112131958/http://www.compiz.org/) (to match the default KDE shortcuts) and I was feeling at home! :)

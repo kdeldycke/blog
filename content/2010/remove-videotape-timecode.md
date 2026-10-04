@@ -21,7 +21,7 @@ See? No? Here is an upscaled version:
 Yes, that's it: there is white dots on top of each frame.
 
 I discovered that these dots represents a [binary timecode
-](https://documentation.apple.com/en/finalcutpro/usermanual/chapter_D_section_7.html#apple_ref:doc:uid:TempBookID-ReplacedWhenAssociatingWithMessierRevision-44035FRT-1001444)
+](https://web.archive.org/web/20111011013953/http://documentation.apple.com/en/finalcutpro/usermanual/chapter_D_section_7.html#apple_ref:doc:uid:TempBookID-ReplacedWhenAssociatingWithMessierRevision-44035FRT-1001444)
 called the [Vertical Interval TimeCode, or VITC
 ](https://en.wikipedia.org/wiki/Vertical_interval_timecode). In the old days of
 analog video, some timecodes were directly embedded in video or audio signals.

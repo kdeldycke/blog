@@ -145,7 +145,7 @@ $ ln -s /usr/share/munin/plugins/mysql_queries     /etc/munin/plugins/
 $ ln -s /usr/share/munin/plugins/mysql_bytes       /etc/munin/plugins/
 ```
 
-I also use some other Munin plugins coming from [Munin exchange](https://exchange.munin-monitoring.org):
+I also use some other Munin plugins coming from [Munin exchange](https://web.archive.org/web/20110727101750/http://exchange.munin-monitoring.org/):
 
 ```shell-session
 $ wget https://exchange.munin-monitoring.org/plugins/mysql_size_all/version/1/download --output-document=/usr/share/munin/plugins/mysql_size_all

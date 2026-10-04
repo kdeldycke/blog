@@ -23,14 +23,14 @@ simple: Mac OS X Leopard ships with Python 2.5, but Plone 3 requires
 Python 2.4.
 
 To get Python 2.4 on your machine, you can [install it from its source code
-](https://kb.ucla.edu/articles/installing-plone-v32-on-mac-os-x-105). But this
+](https://web.archive.org/web/20090906153003/http://kb.ucla.edu/articles/installing-plone-v32-on-mac-os-x-105). But this
 is too much work for me. There should be a way to do it easier and faster...
 And there is.
 
 Browsing the net, I found the [repository of the "fat python" project
-](https://pythonmac.org/packages/py24-fat/), were you can find a [universal
+](http://pythonmac.org/packages/py24-fat/), were you can find a [universal
 binary installer for Mac OS X Panther
-](https://pythonmac.org/packages/py24-fat/dmg/python-2.4.4-macosx2006-10-18.dmg).
+](http://pythonmac.org/packages/py24-fat/dmg/python-2.4.4-macosx2006-10-18.dmg).
 I've just installed it on my brand new Mac OS X 10.5.7 and it seems to works
 perfectly:
 
@@ -42,7 +42,7 @@ Now that the most annoying part (to me) is done, we can install Plone via
 
 Before going further, you need to have a machine that is able to compile code,
 which mean [Apple's developer tools
-](https://developer.apple.com/technology/tools.html) must be installed locally.
+](https://web.archive.org/web/20090706144654/http://developer.apple.com/technology/tools.html) must be installed locally.
 These software are available for free on the second DVD that ships with every
 Mac OS X copy.
 

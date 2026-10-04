@@ -27,7 +27,7 @@ tags: ascii, Computer programming, date, dateutil, development, distutils, encod
 
 ## Sorting
 
-- Sort a list of dicts by dict-key ([source](https://code.pui.ch/2007/07/23/python-sort-a-list-of-dicts-by-dict-key/)):
+- Sort a list of dicts by dict-key ([source](https://web.archive.org/web/20110112083454/http://code.pui.ch/2007/07/23/python-sort-a-list-of-dicts-by-dict-key/)):
 
   ```python
   import operator
@@ -39,7 +39,7 @@ tags: ascii, Computer programming, date, dateutil, development, distutils, encod
 
 ## Date & Time
 
-I recommend using [`Arrow`](https://crsmithdev.com/arrow/). But if you can't, here are some pure-python snippets.
+I recommend using [`Arrow`](https://arrow.readthedocs.io/). But if you can't, here are some pure-python snippets.
 
 - Add a month to the current date:
 
@@ -52,7 +52,7 @@ I recommend using [`Arrow`](https://crsmithdev.com/arrow/). But if you can't, he
 
 ## Network
 
-- Set `urllib2` timeout ([source](https://www.voidspace.org.uk/python/articles/urllib2.shtml)):
+- Set `urllib2` timeout ([source](https://web.archive.org/web/20110714030854/http://www.voidspace.org.uk/python/articles/urllib2.shtml)):
 
   ```python
   import socket
@@ -113,11 +113,11 @@ I recommend using [`Arrow`](https://crsmithdev.com/arrow/). But if you can't, he
 
 I maintain a set of default configuration files in my [`dotfiles` repository](https://github.com/kdeldycke/dotfiles):
 
-- PDB: [`~/.pdbrc`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.pdbrc)
-- Pip: [`~/.pip/pip.conf`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.pip/pip.conf)
-- PyPI: [`~/.pypirc`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.pypirc)
-- Pycodestyle: [`~/.config/pycodestyle`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.config/pycodestyle)
-- PyLint: [`~/.pylintrc`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.pylintrc)
+- PDB: [`~/.pdbrc`](https://github.com/kdeldycke/dotfiles/blob/41c9715bf5abd665e7cd91887e61977a78a36e5d/dotfiles/.pdbrc)
+- Pip: [`~/.pip/pip.conf`](https://github.com/kdeldycke/dotfiles/blob/main/dotfiles/.config/pip/pip.conf)
+- PyPI: [`~/.pypirc`](https://github.com/kdeldycke/dotfiles/blob/8826b7f59d70940d5a3bb86a18a5a420cb465e33/dotfiles/.pypirc)
+- Pycodestyle: [`~/.config/pycodestyle`](https://github.com/kdeldycke/dotfiles/blob/41c9715bf5abd665e7cd91887e61977a78a36e5d/dotfiles/.config/pycodestyle)
+- PyLint: [`~/.pylintrc`](https://github.com/kdeldycke/dotfiles/blob/41c9715bf5abd665e7cd91887e61977a78a36e5d/dotfiles/.pylintrc)
 
 ## Package Management
 

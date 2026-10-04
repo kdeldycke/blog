@@ -17,7 +17,7 @@ $ lspci
 (...)
 ```
 
-[After some googling](https://slforums.typo3-factory.net/lofiversion/index.php/t63508.html) and tests, I've designed the perfect `xorg.conf` for this configuration:
+After some googling (`https://slforums.typo3-factory.net/lofiversion/index.php/t63508.html`) and tests, I've designed the perfect `xorg.conf` for this configuration:
 
 ```text
 # **********************************************************************
@@ -111,7 +111,7 @@ What I've learned so far during these experiments:
 
 - With DRI, [virtual screen can't be greater than 2048x2048](https://www.thinkwiki.org/wiki/Xorg_RandR_1.2#the_Virtual_screen) for Intel 945 (or less) chips. This explain why my screens are one above the other instead of side-by-side.
 
-- [XRandR](https://www.x.org/wiki/Projects/XRandR) and its friend [KRandRTray](https://www.novell.com/coolsolutions/trench/16034.html) make screen positioning user-friendly...
+- [XRandR](https://www.x.org/wiki/Projects/XRandR) and its friend [KRandRTray](https://web.archive.org/web/20080516102259/http://www.novell.com/coolsolutions/trench/16034.html) make screen positioning user-friendly...
 
 - ...until you play with the `xrandr`'s "`--off`" option! After I manually called it, this parameter disabled all my screens, forever, and at each boot. I've randomly deleted xorg-related files, but I still didn't know how I solved this mess. If you have a better understanding of how `xrandr` store its configuration, please let me know!
 

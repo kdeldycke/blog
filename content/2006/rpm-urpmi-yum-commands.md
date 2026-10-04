@@ -94,7 +94,7 @@ tags: Archive formats, CLI, cpio, genhdlist, Linux, Mandriva, Red Hat, RPM, urpm
   $ genhdlist ./
   ```
 
-- [APT/URPMI commands list](https://linux.ensimag.fr/urpmiapt.html)
+- [APT/URPMI commands list](https://web.archive.org/web/20061201162311/http://linux.ensimag.fr/urpmiapt.html)
 
 ## Yum
 
@@ -128,7 +128,7 @@ tags: Archive formats, CLI, cpio, genhdlist, Linux, Mandriva, Red Hat, RPM, urpm
   $ yum clean all
   ```
 
-- Generate [Yum](https://yum.baseurl.org) repository index and metadata of the current folder:
+- Generate [Yum](http://yum.baseurl.org/) repository index and metadata of the current folder:
 
   ```shell-session
   $ createrepo -v ./

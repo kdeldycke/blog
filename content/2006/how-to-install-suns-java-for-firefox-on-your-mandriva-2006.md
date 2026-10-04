@@ -9,7 +9,7 @@ One week ago I succeed to install the Sun's Java Runtime Environment (JRE) on my
 
 So, here is how I achieve this:
 
-1. [Download the last JRE](https://jdl.sun.com/webapps/download/AutoDL?BundleId=10335) (v1.5.0-06 at that time) from [Sun official website](https://java.com/download).
+1. Download the last JRE (`https://jdl.sun.com/webapps/download/AutoDL?BundleId=10335`) (v1.5.0-06 at that time) from [Sun official website](https://java.com/download).
 
 2. As root, launch:
 

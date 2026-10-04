@@ -5,7 +5,7 @@ category: English
 tags: Canon EOS 7D, concert, gig, Happy Farm Fest, Le Duc, live, sigma, Video, YouTube
 ---
 
-Here is an unedited video of [Le Duc](https://www.facebook.com/group.php?gid=20312134675), a band I shot last week at [Happy Farm Fest 2010](https://happyfarmfest.com) with my Canon 7D and a Sigma 30mm f/1.4 EX DC HSM wide open:
+Here is an unedited video of [Le Duc](https://www.facebook.com/group.php?gid=20312134675), a band I shot last week at [Happy Farm Fest 2010](https://web.archive.org/web/20100605233135/http://happyfarmfest.com/2010/) with my Canon 7D and a Sigma 30mm f/1.4 EX DC HSM wide open:
 
 https://www.youtube.com/watch?v=mrHZ4Wh9sCY
 

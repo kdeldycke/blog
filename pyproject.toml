@@ -411,6 +411,10 @@ exclude = [
   "^https://www\\.reddit\\.com/",
   "^https://www\\.videohelp\\.com/",
   "^https://www\\.winehq\\.org/",
+  # chiark answers a crawler in ten seconds or more, then drops the TLS handshake of the
+  # requests that follow, so the one link to it times out in about one CI run in seven.
+  # The link stays live for readers rather than archived. Anchored, like the block above.
+  "^https://www\\.chiark\\.greenend\\.org\\.uk/",
   # Cloudflare dashboard deep links, which pre-fill a token form in docs/infrastructure.md.
   # They only resolve inside a logged-in session.
   "^https://dash\\.cloudflare\\.com/",

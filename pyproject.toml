@@ -302,7 +302,9 @@ overrides = [
 # them to be imported from: pytest only puts the test file's own folder on sys.path, and
 # from tests/ that no longer covers the root. Needed for the `pytest` console script CI
 # runs, which unlike `python -m pytest` does not prepend the working directory.
-ini_options.pythonpath = [ "." ]
+# scripts/ is listed too, so a test imports a script under the top-level module name
+# mypy gives it: `from scripts import ...` makes mypy see the file under two names.
+ini_options.pythonpath = [ ".", "scripts" ]
 # https://docs.pytest.org/en/latest/customize.html#pyproject-toml
 # `--numprocesses=auto` splits the run across cores. It pays off because the suite is
 # mostly live HTTP against production, so workers spend their time waiting rather than

@@ -166,6 +166,30 @@ def redact(record: dict) -> str:
     return f"`{key}=` … `sha256:{digest}`"
 
 
+def table(header: tuple[str, ...], rows: list[tuple[str, ...]]) -> list[str]:
+    """Lay a table out the way `mdformat` does.
+
+    The `format-markdown` job formats `docs/dns.md` after this script writes it. A table
+    written any other way is rewritten by that job, then rewritten back by the next
+    snapshot. `mdformat` pads each column to its widest cell, and counts the three dashes
+    of the delimiter row as a cell.
+
+    Width is counted in characters. That holds while every cell is ASCII, plus the `…`
+    that `redact` writes, which `mdformat` also counts as one column.
+    """
+    widths = [
+        max(3, *(len(row[column]) for row in (header, *rows)))
+        for column in range(len(header))
+    ]
+
+    def line(cells: tuple[str, ...]) -> str:
+        padded = (cell.ljust(width) for cell, width in zip(cells, widths))
+        return f"| {' | '.join(padded)} |"
+
+    delimiter = tuple("-" * width for width in widths)
+    return [line(header), line(delimiter), *(line(row) for row in rows)]
+
+
 def render(zones: list[tuple[dict, list[dict]]], scope: str) -> str:
     if scope == "blog":
         lines = [
@@ -207,9 +231,8 @@ def render(zones: list[tuple[dict, list[dict]]], scope: str) -> str:
             "",
             f"{len(records)} records, zone status `{zone['status']}`.",
             "",
-            "| Type | Name | Content | Proxied | TTL |",
-            "| --- | --- | --- | --- | --- |",
         ]
+        rows: list[tuple[str, ...]] = []
         for record in sorted(records, key=lambda r: (r["type"], r["name"])):
             ttl = "auto" if record.get("ttl") == 1 else str(record.get("ttl", ""))
             priority = record.get("priority")
@@ -218,10 +241,14 @@ def render(zones: list[tuple[dict, list[dict]]], scope: str) -> str:
             )
             if priority is not None:
                 content = f"({priority}) {content}"
-            lines.append(
-                f"| {record['type']} | `{record['name']}` | {content} "
-                f"| {'yes' if record.get('proxied') else 'no'} | {ttl} |"
-            )
+            rows.append((
+                record["type"],
+                f"`{record['name']}`",
+                content,
+                "yes" if record.get("proxied") else "no",
+                ttl,
+            ))
+        lines += table(("Type", "Name", "Content", "Proxied", "TTL"), rows)
         lines.append("")
     return "\n".join(lines)
 

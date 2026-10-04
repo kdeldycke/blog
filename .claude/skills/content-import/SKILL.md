@@ -63,7 +63,7 @@ The blog absorbs content from services it stops using. Each import follows the c
   - The owner's own files live on as tags of his GitHub repositories (`kdeldycke/e107-importer` holds every release).
   - Code from a closed forge may survive on Software Heritage, which archived Bitbucket's Mercurial repositories.
 - Else, link a Wayback Machine capture close to the item's date.
-- Else, keep the address readable as inert code: a bare URL as `` `http://…` ``, a named link as `text (`http://…`)`. When the link text is itself the address, the inert form keeps that text as written.
+- Else, keep the address readable as inert code: a bare URL as `` `http://…` ``, a named link as `` text (`http://…`) ``. When the link text is itself the address, the inert form keeps that text as written.
 - Keep a dead link that documents a past procedure ("the new link to the form is…") as it was, rather than pointing it at today's equivalent.
 - Show text alone, without the address, for false links (a file name a service turned into a link) and affiliate links with no replacement.
 - Remove file-sharing links (Dropbox, Google Drive, send.vis.ee). Drop an item that has nothing left once they are gone, and the replies that only ask for the removed file.

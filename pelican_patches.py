@@ -103,6 +103,53 @@ def absolutize_relative_images(instance: Content) -> None:
     instance._content = IMG_SRC.sub(rewrite, content)
 
 
+# The href of an <a>, captured in the same three pieces as IMG_SRC above.
+A_HREF = re.compile(r"""(<a\b[^>]*?\bhref=["'])([^"']+)(["'])""", re.IGNORECASE)
+
+
+def unescape_link_ampersands(instance: Content) -> None:
+    """Strip the second layer of escaping myst-parser leaves on the ``&`` of a link.
+
+    myst-parser stores the target of a Markdown link already HTML-escaped, and the
+    docutils writer escapes it again on the way out. A link to
+    ``?kind=pear&colour=green`` therefore reaches the page as
+    ``?kind=pear&amp;amp;colour=green``, which a browser decodes to
+    ``?kind=pear&amp;colour=green``: the server gets a parameter named ``amp;colour``
+    and never sees the one the author wrote.
+
+    Only ``&`` comes out doubled, because markdown-it percent-encodes the other
+    characters ``escapeHtml`` knows before the target gets that far. And only a link
+    written in Markdown does: an ``<a>`` typed by hand in a post, an image and the
+    archived comments are escaped once, so they hold no ``&amp;amp;`` for this to match.
+
+    Runs on ``content_object_init`` for the reason given in
+    ``absolutize_relative_images``, but on pages as well as articles: a target reads the
+    same wherever the document is written.
+
+    myst-parser 5.1.0 stores the target raw
+    ([executablebooks/MyST-Parser#1126](https://github.com/executablebooks/MyST-Parser/pull/1126)),
+    and this hook then matches nothing. pelican-myst-reader 1.4.0 requires
+    ``myst-parser<5.0.0``, which keeps that release out of reach.
+
+    ```{todo}
+    Delete this hook, its tests and their canary once pelican-myst-reader ships a
+    release that requires ``myst-parser>=5.1``. Its ``main`` branch does since
+    [ashwinvis/myst-reader#49](https://github.com/ashwinvis/myst-reader/pull/49).
+    ``test_myst_parser_escapes_link_targets_once`` fails the day that parser is
+    installed.
+    ```
+    """
+    content = getattr(instance, "_content", None)
+    if not content:
+        return
+
+    def rewrite(match: re.Match[str]) -> str:
+        prefix, url, suffix = match.groups()
+        return prefix + url.replace("&amp;amp;", "&amp;") + suffix
+
+    instance._content = A_HREF.sub(rewrite, content)
+
+
 # A canonical link already present in the document, whoever wrote it.
 CANONICAL_LINK = re.compile(r"""<link\b[^>]*\brel=["']canonical["']""", re.IGNORECASE)
 
@@ -380,6 +427,7 @@ def register() -> None:
     cached in ``sys.modules``, so a second call reconnects the same function objects.
     """
     signals.content_object_init.connect(absolutize_relative_images)
+    signals.content_object_init.connect(unescape_link_ampersands)
     signals.content_written.connect(canonicalize_listings)
     signals.article_generator_finalized.connect(attach_comments)
 

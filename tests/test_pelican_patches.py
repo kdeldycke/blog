@@ -27,6 +27,7 @@ from __future__ import annotations
 import re
 
 import pytest
+from myst_parser.parsers.docutils_ import to_html5_demo
 from pelican.contents import Article, Page
 from pelican.settings import DEFAULT_CONFIG
 
@@ -160,11 +161,19 @@ def test_article_without_source_path_is_safe():
     assert article._content == '<img src="photo.jpg"/>'
 
 
-def test_hook_is_registered():
-    """Guards the import side effect in pelicanconf.py, which is what installs the hook.
+@pytest.mark.parametrize(
+    "hook",
+    (
+        pelican_patches.absolutize_relative_images,
+        pelican_patches.unescape_link_ampersands,
+    ),
+)
+def test_hook_is_registered(hook):
+    """Guards the import side effect in pelicanconf.py, which is what installs the hooks.
 
-    Nothing else in the build references this function by name, so a lost import would
-    otherwise only show up as silently broken images in the feeds.
+    Nothing else in the build references these functions by name, so a lost import would
+    otherwise only show up as silently broken images in the feeds, or as links that lose
+    their parameters.
     """
     from pelican import signals
 
@@ -172,7 +181,126 @@ def test_hook_is_registered():
     resolved = {
         r() if callable(r) and not hasattr(r, "__name__") else r for r in receivers
     }
-    assert pelican_patches.absolutize_relative_images in resolved
+    assert hook in resolved
+
+
+# A link the way myst-parser and the docutils writer lay it out.
+LINK = '<a class="reference external" href="{}">pears</a>'
+
+
+@pytest.mark.parametrize(
+    ("href", "expected"),
+    (
+        # What a Markdown link comes out as: every & of its target escaped twice.
+        (
+            "https://example.com/fruit?kind=pear&amp;amp;colour=green",
+            "https://example.com/fruit?kind=pear&amp;colour=green",
+        ),
+        (
+            "https://example.com/fruit?kind=pear&amp;amp;colour=green&amp;amp;ripe=1",
+            "https://example.com/fruit?kind=pear&amp;colour=green&amp;ripe=1",
+        ),
+        # A parameter named like the entity loses one layer as well, and keeps its name.
+        (
+            "https://example.com/fruit?kind=pear&amp;amp;amp=1",
+            "https://example.com/fruit?kind=pear&amp;amp=1",
+        ),
+        # Escaped once, the way a hand-written <a> is, or with nothing to escape: left
+        # exactly as it was.
+        (
+            "https://example.com/fruit?kind=fig&amp;colour=brown",
+            "https://example.com/fruit?kind=fig&amp;colour=brown",
+        ),
+        ("https://example.com/fruit", "https://example.com/fruit"),
+        ("{filename}/2004/other.md#ripe", "{filename}/2004/other.md#ripe"),
+    ),
+)
+def test_link_target_unescaping(href, expected):
+    assert build(LINK.format(href))._content == LINK.format(expected)
+
+
+@pytest.mark.parametrize(
+    ("markup", "expected"),
+    (
+        # Quoting style, attribute order and every other attribute have to come out
+        # untouched, a doubled entity in a title included: only the target is the
+        # patch's business.
+        (
+            "<a href='https://example.com/fruit?kind=pear&amp;amp;colour=green'>x</a>",
+            "<a href='https://example.com/fruit?kind=pear&amp;colour=green'>x</a>",
+        ),
+        (
+            '<a title="pears &amp;amp; figs" href="/fruit?kind=pear&amp;amp;ripe=1">x</a>',
+            '<a title="pears &amp;amp; figs" href="/fruit?kind=pear&amp;ripe=1">x</a>',
+        ),
+        (
+            '<A HREF="https://example.com/fruit?kind=pear&amp;amp;colour=green">x</A>',
+            '<A HREF="https://example.com/fruit?kind=pear&amp;colour=green">x</A>',
+        ),
+        # Several links in one document, mixing forms.
+        (
+            (
+                '<a href="/fruit?kind=pear&amp;amp;ripe=1">x</a><p>y</p>'
+                '<a href="/fruit?kind=fig&amp;ripe=0">z</a>'
+            ),
+            (
+                '<a href="/fruit?kind=pear&amp;ripe=1">x</a><p>y</p>'
+                '<a href="/fruit?kind=fig&amp;ripe=0">z</a>'
+            ),
+        ),
+    ),
+)
+def test_markup_around_link_target_is_preserved(markup, expected):
+    assert build(markup)._content == expected
+
+
+@pytest.mark.parametrize(
+    "markup",
+    (
+        # A doubled entity shown to the reader on purpose, in prose or in a code sample.
+        "<p>Escaped twice, an ampersand reads &amp;amp;.</p>",
+        '<pre>&lt;a href="/fruit?kind=pear&amp;amp;ripe=1"&gt;</pre>',
+        # myst-parser escapes an image source once, so a doubled entity there is the
+        # author's own.
+        '<img src="https://example.com/pear.png?w=10&amp;amp;h=20"/>',
+    ),
+)
+def test_doubled_entities_outside_link_targets_are_untouched(markup):
+    assert build(markup)._content == markup
+
+
+def test_link_unescaping_is_idempotent():
+    """A second pass must be a no-op, since the first one left single entities."""
+    article = build(LINK.format("/fruit?kind=pear&amp;amp;colour=green"))
+    once = article._content
+    pelican_patches.unescape_link_ampersands(article)
+    assert article._content == once
+
+
+def test_pages_get_their_link_targets_unescaped_too():
+    """Unlike an image path, a link target reads the same wherever the page lands."""
+    page = build(
+        LINK.format("/fruit?kind=pear&amp;amp;colour=green"),
+        cls=Page,
+        source_path=f"{CONTENT_ROOT}/pages/p.md",
+    )
+    assert page._content == LINK.format("/fruit?kind=pear&amp;colour=green")
+
+
+@pytest.mark.xfail(
+    reason=(
+        "myst-parser escapes a link target that the docutils writer escapes again, "
+        "until 5.1.0. Once this passes, delete unescape_link_ampersands()."
+    )
+)
+def test_myst_parser_escapes_link_targets_once():
+    """Tells the day the workaround has graduated upstream and can go.
+
+    Renders a link through the installed myst-parser, with no patch involved, and expects
+    what a fixed release produces. ``xfail_strict`` turns the first pass into a failure.
+    """
+    html = to_html5_demo("[pears](https://example.com/fruit?kind=pear&colour=green)")
+    assert 'href="https://example.com/fruit?kind=pear&amp;colour=green"' in html
 
 
 LISTING = "<html><head><title>Tag: Python</title></head><body>x</body></html>"

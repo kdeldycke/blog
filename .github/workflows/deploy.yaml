@@ -43,33 +43,6 @@ env:
 
 jobs:
 
-  # Cloudflare holds settings that no file in this repository can express: the
-  # compatibility date, Smart Placement, the build image floor. They are invisible
-  # until they misbehave, and the project spent years with a `wrangler.toml`
-  # compatibility date three years out of step with the live one without anyone
-  # noticing. This job fails the run when the live project stops matching what
-  # docs/infrastructure.md declares. It is deliberately a separate job: drifted
-  # settings should be loud, but they should never hold up publishing an article.
-  config-drift:
-    name: Check Cloudflare config drift
-    # Same image as the deploy job below, where the reasoning sits.
-    runs-on: ubuntu-26.04
-    # Two Cloudflare API calls and a TOML parse. A minute is already luxurious; 10
-    # covers an API that is answering slowly rather than not at all.
-    timeout-minutes: 10
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      # Standard library only, so no uv sync and no dependency cooldown to honour.
-      # Needs Python 3.11 or later for tomllib; ubuntu-26.04 ships 3.14.
-      - name: Compare live project against declared state
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: >
-          python3 scripts/cloudflare_config.py --check
-
   deploy:
     name: Deploy to Cloudflare Pages
     # x64 because it was measured, not assumed. arm64 ran this same job green on
@@ -106,7 +79,6 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: read
-      deployments: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0

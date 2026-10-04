@@ -91,7 +91,9 @@ dependencies = [
   # "gensim ~= 4.3.0",  # XXX Broken!
 ]
 optional-dependencies.test = [
-  "pytest>=8.3.2",
+  # 9.0 is the first release to read the native `[tool.pytest]` keys below. An older one
+  # ignores them, so `pythonpath` stays unset and the tests cannot import `pelican_patches`.
+  "pytest>=9",
   # More pytest plugins at: https://docs.pytest.org/en/latest/reference/plugin_list.html
   "pytest-github-actions-annotate-failures>=0.2",
   "pytest-randomly>=3.15",
@@ -297,14 +299,6 @@ overrides = [
 ]
 
 [tool.pytest]
-# The tests import pelicanconf and pelican_patches, which sit at the repository root.
-# This project is not a package (see [tool.uv] below), so there is nothing installed for
-# them to be imported from: pytest only puts the test file's own folder on sys.path, and
-# from tests/ that no longer covers the root. Needed for the `pytest` console script CI
-# runs, which unlike `python -m pytest` does not prepend the working directory.
-# scripts/ is listed too, so a test imports a script under the top-level module name
-# mypy gives it: `from scripts import ...` makes mypy see the file under two names.
-ini_options.pythonpath = [ ".", "scripts" ]
 # https://docs.pytest.org/en/latest/customize.html#pyproject-toml
 # `--numprocesses=auto` splits the run across cores. It pays off because the suite is
 # mostly live HTTP against production, so workers spend their time waiting rather than
@@ -316,17 +310,29 @@ ini_options.pythonpath = [ ".", "scripts" ]
 # random state at collection time, so every worker invented different URLs. `token()`
 # in `test_redirects.py` seeds off the rule instead. Keep it that way, or this flag
 # turns every run into "Different tests were collected between gw0 and gw1".
-ini_options.addopts = [ "--durations=10", "--numprocesses=auto" ]
+addopts = [ "--durations=10", "--numprocesses=auto" ]
+# The tests import pelicanconf and pelican_patches, which sit at the repository root.
+# This project is not a package (see [tool.uv] below), so there is nothing installed for
+# them to be imported from: pytest only puts the test file's own folder on sys.path, and
+# from tests/ that no longer covers the root. Needed for the `pytest` console script CI
+# runs, which unlike `python -m pytest` does not prepend the working directory.
+# scripts/ is listed too, so a test imports a script under the top-level module name
+# mypy gives it: `from scripts import ...` makes mypy see the file under two names.
+pythonpath = [ ".", "scripts" ]
+# Collect from tests/ only. Without this key pytest walks the whole repository, content/
+# and output/ included, to find test files.
+testpaths = [ "tests" ]
 # Make sure tests that are expected to fail do not resurect and start working all of a sudden.
-ini_options.xfail_strict = true
+xfail_strict = true
 
 [tool.lychee]
 # Since v0.24 lychee reads this table straight out of pyproject.toml, so repomatic runs no
-# translation step and performs no merge: whatever is written here is the whole policy, and
-# declaring the table at all is what discards repomatic/data/lychee.toml. The bundled
-# entries are therefore restated below rather than inherited, verbatim and in their bundled
-# order. Only the first entry, `twitter\.com` and the entries after `githubstatus\.com` are
-# specific to this repo, as is everything outside `exclude`.
+# translation step and merges nothing at run time: whatever is written here is the whole
+# policy. repomatic/data/lychee.toml is no fallback either. `repomatic init lychee` writes
+# that template into this table, and nothing applies it when the table is absent. The
+# bundled entries are therefore restated below rather than inherited, verbatim and in their
+# bundled order. Only the first entry, `twitter\.com` and the entries after
+# `githubstatus\.com` are specific to this repo, as is everything outside `exclude`.
 # A 429 says the server is up and throttling the crawl, not that the page is gone, so it
 # passes: Blogger, Google Groups and Noctua answer every run with it. Setting the key
 # replaces lychee's default list, which is restated first.
@@ -438,7 +444,7 @@ seo_report.html
 
 # The virtualenv template gitignore.io emits above ignores `[Ss]cripts`, aimed at a
 # venv's Windows `Scripts/` folder. It also swallows this repo's own `scripts/`, so
-# `scripts/cloudflare_config.py` silently refuses to be added. Re-included here, which
+# a new file there silently refuses to be added. Re-included here, which
 # only works because extra-content is appended after the generated rules.
 !scripts/
 """

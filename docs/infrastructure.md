@@ -1,6 +1,6 @@
 # Infrastructure
 
-Everything needed to rebuild this site's hosting from nothing, and the reasoning behind each deviation from a stock setup. The repository is the source of truth: if something here disagrees with the Cloudflare dashboard, run `scripts/cloudflare_config.py --check` and reconcile deliberately rather than editing this file to match reality.
+Everything needed to rebuild this site's hosting from nothing, and the reasoning behind each deviation from a stock setup. The repository is the source of truth: if something here disagrees with the Cloudflare dashboard, run `repomatic cloudflare-pages --check` and reconcile deliberately rather than editing this file to match reality.
 
 No account, zone or project identifier is recorded here. This repository is public, and those identifiers are resolved at runtime from the credential instead. Find them with `wrangler whoami` or in any dashboard URL.
 
@@ -63,19 +63,21 @@ The same audit caught the build publishing an artefact of its own: webassets dro
 
 The project has no repository attached, and must not gain one. Its `source` reads `null`, which is what keeps Cloudflare out of the build path entirely: the only thing that ever reaches the edge is the tree uploaded in step 4.
 
-Attaching one reintroduces a second, competing publisher for the same project, and Cloudflare has no build configuration here that would produce a usable site. `scripts/cloudflare_config.py --check` fails when `source` stops being null, which is the guard against it coming back by accident.
+Attaching one reintroduces a second, competing publisher for the same project, and Cloudflare has no build configuration here that would produce a usable site. `repomatic cloudflare-pages --check` fails when `source` stops being null, which is the guard against it coming back by accident.
 
 ## Defaults versus what this project sets
 
-`scripts/cloudflare_config.py` is the executable version of this table. Run it rather than trusting the table:
+`repomatic cloudflare-pages` is the executable version of this table. Run it rather than trusting the table:
 
 ```bash
-python scripts/cloudflare_config.py --check # diff live against declared, exit 1 on drift
-python scripts/cloudflare_config.py --apply # write the declared values back
-python scripts/cloudflare_config.py --dump  # full live state, secrets redacted
+uvx repomatic cloudflare-pages --check # diff live against declared, exit 1 on drift
+uvx repomatic cloudflare-pages --apply # write the declared values back
+uvx repomatic cloudflare-pages --dump  # full live state, secrets redacted
 ```
 
-The Docs workflow runs the same comparison with `repomatic cloudflare-pages --check`, in its `cloudflare-config-drift` job. The `site.*` keys in `pyproject.toml` declare the values it checks. That job reads `CLOUDFLARE_API_TOKEN` alone and derives the account from it. repomatic measured on 2026-08-16 that an account-owned token scoped to Pages Edit lists its own account through `GET /accounts`. The 403 hint in `scripts/cloudflare_config.py` says the opposite, and this repository's token has not been tried against that call yet: the job's first run settles it.
+The `site.*` keys in `pyproject.toml` declare the values it checks. It reads `CLOUDFLARE_API_TOKEN`, and falls back to the OAuth token of a local `wrangler login`. The Docs workflow runs `--check` in its `cloudflare-config-drift` job, with `CLOUDFLARE_API_TOKEN` alone: the command derives the account from the token. repomatic measured on 2026-08-16 that an account-owned token scoped to Pages Edit lists its own account through `GET /accounts`. This repository's token confirmed it on 2026-10-02, when that job compared all five settings and reported no drift.
+
+That command replaced `scripts/cloudflare_config.py` and the `config-drift` job of `deploy.yaml`, which did the same work with `CLOUDFLARE_ACCOUNT_ID` beside the token. The script stated that a minimum-scope Pages token cannot enumerate accounts. The measurement above shows the opposite.
 
 | Setting                                          | Stock default           | Here         | Why                                                                                                                                                                    |
 | ------------------------------------------------ | ----------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -85,7 +87,7 @@ The Docs workflow runs the same comparison with `repomatic cloudflare-pages --ch
 | `source`                                         | a `github` source block | `null`       | Direct Upload only. A source block here would make Cloudflare a second publisher for the same project, with no build configuration capable of producing a usable site. |
 | `build_config.build_command`                     | empty                   | empty        | Cloudflare never builds this project. A value appearing here means someone reconnected Git.                                                                            |
 
-The "stock default" column is honest about its own confidence: the script tags each entry as `documented` or `inferred, unverified`. Only the build image row is quoted from Cloudflare's documentation. The rest are inferred from product behaviour and should be confirmed against a freshly created project before anyone relies on them.
+The "stock default" column is honest about its own confidence: the command tags each entry as `documented` or `inferred, unverified`. Only the build image row is quoted from Cloudflare's documentation. The rest are inferred from product behaviour and should be confirmed against a freshly created project before anyone relies on them.
 
 `wrangler.toml` is **not** part of this. Its `compatibility_date` said `2023-03-01` for years while the live value was `2026-06-16`, and nothing noticed, because Cloudflare reads the server-side `deployment_configs` and the file only matters to a build that never runs. `pages_build_output_dir` and `compatibility_date` stay in the file because wrangler requires both for a Pages config: dropping either downgrades it to local-development-only.
 
@@ -169,7 +171,7 @@ If the Cloudflare project is deleted or the account is lost:
 
 1. Create a Pages project named `kevin-deldycke-blog`. Choose **Direct Upload**, not a Git connection, for the reasons under [no source repository](#no-source-repository).
 2. Create the API token and set both repository secrets as above.
-3. Run `python scripts/cloudflare_config.py --apply` to write the compatibility date, Smart Placement and build image floor.
+3. Run `repomatic cloudflare-pages --apply` to write the compatibility date, Smart Placement and build image floor.
 4. Push to `main`, or run the workflow manually, to produce the first deployment.
 5. Attach `kevin.deldycke.com` as a custom domain, then recreate its DNS record from [`dns.md`](dns.md), in the `deldycke.com` zone.
 6. Re-enable Cloudflare Web Analytics. The token is regenerated per project and is not recoverable from this repository.
@@ -225,7 +227,7 @@ This could not have been done in `content/extra/_redirects`. That file is served
 
 #### The rule is readable over the API after all
 
-An edge rule of this kind can be snapshotted and reconciled the way `scripts/cloudflare_config.py` handles the Pages project, and an account-owned token is enough. Measured on 2026-08-15, against the sibling `mpm.run` zone rather than this one, with a token carrying `Zone → Read` and `Dynamic URL Redirects → Edit`:
+An edge rule of this kind can be snapshotted and reconciled the way `repomatic cloudflare-pages` handles the Pages project, and an account-owned token is enough. Measured on 2026-08-15, against the sibling `mpm.run` zone rather than this one, with a token carrying `Zone → Read` and `Dynamic URL Redirects → Edit`:
 
 | Call                                                           | Result                                                    |
 | -------------------------------------------------------------- | --------------------------------------------------------- |
@@ -239,7 +241,7 @@ The last row is the trap, and it is about the endpoint rather than the token: `/
 
 This does not contradict [what is recorded below](#known-gaps) about Page Rules: that is the **legacy** `/zones/{id}/pagerules` endpoint, and nothing here re-tested it. Single Redirects live in the newer `rulesets` API, which is what these calls exercise.
 
-Reconciling this rule from the repository is therefore possible and not yet done. It would need a `Dynamic URL Redirects → Read` token in the same short-TTL, delete-after-use shape as the DNS snapshot one, and the same `--check`/`--apply`/`--dump` verbs `cloudflare_config.py` already offers.
+Reconciling this rule from the repository is therefore possible and not yet done. It would need a `Dynamic URL Redirects → Read` token in the same short-TTL, delete-after-use shape as the DNS snapshot one, and the same `--check`/`--apply`/`--dump` verbs `repomatic cloudflare-pages` already offers.
 
 Two things stay unrecoverable from this repository alone: the Web Analytics token, which is regenerated per project, and the TXT record values, which are fingerprinted here by design. Everything else in a rebuild is reproducible from what is committed.
 
@@ -272,13 +274,13 @@ Things known to be wrong or unfinished, as opposed to the gaps below which are l
 - **The apex still carries eight dead CloudFront records.** Replacing them is described under [what the snapshot turned up](#what-the-snapshot-turned-up). Add the discard record before deleting the rest, or the apex goes dark in between.
 - **`www.deldycke.com` returns 403**, along with every other subdomain the wildcard covers. Needs either a second Pages custom domain or an edge redirect.
 - **The reordered `content/extra/_redirects` and the `.patch`/`.xcf` header rules await deployment.** Until the next deploy ships them, `tests/test_redirects.py` fails on the 35 cases covering the previously-dead rules and `tests/test_headers.py` on the two new content types; all flip green once live. A push touching `content/**` triggers `tests.yaml` and `deploy.yaml` in parallel, so a test run racing the deploy may fail once and pass on rerun; this is inherent to testing edge files against production.
-- **Two drift checks run side by side.** Once the Docs workflow's `cloudflare-config-drift` job has run green, delete `scripts/cloudflare_config.py`, the `config-drift` job in `deploy.yaml`, and the `CLOUDFLARE_ACCOUNT_ID` secret if the deploy step no longer needs it. Then point this page's commands at `repomatic cloudflare-pages`.
+- **The `Publish` step of `deploy.yaml` still passes `CLOUDFLARE_ACCOUNT_ID` to wrangler.** The Pages deploy job of repomatic's Docs workflow runs `wrangler pages deploy` with the token alone. Nobody tried that with this repository's token. If a deploy passes without the variable, delete the secret and its paragraph under [the deploy token](#the-deploy-token).
 
 ## Known gaps
 
 - The stock-default column is mostly inferred, as noted above. Confirming it means creating a throwaway Pages project and diffing its config against this one.
-- `dns.md` is a snapshot, not a reconciler. Nothing detects DNS drift automatically the way `cloudflare_config.py --check` does for the Pages project, because that would mean a DNS-scoped token living in CI. Regenerating after any DNS change is manual.
-- `scripts/cloudflare_config.py` reconciles the Pages project only. Zones, DNS, Web Analytics and zone-level rules are untouched by it.
+- `dns.md` is a snapshot, not a reconciler. Nothing detects DNS drift automatically the way the `cloudflare-config-drift` job does for the Pages project, because that would mean a DNS-scoped token living in CI. Regenerating after any DNS change is manual.
+- `repomatic cloudflare-pages --check` compares the Pages project only. Zones, DNS, Web Analytics and zone-level rules stay outside its diff.
 - Zone-level settings (SSL mode, minimum TLS version, always-use-HTTPS, cache rules) are not captured anywhere. They are unlikely to matter for a static site on Cloudflare defaults, but they are not verified to be on defaults either.
 - The rule producing the apex redirect is recorded here by hand, and nothing reconciles it. It is no longer dashboard-only: [the rulesets API reads and writes it with an account-owned token](#the-rule-is-readable-over-the-api-after-all), so the gap is now the missing script rather than a missing capability. The legacy Page Rules endpoint is a separate thing and still refuses those tokens as far as anyone here has tested.
 
@@ -286,4 +288,4 @@ Things known to be wrong or unfinished, as opposed to the gaps below which are l
 
 This file is the account's memory, not a snapshot of one afternoon. Anything learned about the hosting that is not already derivable from the repository belongs here, including the negative results: a permission that turned out not to exist, an endpoint that refuses a token type, a setting that looked alarming and was not. Those are the findings most likely to be rediscovered the expensive way.
 
-Record what was checked and how, not just the conclusion, so a later reader can tell a verified fact from a plausible assumption. The `documented` versus `inferred, unverified` tagging in `scripts/cloudflare_config.py` exists for the same reason.
+Record what was checked and how, not just the conclusion, so a later reader can tell a verified fact from a plausible assumption. The `documented` versus `inferred, unverified` tagging in the output of `repomatic cloudflare-pages` exists for the same reason.

@@ -78,10 +78,10 @@ The site is rendered by GitHub Actions and uploaded to Cloudflare Pages as a fin
 Cloudflare keeps settings that no file here can express. To check the live project still matches what the repository declares:
 
 ```shell-session
-$ python scripts/cloudflare_config.py --check
+$ uvx repomatic cloudflare-pages --check
 ```
 
-The same check runs on every deploy and monthly on a schedule.
+The Docs workflow runs the same check on pushes to `main`, and monthly on a schedule.
 
 ## Theme development
 
@@ -157,8 +157,7 @@ Now if you need to work both on the content and the theme you need to:
 
 ## Dependencies
 
-```mermaid docs/assets/dependencies.mmd
-```
+[`docs/assets/dependencies.mmd`](docs/assets/dependencies.mmd) holds the dependency graph of the project. GitHub renders it as a diagram.
 
 ## License
 

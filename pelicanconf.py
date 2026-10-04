@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import plumage
 
 # Imported for its side effect: the module connects this repo's local workarounds to
-# Pelican's signals on import. See CLAUDE.md for why they are not loaded via PLUGINS.
+# Pelican's signals on import. See claude.md for why they are not loaded via PLUGINS.
 import pelican_patches  # noqa: F401
 
 SITEURL = "http://localhost:8000"
@@ -84,7 +84,7 @@ MYST_FORCE_SPHINX = True
 
 # Plugins are deliberately not listed. Pelican auto-discovers everything in the
 # pelican.plugins namespace for as long as PLUGINS is left unset, and naming even one
-# there switches that off, silently dropping the rest. See CLAUDE.md.
+# there switches that off, silently dropping the rest. See claude.md.
 
 # Allow MyST syntax in content metadata:
 # https://github.com/ashwinvis/myst-reader/tree/main#specifying-file-metadata

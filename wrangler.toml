@@ -8,7 +8,9 @@
 # The date below is kept equal to the live `deployment_configs.*.compatibility_date`
 # that Cloudflare actually honours, so the repository states one value rather than
 # two. It sat at 2023-03-01 for years while the live value moved on, and nothing
-# caught it: `scripts/cloudflare_config.py --check` is what catches it now.
+# caught it. Two checks catch it now: `lint-repo` compares the date below with
+# `[tool.repomatic] site.cloudflare-compatibility-date`, and `repomatic
+# cloudflare-pages --check` compares that key with the live value.
 name = "kevin-deldycke-blog"
 pages_build_output_dir = "output"
 compatibility_date = "2026-06-16"

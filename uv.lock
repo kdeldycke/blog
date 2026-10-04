@@ -100,7 +100,7 @@ requires-dist = [
     { name = "pelican-sitemap", specifier = ">=1.1" },
     { name = "plumage", specifier = ">=5" },
     { name = "pygments", specifier = ">=2.20" },
-    { name = "pytest", marker = "extra == 'test'", specifier = ">=8.3.2" },
+    { name = "pytest", marker = "extra == 'test'", specifier = ">=9" },
     { name = "pytest-github-actions-annotate-failures", marker = "extra == 'test'", specifier = ">=0.2" },
     { name = "pytest-randomly", marker = "extra == 'test'", specifier = ">=3.15" },
     { name = "pytest-xdist", extras = ["psutil"], marker = "extra == 'test'", specifier = ">=3.7" },

@@ -2,7 +2,7 @@
 
 Fixes are collected here rather than pushed straight to Plumage or Pelican, so each one
 gets exercised against the whole corpus before being proposed to whichever project it
-belongs to. See ``CLAUDE.md`` for the policy.
+belongs to. See ``claude.md`` for the policy.
 
 The hooks install themselves on import: ``pelicanconf.py`` imports this module, and
 Pelican reads its settings before it reads any content. Registering through the

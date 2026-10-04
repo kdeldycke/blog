@@ -1,157 +1,290 @@
-flowchart TD
-    classDef missing stroke-dasharray: 5
-    alabaster["alabaster\n0.7.16"]
-    anyio["anyio\n4.3.0"]
-    babel["Babel\n2.14.0"]
-    beautifulsoup4["beautifulsoup4\n4.12.3"]
-    blinker["blinker\n1.7.0"]
-    certifi["certifi\n2024.2.2"]
-    charset-normalizer["charset-normalizer\n3.3.2"]
-    closure["closure\n20191111"]
-    cssmin["cssmin\n0.2.0"]
-    cssselect["cssselect\n1.2.0"]
-    docutils["docutils\n0.20.1"]
-    feedgenerator["feedgenerator\n2.1.0"]
-    idna["idna\n3.7"]
-    imagesize["imagesize\n1.4.1"]
-    jinja2["Jinja2\n3.1.3"]
-    latexcodec["latexcodec\n3.0.0"]
-    libsass["libsass\n0.22.0"]
-    lxml["lxml\n5.2.1"]
-    markdown-it-py["markdown-it-py\n3.0.0"]
-    markdown-word-count["markdown-word-count\n0.0.1"]
-    markdown["Markdown\n3.6"]
-    markupsafe["MarkupSafe\n2.1.5"]
-    mdit-py-plugins["mdit-py-plugins\n0.4.0"]
-    mdurl["mdurl\n0.1.2"]
-    mdx-video["mdx_video\n0.2.0"]
-    myst-parser["myst-parser\n2.0.0"]
-    ordered-set["ordered-set\n4.1.0"]
-    packaging["packaging\n24.0"]
-    pelican-image-process["pelican-image-process\n3.0.4"]
-    pelican-myst-reader["pelican-myst-reader\n1.3.0b1"]
-    pelican-neighbors["pelican-neighbors\n1.2.0"]
-    pelican-search["pelican-search\n1.1.0"]
-    pelican-seo["pelican-seo\n1.2.2"]
-    pelican-sitemap["pelican-sitemap\n1.1.0"]
-    pelican-webassets["pelican-webassets\n2.0.0"]
-    pelican["pelican\n4.9.1"]
-    pillow["pillow\n10.3.0"]
-    pip["pip\n24.0"]
-    plumage["plumage\n4.0.0"]
-    pybtex-docutils["pybtex-docutils\n1.0.3"]
-    pybtex["pybtex\n0.24.0"]
-    pygments["Pygments\n2.17.2"]
-    pynpm["pynpm\n0.2.0"]
-    pyquery["pyquery\n2.0.0"]
-    python-dateutil["python-dateutil\n2.9.0.post0"]
-    pytz["pytz\n2024.1"]
-    pyyaml["PyYAML\n6.0.1"]
-    requests["requests\n2.31.0"]
-    rich["rich\n13.7.1"]
-    rtoml["rtoml\n0.9.0"]
-    six["six\n1.16.0"]
-    smartypants["smartypants\n2.0.1"]
-    sniffio["sniffio\n1.3.1"]
-    snowballstemmer["snowballstemmer\n2.2.0"]
-    soupsieve["soupsieve\n2.5"]
-    sphinx["Sphinx\n7.2.6"]
-    sphinxcontrib-applehelp["sphinxcontrib-applehelp\n1.0.8"]
-    sphinxcontrib-bibtex["sphinxcontrib-bibtex\n2.5.0"]
-    sphinxcontrib-devhelp["sphinxcontrib-devhelp\n1.0.6"]
-    sphinxcontrib-htmlhelp["sphinxcontrib-htmlhelp\n2.0.5"]
-    sphinxcontrib-jsmath["sphinxcontrib-jsmath\n1.0.1"]
-    sphinxcontrib-qthelp["sphinxcontrib-qthelp\n1.0.7"]
-    sphinxcontrib-serializinghtml["sphinxcontrib-serializinghtml\n1.1.10"]
-    typogrify["typogrify\n2.0.7"]
-    unidecode["Unidecode\n1.3.8"]
-    urllib3["urllib3\n2.2.1"]
-    watchfiles["watchfiles\n0.21.0"]
-    webassets["webassets\n2.0"]
-    anyio -- ">=1.1" --> sniffio
-    anyio -- ">=2.8" --> idna
-    beautifulsoup4 -- ">1.2" --> soupsieve
-    feedgenerator -- ">=0a" --> pytz
-    jinja2 -- ">=2.0" --> markupsafe
-    markdown-it-py -- "~=0.1" --> mdurl
-    mdit-py-plugins -- ">=1.0.0,<4.0.0" --> markdown-it-py
-    mdx-video -- ">=3.0" --> markdown
-    myst-parser -- ">=0.16,<0.21" --> docutils
-    myst-parser -- ">=6,<8" --> sphinx
-    myst-parser -- "any" --> jinja2
-    myst-parser -- "any" --> pyyaml
-    myst-parser -- "~=0.4" --> mdit-py-plugins
-    myst-parser -- "~=3.0" --> markdown-it-py
-    pelican -- ">=0.20.1" --> docutils
-    pelican -- ">=0.21.0" --> watchfiles
-    pelican -- ">=1.3.7" --> unidecode
-    pelican -- ">=1.7.0" --> blinker
-    pelican -- ">=13.6.0" --> rich
-    pelican -- ">=2.1.0" --> feedgenerator
-    pelican -- ">=2.16.1" --> pygments
-    pelican -- ">=2.8.2" --> python-dateutil
-    pelican -- ">=3.1.2" --> jinja2
-    pelican -- ">=4.1.0" --> ordered-set
-    pelican-image-process -- ">=4.5" --> pelican
-    pelican-image-process -- ">=4.6" --> lxml
-    pelican-image-process -- ">=4.9" --> beautifulsoup4
-    pelican-image-process -- ">=9.1" --> pillow
-    pelican-myst-reader -- ">=0.0.1,<0.0.2" --> markdown-word-count
-    pelican-myst-reader -- ">=0.17" --> docutils
-    pelican-myst-reader -- ">=2.0.0,<3.0.0" --> myst-parser
-    pelican-myst-reader -- ">=2.5.0,<2.6.0" --> sphinxcontrib-bibtex
-    pelican-myst-reader -- ">=4.5,<5.0" --> pelican
-    pelican-myst-reader -- ">=4.9.3,<5.0.0" --> beautifulsoup4
-    pelican-myst-reader -- ">=6.0,<7.0" --> pyyaml
-    pelican-neighbors -- ">=3,<5" --> pelican
-    pelican-search -- ">=0.9.0,<0.10.0" --> rtoml
-    pelican-search -- ">=4.5" --> pelican
-    pelican-seo -- ">=4.5" --> pelican
-    pelican-seo -- ">=4.9,<5.0" --> beautifulsoup4
-    pelican-sitemap -- ">=4.5" --> pelican
-    pelican-webassets -- ">=2.0,<3.0" --> webassets
-    pelican-webassets -- ">=4.5,<5.0" --> pelican
-    plumage -- ">=0.2.0,<0.3.0" --> cssmin
-    plumage -- ">=0.2.0,<0.3.0" --> pynpm
-    plumage -- ">=0.22.0,<0.23.0" --> libsass
-    plumage -- ">=1.3.0b1,<2.0.0" --> pelican-myst-reader
-    plumage -- ">=2.0.0,<3.0.0" --> pelican-webassets
-    plumage -- ">=2.0.0,<3.0.0" --> pyquery
-    plumage -- ">=20191111,<20191112" --> closure
-    plumage -- ">=4.8.0,<5.0.0" --> pelican
-    pybtex -- ">=1.0.4" --> latexcodec
-    pybtex -- ">=3.01" --> pyyaml
-    pybtex -- "any" --> six
-    pybtex-docutils -- ">=0.14" --> docutils
-    pybtex-docutils -- ">=0.16" --> pybtex
-    pyquery -- ">=1.2.0" --> cssselect
-    pyquery -- ">=2.1" --> lxml
-    python-dateutil -- ">=1.5" --> six
-    requests -- ">=1.21.1,<3" --> urllib3
-    requests -- ">=2,<4" --> charset-normalizer
-    requests -- ">=2.5,<4" --> idna
-    requests -- ">=2017.4.17" --> certifi
-    rich -- ">=2.13.0,<3.0.0" --> pygments
-    rich -- ">=2.2.0" --> markdown-it-py
-    sphinx -- ">=0.18.1,<0.21" --> docutils
-    sphinx -- ">=0.7,<0.8" --> alabaster
-    sphinx -- ">=1.1.9" --> sphinxcontrib-serializinghtml
-    sphinx -- ">=1.3" --> imagesize
-    sphinx -- ">=2.0" --> snowballstemmer
-    sphinx -- ">=2.0.0" --> sphinxcontrib-htmlhelp
-    sphinx -- ">=2.14" --> pygments
-    sphinx -- ">=2.25.0" --> requests
-    sphinx -- ">=2.9" --> babel
-    sphinx -- ">=21.0" --> packaging
-    sphinx -- ">=3.0" --> jinja2
-    sphinx -- "any" --> sphinxcontrib-applehelp
-    sphinx -- "any" --> sphinxcontrib-devhelp
-    sphinx -- "any" --> sphinxcontrib-jsmath
-    sphinx -- "any" --> sphinxcontrib-qthelp
-    sphinxcontrib-bibtex -- ">=0.24" --> pybtex
-    sphinxcontrib-bibtex -- ">=0.8" --> docutils
-    sphinxcontrib-bibtex -- ">=1.0.0" --> pybtex-docutils
-    sphinxcontrib-bibtex -- ">=2.1" --> sphinx
-    typogrify -- ">=1.8.3" --> smartypants
-    watchfiles -- ">=3.0.0" --> anyio
+flowchart LR
+    blog[["`blog`"]]
 
+    subgraph primary-deps [Primary dependencies]
+        plumage{{"`plumage`"}}
+        pelican_seo{{"`pelican-seo`"}}
+        pelican_search{{"`pelican-search`"}}
+        pelican_neighbors{{"`pelican-neighbors`"}}
+        pelican_sitemap{{"`pelican-sitemap`"}}
+        pelican{{"`pelican`"}}
+        markdown_it_py{{"`markdown-it-py`"}}
+        typogrify{{"`typogrify`"}}
+        pygments{{"`pygments`"}}
+    end
+
+    sphinx(["`sphinx`"])
+    pelican_myst_reader(["`pelican-myst-reader`"])
+    myst_parser(["`myst-parser`"])
+    docutils(["`docutils`"])
+    requests(["`requests`"])
+    sphinxcontrib_bibtex(["`sphinxcontrib-bibtex`"])
+    beautifulsoup4(["`beautifulsoup4`"])
+    jinja2(["`jinja2`"])
+    pybtex(["`pybtex`"])
+    anyio(["`anyio`"])
+    pybtex_docutils(["`pybtex-docutils`"])
+    pyquery(["`pyquery`"])
+    pyyaml(["`pyyaml`"])
+    rich(["`rich`"])
+    colorama(["`colorama`"])
+    feedgenerator(["`feedgenerator`"])
+    idna(["`idna`"])
+    mdit_py_plugins(["`mdit-py-plugins`"])
+    packaging(["`packaging`"])
+    pelican_webassets(["`pelican-webassets`"])
+    python_dateutil(["`python-dateutil`"])
+    roman_numerals_py(["`roman-numerals-py`"])
+    typing_extensions(["`typing-extensions`"])
+    tzdata(["`tzdata`"])
+    urllib3(["`urllib3`"])
+    watchfiles(["`watchfiles`"])
+    alabaster(["`alabaster`"])
+    babel(["`babel`"])
+    blinker(["`blinker`"])
+    certifi(["`certifi`"])
+    charset_normalizer(["`charset-normalizer`"])
+    cssmin(["`cssmin`"])
+    cssselect(["`cssselect`"])
+    execnet(["`execnet`"])
+    imagesize(["`imagesize`"])
+    iniconfig(["`iniconfig`"])
+    latexcodec(["`latexcodec`"])
+    libsass(["`libsass`"])
+    lxml(["`lxml`"])
+    markdown(["`markdown`"])
+    markdown_word_count(["`markdown-word-count`"])
+    markupsafe(["`markupsafe`"])
+    mdurl(["`mdurl`"])
+    ordered_set(["`ordered-set`"])
+    pluggy(["`pluggy`"])
+    psutil(["`psutil`"])
+    pynpm(["`pynpm`"])
+    roman_numerals(["`roman-numerals`"])
+    rtoml(["`rtoml`"])
+    six(["`six`"])
+    smartypants(["`smartypants`"])
+    snowballstemmer(["`snowballstemmer`"])
+    soupsieve(["`soupsieve`"])
+    sphinxcontrib_applehelp(["`sphinxcontrib-applehelp`"])
+    sphinxcontrib_devhelp(["`sphinxcontrib-devhelp`"])
+    sphinxcontrib_htmlhelp(["`sphinxcontrib-htmlhelp`"])
+    sphinxcontrib_jsmath(["`sphinxcontrib-jsmath`"])
+    sphinxcontrib_qthelp(["`sphinxcontrib-qthelp`"])
+    sphinxcontrib_serializinghtml(["`sphinxcontrib-serializinghtml`"])
+    unidecode(["`unidecode`"])
+
+    subgraph ext_test [--extra test]
+        pytest{{"`pytest >=9`"}}
+        pytest_xdist{{"`pytest-xdist >=3.7`"}}
+        pytest_github_actions_annotate_failures{{"`pytest-github-actions-annotate-failures >=0.2`"}}
+        pytest_randomly{{"`pytest-randomly >=3.15`"}}
+    end
+
+    subgraph ext_typing [--extra typing]
+        types_requests{{"`types-requests >=2.32.0.20240622`"}}
+    end
+
+    blog ==>|" >=4.10 "| pelican
+    blog ==>|" >=5 "| plumage
+    blog ==>|" >=2.20 "| pygments
+    blog ==>|" >=3 "| markdown_it_py
+    blog ==>|" >=1.1 "| pelican_search
+    blog ==>|" >=1.2.2 "| pelican_seo
+    blog ==>|" >=1.2 "| pelican_neighbors
+    blog ==>|" >=1.1 "| pelican_sitemap
+    blog ==>|" >=2.0.7 "| typogrify
+    pelican --> docutils
+    pelican --> pygments
+    pelican --> jinja2
+    pelican --> rich
+    pelican --> feedgenerator
+    pelican --> python_dateutil
+    pelican --> tzdata
+    pelican --> watchfiles
+    pelican --> blinker
+    pelican --> markdown
+    pelican --> ordered_set
+    pelican --> unidecode
+    plumage --> pelican
+    plumage --> pelican_myst_reader
+    plumage --> pygments
+    plumage --> pyquery
+    plumage --> pelican_webassets
+    plumage --> cssmin
+    plumage --> libsass
+    plumage --> pynpm
+    pytest --> pygments
+    pytest --> colorama
+    pytest --> packaging
+    pytest --> iniconfig
+    pytest --> pluggy
+    markdown_it_py --> mdurl
+    pytest_xdist --> pytest
+    pytest_xdist --> execnet
+    pytest_xdist --> psutil
+    pelican_search --> pelican
+    pelican_search --> rtoml
+    pelican_seo --> pelican
+    pelican_seo --> beautifulsoup4
+    pelican_neighbors --> pelican
+    pelican_sitemap --> pelican
+    pytest_github_actions_annotate_failures --> pytest
+    pytest_randomly --> pytest
+    types_requests --> urllib3
+    typogrify --> smartypants
+    pelican_myst_reader --> pelican
+    pelican_myst_reader --> myst_parser
+    pelican_myst_reader --> docutils
+    pelican_myst_reader --> sphinxcontrib_bibtex
+    pelican_myst_reader --> beautifulsoup4
+    pelican_myst_reader --> pyyaml
+    pelican_myst_reader --> markdown_word_count
+    beautifulsoup4 --> typing_extensions
+    beautifulsoup4 --> soupsieve
+    jinja2 --> markupsafe
+    pyquery --> cssselect
+    pyquery --> lxml
+    rich --> pygments
+    rich --> markdown_it_py
+    feedgenerator --> tzdata
+    pelican_webassets --> pelican
+    python_dateutil --> six
+    watchfiles --> anyio
+    myst_parser --> sphinx
+    myst_parser --> docutils
+    myst_parser --> markdown_it_py
+    myst_parser --> jinja2
+    myst_parser --> pyyaml
+    myst_parser --> mdit_py_plugins
+    sphinxcontrib_bibtex --> sphinx
+    sphinxcontrib_bibtex --> docutils
+    sphinxcontrib_bibtex --> pybtex
+    sphinxcontrib_bibtex --> pybtex_docutils
+    anyio --> idna
+    anyio --> typing_extensions
+    sphinx --> docutils
+    sphinx --> pygments
+    sphinx --> requests
+    sphinx --> jinja2
+    sphinx --> colorama
+    sphinx --> packaging
+    sphinx --> roman_numerals_py
+    sphinx --> alabaster
+    sphinx --> babel
+    sphinx --> imagesize
+    sphinx --> snowballstemmer
+    sphinx --> sphinxcontrib_applehelp
+    sphinx --> sphinxcontrib_devhelp
+    sphinx --> sphinxcontrib_htmlhelp
+    sphinx --> sphinxcontrib_jsmath
+    sphinx --> sphinxcontrib_qthelp
+    sphinx --> sphinxcontrib_serializinghtml
+    pybtex --> pyyaml
+    pybtex --> latexcodec
+    pybtex_docutils --> docutils
+    pybtex_docutils --> pybtex
+    mdit_py_plugins --> markdown_it_py
+    requests --> idna
+    requests --> urllib3
+    requests --> certifi
+    requests --> charset_normalizer
+    roman_numerals_py --> roman_numerals
+    blog -.-> ext_test
+    blog -.-> ext_typing
+
+    click alabaster "https://pypi.org/project/alabaster/" _blank
+    click anyio "https://pypi.org/project/anyio/" _blank
+    click babel "https://pypi.org/project/babel/" _blank
+    click beautifulsoup4 "https://pypi.org/project/beautifulsoup4/" _blank
+    click blinker "https://pypi.org/project/blinker/" _blank
+    click blog "https://pypi.org/project/blog/" _blank
+    click certifi "https://pypi.org/project/certifi/" _blank
+    click charset_normalizer "https://pypi.org/project/charset-normalizer/" _blank
+    click colorama "https://pypi.org/project/colorama/" _blank
+    click cssmin "https://pypi.org/project/cssmin/" _blank
+    click cssselect "https://pypi.org/project/cssselect/" _blank
+    click docutils "https://pypi.org/project/docutils/" _blank
+    click execnet "https://pypi.org/project/execnet/" _blank
+    click feedgenerator "https://pypi.org/project/feedgenerator/" _blank
+    click idna "https://pypi.org/project/idna/" _blank
+    click imagesize "https://pypi.org/project/imagesize/" _blank
+    click iniconfig "https://pypi.org/project/iniconfig/" _blank
+    click jinja2 "https://pypi.org/project/jinja2/" _blank
+    click latexcodec "https://pypi.org/project/latexcodec/" _blank
+    click libsass "https://pypi.org/project/libsass/" _blank
+    click lxml "https://pypi.org/project/lxml/" _blank
+    click markdown "https://pypi.org/project/markdown/" _blank
+    click markdown_it_py "https://pypi.org/project/markdown-it-py/" _blank
+    click markdown_word_count "https://pypi.org/project/markdown-word-count/" _blank
+    click markupsafe "https://pypi.org/project/markupsafe/" _blank
+    click mdit_py_plugins "https://pypi.org/project/mdit-py-plugins/" _blank
+    click mdurl "https://pypi.org/project/mdurl/" _blank
+    click myst_parser "https://pypi.org/project/myst-parser/" _blank
+    click ordered_set "https://pypi.org/project/ordered-set/" _blank
+    click packaging "https://pypi.org/project/packaging/" _blank
+    click pelican "https://pypi.org/project/pelican/" _blank
+    click pelican_myst_reader "https://pypi.org/project/pelican-myst-reader/" _blank
+    click pelican_neighbors "https://pypi.org/project/pelican-neighbors/" _blank
+    click pelican_search "https://pypi.org/project/pelican-search/" _blank
+    click pelican_seo "https://pypi.org/project/pelican-seo/" _blank
+    click pelican_sitemap "https://pypi.org/project/pelican-sitemap/" _blank
+    click pelican_webassets "https://pypi.org/project/pelican-webassets/" _blank
+    click pluggy "https://pypi.org/project/pluggy/" _blank
+    click plumage "https://pypi.org/project/plumage/" _blank
+    click psutil "https://pypi.org/project/psutil/" _blank
+    click pybtex "https://pypi.org/project/pybtex/" _blank
+    click pybtex_docutils "https://pypi.org/project/pybtex-docutils/" _blank
+    click pygments "https://pypi.org/project/pygments/" _blank
+    click pynpm "https://pypi.org/project/pynpm/" _blank
+    click pyquery "https://pypi.org/project/pyquery/" _blank
+    click pytest "https://pypi.org/project/pytest/" _blank
+    click pytest_github_actions_annotate_failures "https://pypi.org/project/pytest-github-actions-annotate-failures/" _blank
+    click pytest_randomly "https://pypi.org/project/pytest-randomly/" _blank
+    click pytest_xdist "https://pypi.org/project/pytest-xdist/" _blank
+    click python_dateutil "https://pypi.org/project/python-dateutil/" _blank
+    click pyyaml "https://pypi.org/project/pyyaml/" _blank
+    click requests "https://pypi.org/project/requests/" _blank
+    click rich "https://pypi.org/project/rich/" _blank
+    click roman_numerals "https://pypi.org/project/roman-numerals/" _blank
+    click roman_numerals_py "https://pypi.org/project/roman-numerals-py/" _blank
+    click rtoml "https://pypi.org/project/rtoml/" _blank
+    click six "https://pypi.org/project/six/" _blank
+    click smartypants "https://pypi.org/project/smartypants/" _blank
+    click snowballstemmer "https://pypi.org/project/snowballstemmer/" _blank
+    click soupsieve "https://pypi.org/project/soupsieve/" _blank
+    click sphinx "https://pypi.org/project/sphinx/" _blank
+    click sphinxcontrib_applehelp "https://pypi.org/project/sphinxcontrib-applehelp/" _blank
+    click sphinxcontrib_bibtex "https://pypi.org/project/sphinxcontrib-bibtex/" _blank
+    click sphinxcontrib_devhelp "https://pypi.org/project/sphinxcontrib-devhelp/" _blank
+    click sphinxcontrib_htmlhelp "https://pypi.org/project/sphinxcontrib-htmlhelp/" _blank
+    click sphinxcontrib_jsmath "https://pypi.org/project/sphinxcontrib-jsmath/" _blank
+    click sphinxcontrib_qthelp "https://pypi.org/project/sphinxcontrib-qthelp/" _blank
+    click sphinxcontrib_serializinghtml "https://pypi.org/project/sphinxcontrib-serializinghtml/" _blank
+    click types_requests "https://pypi.org/project/types-requests/" _blank
+    click typing_extensions "https://pypi.org/project/typing-extensions/" _blank
+    click typogrify "https://pypi.org/project/typogrify/" _blank
+    click tzdata "https://pypi.org/project/tzdata/" _blank
+    click unidecode "https://pypi.org/project/unidecode/" _blank
+    click urllib3 "https://pypi.org/project/urllib3/" _blank
+    click watchfiles "https://pypi.org/project/watchfiles/" _blank
+
+    style blog stroke-width:3px
+    style markdown_it_py stroke-width:3px
+    style pelican stroke-width:3px
+    style pelican_neighbors stroke-width:3px
+    style pelican_search stroke-width:3px
+    style pelican_seo stroke-width:3px
+    style pelican_sitemap stroke-width:3px
+    style plumage stroke-width:3px
+    style pygments stroke-width:3px
+    style pytest stroke-width:3px
+    style pytest_github_actions_annotate_failures stroke-width:3px
+    style pytest_randomly stroke-width:3px
+    style pytest_xdist stroke-width:3px
+    style types_requests stroke-width:3px
+    style typogrify stroke-width:3px
+
+    style primary-deps fill:#1565C020,stroke:#42A5F5
+    style ext_test fill:#7B1FA220,stroke:#BA68C8
+    style ext_typing fill:#7B1FA220,stroke:#BA68C8

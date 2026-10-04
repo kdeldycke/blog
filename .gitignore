@@ -550,6 +550,6 @@ seo_report.html
 
 # The virtualenv template gitignore.io emits above ignores `[Ss]cripts`, aimed at a
 # venv's Windows `Scripts/` folder. It also swallows this repo's own `scripts/`, so
-# `scripts/cloudflare_config.py` silently refuses to be added. Re-included here, which
+# a new file there silently refuses to be added. Re-included here, which
 # only works because extra-content is appended after the generated rules.
 !scripts/

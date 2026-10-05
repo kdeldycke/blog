@@ -141,7 +141,7 @@ jobs:
       - name: Validate generated HTML
         continue-on-error: true
         run: >
-          npx --yes html-validate@11.16.0 './output/**/*.html'
+          npx --yes html-validate@11.16.1 './output/**/*.html'
 
   unittests:
     name: Unittests

@@ -155,7 +155,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: >
-          npx --yes wrangler@4.139.0 pages deploy ./output
+          npx --yes wrangler@4.142.0 pages deploy ./output
           --project-name=kevin-deldycke-blog --commit-dirty=true
       # The site went live without the files the offload dropped, so every link to them is
       # dead. The offload step's annotations name each file and how to fix it.

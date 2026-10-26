@@ -142,6 +142,7 @@ override-dependencies = [ "pygments>=2.20" ]
 # ~/.config/uv/uv.toml alone, which is one machine's config and does not travel: a fresh
 # clone resolved with no window at all.
 exclude-newer = "1 week"
+exclude-newer-package = { certifi = "2026-10-25T00:00:00Z" }
 package = false
 
 [tool.typos]

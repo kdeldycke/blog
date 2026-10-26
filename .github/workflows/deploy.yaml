@@ -93,7 +93,7 @@ jobs:
       # that mattered most.
       - name: Install npm
         run: > # zizmor: ignore[adhoc-packages]
-          npm install npm@12.1.0 --global --ignore-scripts --no-progress
+          npm install npm@12.2.1 --global --ignore-scripts --no-progress
           --no-update-notifier --no-fund --no-audit
       # Version-pinned because `--locked` does not do it: that flag freezes the
       # crate's own dependency tree and leaves the crate itself resolved fresh on
@@ -145,7 +145,7 @@ jobs:
       # surprise is least welcome.
       - name: Optimize
         run: >
-          npx --yes @divriots/jampack@0.34.1 ./output
+          npx --yes @divriots/jampack@0.34.2 ./output
       # wrangler runs straight from npm, version-pinned like jampack above, so
       # sync-workflow-pins moves it past the cooldown. cloudflare/wrangler-action would
       # only install this same CLI and run this command, with one more third-party
@@ -155,7 +155,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: >
-          npx --yes wrangler@4.139.0 pages deploy ./output
+          npx --yes wrangler@4.151.1 pages deploy ./output
           --project-name=kevin-deldycke-blog --commit-dirty=true
       # The site went live without the files the offload dropped, so every link to them is
       # dead. The offload step's annotations name each file and how to fix it.

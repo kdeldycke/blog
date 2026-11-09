@@ -117,7 +117,7 @@ urls.Repository = "https://github.com/kdeldycke/blog"
 # afterwards. Floor uv rather than cap it: astral-sh/setup-uv reads `required-version`
 # directly and installs the newest release satisfying it, so a ceiling would break every
 # machine the day the next minor lands.
-required-version = ">=0.11.15"
+required-version = ">=0.12.22"
 # pelican caps pygments at `<2.20.0`, and 2.20.0 is the release fixing CVE-2026-4539, so
 # this repo's Dependabot alert sits out of reach of an ordinary resolution: uv keeps 2.18.0
 # without complaining and `fix-vulnerable-deps` has nothing to propose. The cap is
@@ -152,8 +152,8 @@ package = false
 # suppresses either, since the checker never sees the whole word. Any acronym
 # carrying a lowercase suffix needs its own entry here.
 default.extend-identifiers = { Github = "GitHub", IOS = "iOS", Javascript = "JavaScript", MacOS = "macOS", PATCHed = "PATCHed", PNGs = "PNGs", PyPi = "PyPI", Typescript = "TypeScript" }
-# False positives: "astroid" is a Python AST library (not "asteroid"); "oject" appears when "pyproject.toml" is split across line breaks in CLI help output; "sur" is macOS 11 Big Sur and Homebrew's big_sur bottle tag (not "sure").
-default.extend-words = { astroid = "astroid", oject = "oject", sur = "sur", certifi = "certifi" }
+# False positives: "astroid" is a Python AST library (not "asteroid"); "certifi" is the CA bundle package a dependency graph lists under requests (not "certify"); "oject" appears when "pyproject.toml" is split across line breaks in CLI help output; "sur" is macOS 11 Big Sur and Homebrew's big_sur bottle tag (not "sure").
+default.extend-words = { astroid = "astroid", certifi = "certifi", oject = "oject", sur = "sur" }
 # Skip content between <!-- typos:off --> and <!-- typos:on --> markers.
 default.extend-ignore-re = [
   "(?s)<!-- typos:off -->.*?<!-- typos:on -->",
